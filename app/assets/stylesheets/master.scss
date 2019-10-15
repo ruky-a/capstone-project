@@ -15,6 +15,8 @@
 } 
 
 
+
+
 body {
   font-family: 'ambleregular', sans-serif;
 }
@@ -59,3 +61,47 @@ body {
 
   }
 
+
+.box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 10px;
+}
+
+
+.form_main {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  width: 460px;
+  min-height: 350px;
+  padding: 20px;
+
+
+}
+
+.form_main h2 {
+  font-family: roboto;
+   min-width: 200px;
+  right: 10px;
+  padding-bottom: 30px;
+
+
+}
+
+.my-btn {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  color: white;
+  margin-top: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
