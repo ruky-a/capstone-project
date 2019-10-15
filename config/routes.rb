@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'registration'},
   controllers: {omniauth_callbacks: 'omniauth_callbacks'}
   root 'pages#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :host do
+    resources :rooms, only: [:new, :create, :show]
+  end
 end

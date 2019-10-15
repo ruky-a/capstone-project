@@ -26,13 +26,13 @@
    <div class="form-group">
         <%= f.password_field :password, autocomplete: "off", placeholder: "confirm password", class: "form-control" %>
       </div>
- 
-  <br />
 
    <div class="form-actions">
     <a><%= f.submit "Create Account", class: 'my-btn btn-danger' %> </a>
+    <br />
+    <br />
      <div class="form-actions">
-    <%= link_to "Sign up with Facebook",user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+    <%= link_to "Sign up with Facebook",user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-block" %>
   </div>
 
   </div>
