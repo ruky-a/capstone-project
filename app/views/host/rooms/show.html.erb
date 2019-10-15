@@ -1,10 +1,9 @@
 <br />
  <br />
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= @room.listing_name %></h1>
-  <br />
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= @room.description%></h1>
-</div>
+<div class="row">
+  <div class="col md-8">
+  <h1><%= @room.listing_name %></h1>
+  <%= @room.address %>
+  <%= @room.description%>
 </div>
 </div>
