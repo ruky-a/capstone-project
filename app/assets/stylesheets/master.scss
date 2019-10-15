@@ -11,9 +11,10 @@
 .navbar-light .navbar-brand {
  font-family: 'amblelight_condensed', sans-serif;
   font-size: 28px;
-  color: #CC0000;
-} 
 
+
+
+ }
 
 
 
@@ -95,6 +96,7 @@ body {
 }
 
 .my-btn {
+  background-color: #1C2331;
   width: 100%;
   border: none;
   font-size: 15px;
@@ -104,4 +106,12 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 
+}
+
+
+
+
+
+.avatar-small {
+  width:28px;
 }

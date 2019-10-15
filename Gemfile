@@ -22,6 +22,9 @@ gem "font-awesome-rails"
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'simple_form'
+gem "figaro"
+gem 'omniauth', '~> 1.7'
+gem 'omniauth-facebook', '~> 4.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
