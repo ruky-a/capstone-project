@@ -23,3 +23,39 @@ body {
 font-size: 35px;
   font-family: 'amblebold', sans-serif;
 }
+
+html {
+  height: 100%;
+
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: image_url('plain.png'); 
+}
+
+#container {
+  flex: 1 0;
+}
+
+
+#footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: rgba(96, 125, 139, 0.1) ;
+  color: #303f9f;
+  font-family: 'robotolight', sans-serit;
+  padding-top: 20px;
+}
+
+
+#footer a {
+  color: white;
+  font-weight: 200;
+  font-size: 12px;
+
+  }
+
