@@ -9,17 +9,14 @@
         <h4 class="text-center">Add your Listing Details</h4>
       </div>
      <div class="card-body">
-  <%= simple_form_for @room, url: host_rooms_path do |f| %>
-    <%= f.input :listing_name %>
-      <%= f.input :address %>
-   <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
-  
-    <%= f.input :rate %>
-    <br />
-    <%= f.submit "Create", class: 'btn btn-primary' %>
-    <br />
-  </div>
-</div>
+        <%= simple_form_for @room, url: host_rooms_path do |f| %>
+         <%= f.input :listing_name %>
+         <%= f.input :address %>
+         <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+       <br />
+       <p class="text-center"><%= f.submit "Save", class: 'btn btn-dark' %></p>
+      </div>
+    </div>
   <% end %>
   <br />
 </div>

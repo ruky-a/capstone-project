@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_094800) do
+ActiveRecord::Schema.define(version: 2019_10_16_011803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "hometype"
+    t.string "roomtype"
+    t.integer "accommodate"
+    t.integer "bathroom"
+    t.integer "bedroom"
+    t.boolean "swimming"
+    t.boolean "air"
+    t.boolean "tv"
+    t.boolean "kitchen"
+    t.boolean "restaurant"
+    t.boolean "internet"
+    t.integer "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_amenities_on_room_id"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.string "listing_name"
@@ -23,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_10_15_094800) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 

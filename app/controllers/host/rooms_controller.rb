@@ -1,12 +1,14 @@
 class Host::RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create]
 
+  def index
+    @rooms = current_user.rooms
+  end
 
   def new
    @room = Room.new
  end
   
-
 
   def show
    @room = Room.find(params[:id])

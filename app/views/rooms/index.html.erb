@@ -1,0 +1,11 @@
+<br /><br />
+<div class="row">
+    <div class="box col-10 offset-1">
+     <% @rooms.each do |room| %>
+  <h2><%= room.listing_name %></h2>
+    <%= room.description %>
+    <%= room.address %>
+  <% end %>
+</div>
+</div>
+</div>

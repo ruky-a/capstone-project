@@ -25,6 +25,7 @@ gem 'simple_form'
 gem "figaro"
 gem 'omniauth', '~> 1.7'
 gem 'omniauth-facebook', '~> 4.0'
+gem "geocoder"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

@@ -1,9 +1,96 @@
 <br />
- <br />
-<div class="row">
-  <div class="col md-8">
-  <h1><%= @room.listing_name %></h1>
-  <%= @room.address %>
-  <%= @room.description%>
+
+
+  <h1 class="text-center"><%= @room.listing_name %></h1>
+  <p class="text-center"><%= @room.address %></p>
+  <p class="text-center"><%= @room.description%></p>
+
+
+
+
+<br />
+
+ <div class="text-center">
+    <%= link_to 'Add Amenities...', new_host_room_amenity_path(@room), class: 'btn btn-danger' %>
+  </div>
+  <br />
+  <br />
+
+
+
+
+<div class="col-md-8 offset-md-3">
+<div class="form-group">
+  <div class="row text-center">
+    <div class="col-md-2">
+     <i class="fa fa-home fa-2x"></i>
+    </div>
+    <div class="col-md-2">
+      <i class="fa fa-bed fa-2x"></i> 
+    </div>
+    <div class="col-md-2">
+   <i class="fa fa-bath fa-2x"></i>
+    </div>
+
+     <div class="col-md-2">
+     <i class="fa fa-user-circle-o fa-2x"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+ <% @room.amenities.each do |amenity| %>
+<div class="row text-center">
+<div class="col-md-2"><%= amenity.hometype %></div>
+<div class="col-md-2"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+<div class="col-md-2"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+<div class="col-md-2"><%= pluralize(amenity.accommodate, "Guest") %></div>
+</div>
+<% end %>
 </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
