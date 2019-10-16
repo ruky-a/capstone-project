@@ -61,7 +61,7 @@
 
   <% if @room.latitude.present? && @room.longitude.present? %>
   
-  <div id="map"></div>
+  
 <script>
 
   function initMap() {
@@ -82,12 +82,12 @@
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
   </script>
+  <div id="map"></div>
   <% end %>
 
 
   <br />
 
-  </div>
 
 
 

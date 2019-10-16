@@ -7,8 +7,11 @@ class Host::AmenitiesController < ApplicationController
 
   def create
     @room = Room.find(params[:room_id])
-      @amenity = @room.amenities.create(amenity_params)
+     @amenity = @room.amenities.create(amenity_params)
     redirect_to host_room_path(@room)
+  end
+
+  def show
   end
   
 

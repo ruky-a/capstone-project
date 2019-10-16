@@ -1,7 +1,6 @@
 
 <div class="row">
   <div class="form_main">
-    <div class="box col-10 offset-1">
      <h2 class="text-center">Account</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -9,29 +8,40 @@
 
 
   <div class="form-inputs">
-     <%= f.input :fullname,required: true, autofocus: true, input_html: { autocomplete: "fullname" }%>
+   <div class="form-group">
+      <%= f.email_field :fullname, autofocus: true, placeholder: "Full name", class: "form-control" %>
+    </div>
 
-
-      <%= f.input :email, required: true, autofocus: true %>
+   <div class="form-group">
+      <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
+    </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :current_password, required: true, input_html: { autocomplete: "current-password"} %>
+      <div class="form-group">
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current password", class: "form-control" %>
+      </div>
 
-    <%= f.input :password, required: false, input_html: { autocomplete: "new-password", placeholder: "new-password" } %>
 
-    <%= f.input :password_confirmation, required: false,  input_html: { autocomplete: "new-password",placeholder: "confirm-password" } %>
+       <div class="form-group">
+       <%= f.password_field :password, autocomplete: "off", placeholder: "New password", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class: "form-control" %>
+      </div>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update", class: "btn btn-success" %>
+    <%= f.submit "Save", class: "my-btn" %>
   </div>
 <% end %>
+<br />
 
- <span class="pull-right"><%= link_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></span>
+ <span class="pull-right"><%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></span>
 
 <%= link_to "Back", :back %>
 </div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :show]
   namespace :host do
   resources :rooms, only: [:new, :create, :show] do
-    resources :amenities, only: [:new, :create]
-  end
+      resources :amenities, only: [:new, :create]
+    end
   end
 end

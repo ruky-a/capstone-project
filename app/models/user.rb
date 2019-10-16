@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-         validates :fullname, presence: true, length: {maximum: 30}
+         validates :fullname, length: {maximum: 35}
         
-        has_many :rooms
+            has_many :rooms
 
     
         

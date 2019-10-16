@@ -1,4 +1,4 @@
-<br ><br />
+
 <div class="row">
   <div class="form_main">
     <div class="box col-10 offset-1">
@@ -6,7 +6,7 @@
     <h2 class="text-center">Sign up </h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+ <%= render "devise/shared/mes" %>
 
  
    <div class="form-group">
@@ -24,7 +24,7 @@
       </div>
 
    <div class="form-group">
-        <%= f.password_field :password, autocomplete: "off", placeholder: "confirm password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Confirm password", class: "form-control" %>
       </div>
 
    <div class="form-actions">
