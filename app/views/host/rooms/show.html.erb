@@ -1,3 +1,4 @@
+
 <br />
 
 
@@ -53,7 +54,43 @@
 <% end %>
 </div>
 </div>
-</div>
+<br />
+
+
+
+
+  <% if @room.latitude.present? && @room.longitude.present? %>
+  
+  <div id="map"></div>
+<script>
+
+  function initMap() {
+  var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+  }
+</script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+  </script>
+  <% end %>
+
+
+  <br />
+
+  </div>
+
+
+
 
 
 
