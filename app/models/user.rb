@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
          validates :fullname, length: {maximum: 35}
+
         
             has_many :rooms
 

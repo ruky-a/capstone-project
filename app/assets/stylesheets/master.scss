@@ -112,8 +112,20 @@ body {
 }
 
 
-.avatar-small {
+.avatar1 {
   width:28px;
+}
+
+
+.avatar2 {
+  width: 50%;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 100px;
+     height: 100px;
+       border-radius: 50%;
 }
 
 
@@ -177,5 +189,40 @@ body {
  height: 300px;
 
  }
-    
- 
+
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+  padding-top: 20px;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #db2727;
+
+}
+
+.sidebar {
+  color: #db2727;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+
+.sidebar-link:hover, .sidebar-link:focus {
+  color: #CACCCD;
+  text-decoration: none;
+}
+.active.sidebar-link {
+  color: #db2727;
+  font-weight: bold;
+  text-decoration: none;
+}
+

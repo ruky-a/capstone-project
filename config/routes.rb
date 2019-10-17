@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   path: '',
   path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'registration'},
   controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+  resources :users, only: :show
   root 'pages#index'
   resources :rooms, only: [:index, :show]
   namespace :host do
