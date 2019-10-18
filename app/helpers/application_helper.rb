@@ -10,6 +10,18 @@ module ApplicationHelper
         "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&150"
   end
 end
-end
 
+# def image
+#   if @room.images.attached?
+#  @room.images.variant(resize_to_limit: [100, 100])
+#  else
+#   gravatar_image_url(user.email, size: size)
+# end
+# end
+
+def thumbnail
+    return self.images.variant(resize: "300x300!").processed
+  end
+
+end
 

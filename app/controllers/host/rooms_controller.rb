@@ -1,9 +1,9 @@
 class Host::RoomsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :index]
   before_action :set_room, only: [:show]
 
   def index
-    @rooms = current_user.rooms
+    @rooms = Room.all
   end
 
   def new
@@ -12,7 +12,10 @@ class Host::RoomsController < ApplicationController
   
 
   def show
-  end
+  @amenity = Amenity.new
+  @photo = Photo.new
+   end
+
 
 
 
@@ -28,10 +31,10 @@ class Host::RoomsController < ApplicationController
   private
 
   def set_room
-      @room = Room.find(params[:id])
+    @room = Room.find(params[:id])
     end
 
   def room_params
-    params.require(:room).permit(:listing_name, :description, :address, :rate)
+    params.require(:room).permit(:listing_name, :description, :address, :rate, :image )
 end
 end

@@ -1,0 +1,46 @@
+   <br />   
+   <%= render 'host/rooms/room_menu' %>
+
+   
+  <h1 class="text-center"><%= @room.listing_name %></h1>
+  <p class="text-center"><%= @room.address %></p>
+  <p class="text-center"><%= @room.description%></p>
+
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-10 offset-md-1">
+        <div class="card test-white">
+         <div class="card-header">
+        <h4 class="text-center">Details of your room</h4>
+      </div>
+     <div class="card-body">
+ <%= form_for @photo, url: host_room_photos_path(@room) do |f| %>
+ <div class="row">
+  <div class="form-group">
+    <span class="btn btn-default btn-file text-babu">
+      Select Photos
+<%= f.file_field :images, multiple: true %>
+</span>
+<%= f.label :caption %>
+<%= f.text_field :caption %>
+</div>
+</div>
+<div class="text-center">
+<%= f.submit "Add Photo", class: 'btn-danger' %>
+</div>
+</div>
+<% end %>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+     

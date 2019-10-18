@@ -1,11 +1,54 @@
-<br /><br />
-<div class="row">
-    <div class="box col-10 offset-1">
-     <% @rooms.each do |room| %>
-  <h2><%= room.listing_name %></h2>
-    <%= room.description %>
-    <%= room.address %>
-  <% end %>
+     
+<div class="col-10 offset-md-1">
+<div class="container">
+      <div class="card-group">
+  <div class="card">
+      <% @rooms.each do |room| %>
+     <% if room.image.attached? %> 
+      <%= image_tag (room.thumbnail) %>
+        <div class="card-body">
+
+   <h2 class="text-center"><%= link_to room.listing_name, room_path(room) %></h2>
+   <p class="text-center"><%= room.address %></p>
+    <p class="text-center"><%= room.description%></p>
+  </div>
+    <% end %>
+  </div>
+<% end %>
 </div>
 </div>
+
+<br />
+
+
+
+  
+    
+
+
+
+
+
+
+
+ <div class="container">
+<div class="card" style="width: 18rem;">
+   <% @rooms.each do |room| %>
+     <% if room.image.attached? %> 
+      <%= image_tag (room.thumbnail) %>
+  <div class="card-body">
+   <h2 class="text-center"><%= link_to room.listing_name, room_path(room) %></h2>
+   <p class="text-center"><%= room.address %></p>
+    <p class="text-center"><%= room.description%></p>
+      <p class="text-center"><a href="#" class="btn btn-primary">Book Now</a></p>
+     </div>
+    <% end %>
+  </div>
 </div>
+<% end %>
+</div>
+<br />
+
+
+
+

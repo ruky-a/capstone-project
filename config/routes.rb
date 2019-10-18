@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   root 'pages#index'
   resources :rooms, only: [:index, :show]
   namespace :host do
-  resources :rooms, only: [:new, :create, :show] do
+  resources :rooms, except: [:edit] do
       resources :amenities, only: [:new, :create]
+      resources :photos, only: [:create, :destroy, :new]
     end
   end
 end

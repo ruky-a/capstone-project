@@ -1,68 +1,20 @@
 
-
-
-<div class="col-10 offset-md-1">
-<div class="container">
-      <div class="card-group">
-  <div class="card">
- <%= image_tag (@room.thumbnail) %>
-    <div class="card-body">
-   <h1 class="text-center"><%= @room.listing_name %></h1>
-     <p class="text-center"><%= @room.address %></p>
-    <p class="text-center"><%= @room.description%></p>
-    </div>
-    <div class="card-footer">
-    </div>
-  </div>
-  </div>
-
-
-
-<div class="col-md-8 offset-md-3">
-<div class="form-group">
-  <div class="row text-center">
-    <div class="col-md-2">
-     <i class="fa fa-home fa-2x"></i>
-    </div>
-    <div class="col-md-2">
-      <i class="fa fa-bed fa-2x"></i> 
-    </div>
-    <div class="col-md-2">
-   <i class="fa fa-bath fa-2x"></i>
-    </div>
-
-     <div class="col-md-2">
-     <i class="fa fa-user-circle-o fa-2x"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
- <% @room.amenities.each do |amenity| %>
-<div class="row text-center">
-<div class="col-md-2"><%= amenity.hometype %></div>
-<div class="col-md-2"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
-<div class="col-md-2"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
-<div class="col-md-2"><%= pluralize(amenity.accommodate, "Guest") %></div>
-</div>
-<% end %>
-</div>
-</div>
 <br />
 
+         <div class="container">
+      <div class="card-group">
+       <div class="card">
+        <%= image_tag (@room.thumbnail) %>
+      <div class="card-body">
+      <h1 class="text-center"><%= @room.listing_name %></h1>
+         <p class="text-center"><%= @room.address %></p>
+         <p class="text-center"><%= @room.description%></p>
+         </div>
+       </div>
+     </div>
+     <br />
 
-   <li class="sidebar-item">
-  <%= link_to 'Add Photos...', new_host_room_photo_path(@room), class: 'sidebar-link active' %>
-</li>
- 
 
-
-
-  
 
          <div class="container">  
          <div class="card-deck">
@@ -87,8 +39,6 @@
  
 
 
-
-
        <div class="card">
         <% if photo.images.attached? %> 
        <% (0...photo.images.count).each do |image| %>
@@ -100,7 +50,6 @@
    </span>
  </div>
    <% end %>
-
     <div class="card-footer">
        <%= photo.caption %>
     </div>
@@ -108,8 +57,6 @@
      <% end %>
    </div>
  
-
-
 
 
        <div class="card">
@@ -136,11 +83,37 @@
  </div>
 </div>
   
- 
+
+
+
 
   
-    
-    
+
+  
+ 
+
+
+
+
+ <% @room.amenities.each do |amenity| %>
+<div class="row text-center">
+<div class="col-md-2"><%= amenity.hometype %></div>
+<div class="col-md-2"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+<div class="col-md-2"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+<div class="col-md-2"><%= pluralize(amenity.accommodate, "Guest") %></div>
+</div>
+<% end %>
+</div>
+</div>
+<br />
+
+
+  
+ 
+
+
+         
+
 
 
 
@@ -173,10 +146,6 @@
 
 
   <br />
-</div>
-</div>
-</div>
-
 
 
 
@@ -198,9 +167,47 @@
   </div>
   <br />
   <br />
-</div>
-</div>
-</div>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

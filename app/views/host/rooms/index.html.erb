@@ -1,1 +1,22 @@
-index.html.erb
+<div class="col-10 offset-md-1">
+<div class="container">
+  <% @rooms.each do |room| %>
+      <div class="card-group">
+  <div class="card">
+   <% if room.image.attached? %> 
+ <%= image_tag (room.thumbnail) %>
+ <% end %>
+    <div class="card-body">
+   <h1 class="text-center"><%= room.listing_name %></h1>
+     <p class="text-center"><%= room.address %></p>
+    <p class="text-center"><%= room.description%></p>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+  <% end %>
+  </div>   
+</div>
+</div>
+      
+   

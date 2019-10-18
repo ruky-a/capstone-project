@@ -226,3 +226,22 @@ body {
   text-decoration: none;
 }
 
+
+
+.btn-file {
+  position: relative;
+
+}
+
+.btn-file input[type=file] {
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  mmin-height: 100%;
+  text-align: right;
+  display: block;
+
+ }
+
+ 
+
