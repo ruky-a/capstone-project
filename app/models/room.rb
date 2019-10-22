@@ -14,10 +14,8 @@ class Room < ApplicationRecord
   has_many :photos
   has_one_attached :image
 
-  def thumbnail 
-    return self.image.variant(resize: "500x500").processed
-  end
-
-
 end
+
+
+
 

@@ -8,7 +8,7 @@ class Host::PhotosController < ApplicationController
 
   def create
    @room = Room.find(params[:room_id])
-    @photo = @room.photos.create(photo_params)
+   @photo = @room.photos.create(photo_params)
     redirect_to host_room_path(@room)
   end
 
@@ -16,13 +16,13 @@ class Host::PhotosController < ApplicationController
   end
 
   def destroy
- @photo =  Photo.find_by_id(params[:attachment_id]).destroy
+ @photo =  Photo.find_by_id(params[:id])
 
-    @photo.destroy
+    @photo.purge
 
     room = @photo.room
 
-    @photo.destroy
+    @photo.purge
     @photos = Photo.where(room_id: room.id)
 
     respond_to :js

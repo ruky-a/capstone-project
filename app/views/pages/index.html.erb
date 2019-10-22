@@ -12,9 +12,26 @@
 
 
 
-  
-    
+    <div class="container">
+   <div class="card-deck">
+     <% @rooms.each do |room| %>
+      <div class="col-12.col-md-6.col-lg-6">
+    <img class="card-img-top"><% if room.image.attached? %><%= image_tag room.image.variant(resize: "500x280") %>
+    <div class="card-body">
+<h5 class="card-title"><%= link_to room.listing_name, room_path(room) %></h5>
+      <p class="card-text"><%= room.address %></p>
+      <!-- <p class="card-text"><small class="text-muted"><%= room.description%></small></p> -->
+    <div class="card-footer">
+  <%= link_to 'Book Now', room_path(room), class: " btn btn-danger" %></li>
+    </div>
+  </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+</div>
+<br />
 
 
+</div>
 
-    

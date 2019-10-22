@@ -1,190 +1,42 @@
-
-
-
-<div class="col-10 offset-md-1">
-<div class="container">
-      <div class="card-group">
-  <div class="card">
- <%= image_tag (@room.thumbnail) %>
-    <div class="card-body">
-   <h1 class="text-center"><%= @room.listing_name %></h1>
-     <p class="text-center"><%= @room.address %></p>
-    <p class="text-center"><%= @room.description%></p>
-    </div>
-    <div class="card-footer">
-    </div>
-  </div>
+   <br />
+   <div class="conatiner">
+   <div class="row">
+   <div class=" col-md-3">
+    <%= render 'host/rooms/room_menu' %>
+    <br />
   </div>
 
 
-
-<div class="col-md-8 offset-md-3">
-<div class="form-group">
-  <div class="row text-center">
-    <div class="col-md-2">
-     <i class="fa fa-home fa-2x"></i>
-    </div>
-    <div class="col-md-2">
-      <i class="fa fa-bed fa-2x"></i> 
-    </div>
-    <div class="col-md-2">
-   <i class="fa fa-bath fa-2x"></i>
-    </div>
-
-     <div class="col-md-2">
-     <i class="fa fa-user-circle-o fa-2x"></i>
-    </div>
+      
+    <div class="col-md-9">
+  <%= image_tag @room.image.variant(resize: "500x500") %>
+   <h3><%= @room.listing_name %></h3>
+     <p cla><%= @room.address %></p>
+    <%= @room.description%></p>
+      <div class="footer">
+    <span></i> $<%= @room.rate %></span>
+    <span>Per Night</span>
   </div>
-</div>
+  <br />
+    </div>
 
 
 
-
-
-
- <% @room.amenities.each do |amenity| %>
-<div class="row text-center">
-<div class="col-md-2"><%= amenity.hometype %></div>
-<div class="col-md-2"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
-<div class="col-md-2"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
-<div class="col-md-2"><%= pluralize(amenity.accommodate, "Guest") %></div>
-</div>
+  
+   
+      
+    <div class="col-md-10 offset-md-1 text-center">
+    <% @room.photos.each do |photo| %>
+     <% if photo.images.attached? %>
+  <% (0...photo.images.count).each do |image| %>
+  <%= image_tag(photo.thumbnail(image) )%>
+  <%= photo.caption %>
+<% end %>
+<% end %>
 <% end %>
 </div>
 </div>
-<br />
-
-
-   <li class="sidebar-item">
-  <%= link_to 'Add Photos...', new_host_room_photo_path(@room), class: 'sidebar-link active' %>
-</li>
- 
-
-
-
-  
-
-         <div class="container">  
-         <div class="card-deck">
-     <% @room.photos.each do |photo| %>
-      <div class="card">
-        <% if photo.images.attached? %> 
-       <% (0...photo.images.count).each do |image| %>
-       <%= image_tag(photo.thumbnail(image)) %>
-        <div class="card-body">
-     <span class="pull-right">
-     <%= link_to host_room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
-     <i class="fa fa-trash-o" aria-hidden="true"></i>
-   </span>
- </div>
-   <% end %>
-    <div class="card-footer">
-       <%= photo.caption %>
-      </div>
-     <% end %>
-     <% end %>
-   </div>
- 
-
-
-
-
-       <div class="card">
-        <% if photo.images.attached? %> 
-       <% (0...photo.images.count).each do |image| %>
-       <%= image_tag(photo.thumbnail(image)) %>
-        <div class="card-body">
-     <span class="pull-right">
-     <%= link_to host_room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
-     <i class="fa fa-trash-o" aria-hidden="true"></i>
-   </span>
- </div>
-   <% end %>
-
-    <div class="card-footer">
-       <%= photo.caption %>
-    </div>
-     <% end %>
-     <% end %>
-   </div>
- 
-
-
-
-
-       <div class="card">
-        <% if photo.images.attached? %> 
-       <% (0...photo.images.count).each do |image| %>
-       <%= image_tag(photo.thumbnail(image)) %>
-        <div class="card-body">
-     <span class="pull-right">
-     <%= link_to host_room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
-     <i class="fa fa-trash-o" aria-hidden="true"></i>
-   </span>
- </div>
-   <% end %>
-    <div class="card-footer">
-       <%= photo.caption %>
-     </div>
-     <% end %>
-     <% end %>
-   </div>
-   <% end %>
- </div>
 </div>
-</div>
- </div>
-</div>
-  
- 
-
-  
-    
-    
-
-
-
-
-  <% if @room.latitude.present? && @room.longitude.present? %>
-  
-  
-<script>
-
-  function initMap() {
-  var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-  }
-</script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
-  </script>
-  <div id="map"></div>
-  <% end %>
-
-
-  <br />
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -193,14 +45,8 @@
 
 <br />
 
- <div class="text-center">
-    <%= link_to 'Add Amenities...', new_host_room_amenity_path(@room), class: 'btn btn-danger' %>
-  </div>
-  <br />
-  <br />
-</div>
-</div>
-</div>
+
+
 
 
 

@@ -9,6 +9,7 @@
   <h2><%= @user.fullname %></h2>
   <h6><%= @user.email %></h6>
   <h6><%= @user.phone_number %></h6>
+  <h6>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h6>
 </div>
 <div class="col-sm-3 offset-1">
     <ul class="sidebar-list">

@@ -63,7 +63,9 @@ body {
   font-size: 12px;
 
   }
-
+.footer {
+  color: #303f9f;
+}
 
 .box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -153,8 +155,8 @@ body {
   }
 
   .form-group input[type="checkbox"] {
-    height: 1.25em;
-    width: 1.25em;
+    height: 1.00em;
+    width: 1.00em;
     margin-bottom: -0.25em;
     margin-right: 5px;
     vertical-align: top;
@@ -181,12 +183,17 @@ body {
 
   h4 {
   color: white;
+  font-family: 'amblelight', sans-serif;
+  }
+
+  h3 {
+  font-family: 'amblebold', sans-serif;
   }
 
 
 
 #map {
- height: 300px;
+ height: 400px;
 
  }
 
@@ -243,5 +250,70 @@ body {
 
  }
 
+
+
+.card-deck {
+display: block;
+  column-count: 2;
+  text-align: center;
+  width: 100%;
+   padding-left: 5%;
+  padding-right: 5%;
+
+
+  }
+@media screen and (max-width: 600px) {
+  .card-deck {
+    width: 100%;
+     flex-direction: column;
+
+  }
+}
+
+h2 {
+  font-family: 'amblebold', sans-serif;
+}
+
+
+
+.card-columns {
+    column-count: 3;
+    width: 50%;
  
 
+  }
+
+
+.row-space-1 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.amenities .text-line-through {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.45);
+  font-size: 14px;
+   list-style:none !important;
+}
+
+  
+  .card-column {
+    column-count: 3;
+     display: inline-block
+ 
+
+  }
+
+
+.card-footer {
+  background-color: white;
+   border: 0;
+
+  }
+
+
+.feature {
+margin-top: -10px;
+margin-bottom: -10px;
+  color:  #0e159c;
+}
