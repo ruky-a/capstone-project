@@ -52,7 +52,7 @@ body {
   min-height: 100px;
   background-color: rgba(96, 125, 139, 0.1) ;
   color: #303f9f;
-  font-family: 'robotolight', sans-serit;
+  font-family: 'robotolight', sans-serif;
   padding-top: 20px;
 }
 
@@ -244,7 +244,7 @@ body {
   top: 0;
   right: 0;
   min-width: 100%;
-  mmin-height: 100%;
+  min-height: 100%;
   text-align: right;
   display: block;
 
@@ -252,68 +252,11 @@ body {
 
 
 
-.card-deck {
-display: block;
-  column-count: 2;
-  text-align: center;
-  width: 100%;
-   padding-left: 5%;
-  padding-right: 5%;
-
-
-  }
-@media screen and (max-width: 600px) {
-  .card-deck {
-    width: 100%;
-     flex-direction: column;
-
-  }
-}
-
-h2 {
-  font-family: 'amblebold', sans-serif;
-}
-
-
-
-.card-columns {
-    column-count: 3;
-    width: 50%;
- 
-
-  }
-
-
-.row-space-1 {
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-
-.amenities .text-line-through {
-  text-decoration: line-through;
-  color: rgba(0,0,0,0.45);
-  font-size: 14px;
-   list-style:none !important;
-}
-
-  
-  .card-column {
-    column-count: 3;
-     display: inline-block
- 
-
-  }
-
-
-.card-footer {
+.preview {
   background-color: white;
-   border: 0;
+  text-align: center;
+  color: red;
 
-  }
 
 
-.feature {
-margin-top: -10px;
-margin-bottom: -10px;
-  color:  #0e159c;
 }

@@ -1,33 +1,74 @@
-
- <div class="col-8 offset-2">
-  <div class="row">
-        <div class="card test-white">
-         <div class="card-header">
+        <br />
+   <div class="conatiner">
+   <div class="row">
+  
+  <div class="col-9 offset-1 col-sm-8 col-md-6">
+        <div class="card-header">
         <h4 class="text-center">Details of your room</h4>
       </div>
      <div class="card-body">
- <%= form_for @photo, url: host_room_photos_path(@room) do |f| %>
- <div class="row">
-  <div class="form-group">
-    <span class="btn btn-default btn-file text-babu">
-      Select Photos
+    <%= form_for @photo, url: host_room_photos_path(@room) do |f| %>
+     <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
     <%= f.file_field :images, multiple: true, direct_upload: true %><br>
     <%= f.label :caption %>
-   </span>
+    <% f.text_area :caption %>
  </div>
-</div>
 <div class="text-center">
   <%= f.submit "Add Photo", class: 'btn-danger' %>
-</div>
-</div>
 <% end %>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+   
 
 
 
 
 
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title2" id="modal2">Add photos</h4>
+      </div>
+    <%= simple_form_for @photo, url: host_room_photos_path(@room) do |f| %>
+        <div class="modal-body">
+   <%= f.file_field :images, multiple: true, direct_upload: true %><br>
+          <%= f.input :caption %>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Upload photo", class: 'btn btn-primary' %>
+        </div>
+       <% end %>
+      </div>
+    </div>
+  </div>
 
-     
+
+
+<div class="container">
+ <h1>Enter Your Listing Details</h1>
+  <%= simple_form_for @photo, url: host_room_photos_path(@room) do |f| %>
+  <%= f.file_field :images, multiple: true, direct_upload: true %><br>
+  <%= f.input :caption %>
+  <br />
+  <%= f.submit 'Add photo', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+</div>
+
+
+<div class="col-10 offset-1">
+  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#mymodal">
+  Add photo
+ </button>
+</div>
