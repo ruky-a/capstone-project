@@ -1,0 +1,24 @@
+   
+   <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title1" id="modal2">Add photos</h4>
+      </div>
+    <%= simple_form_for @photo, url: host_room_photos_path(@room) do |f| %>
+        <div class="modal-body">
+   <%= f.file_field :images, multiple: true, direct_upload: true %><br>
+      <br />
+          <%= f.input :caption %>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Upload photo", class: 'btn btn-primary' %>
+           <div id='preview'></div>
+        </div>
+       <% end %>
+
+      </div>
+    </div>
+  </div>
+ 

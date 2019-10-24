@@ -126,8 +126,8 @@ body {
 .avatar {
   vertical-align: middle;
   width: 100px;
-     height: 100px;
-       border-radius: 50%;
+  height: 100px;
+  border-radius: 50%;
 }
 
 
@@ -181,7 +181,7 @@ body {
     font-family: 'ambleregular', sans-serif;
   }
 
-  h4 {
+  .card-header h4 {
   color: white;
   font-family: 'amblelight', sans-serif;
   }
@@ -255,8 +255,7 @@ body {
 .preview {
   background-color: white;
   text-align: center;
-  color: red;
-
-
+  
 
 }
+

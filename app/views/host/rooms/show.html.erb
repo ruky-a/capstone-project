@@ -1,112 +1,35 @@
-   <br />
-   <div class="conatiner">
-   <div class="row">
-   <div class=" col-md-3">
-    <%= render 'host/rooms/room_menu' %>
-    <br />
-    <div class="text-center">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
-  Add photos
- </button>
-</div>
-
-    <br />
-  </div>
-   
-   <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"></span>
-        </button>
-        <h4 class="modal-title2" id="modal2">Add photos</h4>
-      </div>
-    <%= simple_form_for @photo, url: host_room_photos_path(@room) do |f| %>
-        <div class="modal-body">
-   <%= f.file_field :images, multiple: true, direct_upload: true %><br>
-          <%= f.input :caption %>
-        </div>
-        <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit "Upload photo", class: 'btn btn-primary' %>
-        </div>
-       <% end %>
-      </div>
-    </div>
-  </div>
-
-
-      
-    <div class="col-md-9">
-  <%= image_tag @room.image.variant(resize: "500x500") %>
-   <h3><%= @room.listing_name %></h3>
-     <p cla><%= @room.address %></p>
-    <%= @room.description%></p>
-      <div class="footer">
-    <span></i> $<%= @room.rate %></span>
-    <span>Per Night</span>
-  </div>
-  <br />
-    </div>
-
-
-
-<div class="container">
-<div class="row">
-<% @room.photos.each do |photo| %>
-<% if photo.images.attached? %>
-<% (0...photo.images.count).each do |image| %>
-<div class="col-md-4">
-  <div class="card test-white">
-    <div class="card-header preview">
-      <%= image_tag(photo.thumbnail(image)) %>
-    </div>
-    <div class="card-body">
-      <%= photo.caption %>
-    <span class="pull-right">
-    <%= link_to host_room_photo_path(photo.room_id, photo), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
-       <i class="fa fa-trash-o" aria-hidden="true"></i>
-  <% end %>
-</span>
-</div>
-  </div>
-</div>
-<% end %>
-<% end %>
-<% end %>
-</div>
-</div>
-
-
-
-
-
-
 <br />
+<div class="conatiner">
+<div class="row">
+<div class=" col-md-3">
+<%= render 'host/rooms/room_menu' %>
+<br />
+</div>
 
 
 
 
 
 
+<div class="col-md-9">
+<%= image_tag @room.image.variant(resize: "500x500") %>
+<h3><%= @room.listing_name %></h3>
+<p cla><%= @room.address %></p>
+<%= @room.description%></p>
+<div class="footer">
+<span></i> $<%= @room.rate %></span>
+<span>Per Night</span>
+</div>
+<br />
+</div>
 
+<%= render 'host/rooms/modal' %>
 
-  
-  
+<%= render 'host/photos/photos_list' %>
 
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+<br />
 
 
 

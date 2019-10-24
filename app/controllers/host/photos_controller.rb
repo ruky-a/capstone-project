@@ -15,17 +15,13 @@ class Host::PhotosController < ApplicationController
   def show
   end
 
-  def destroy
- @photo =  Photo.find_by_id(params[:id])
+ def destroy
+  @photo = Photo.find(params[:id])
+  @room = @photo.room
+    @photo.images.first.purge
+     @photos = Photo.where(room_id: @room.id)
+     respond_to :js
 
-    @photo.purge
-
-    room = @photo.room
-
-    @photo.purge
-    @photos = Photo.where(room_id: room.id)
-
-    respond_to :js
   end
 
 
