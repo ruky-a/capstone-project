@@ -1,16 +1,22 @@
   <br />
   <div class="container">
-    <div class="col-12 col-sm">
+    <div class="row">
+    <div class="col-sm-8">
   <%= image_tag @room.image.variant(resize: "500x500") %>
    <h2><%= @room.listing_name %></h2>
+    <h6><%= @room.description%></h6>
      <p><%= @room.address %></p>
-    <p><%= @room.description%></p>
   </div>
-</div>
-
-  <br />
 
 
+ <div class="col-sm-4">
+      <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, class: "img-circle avatar3" %>
+      <% else %>
+      <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
+      <% end %>
+    </div>
+  </div>
 
 
  <br />
@@ -37,12 +43,12 @@
 <br />
 
 
- <% @room.amenities.each do |amenity| %>
+<% @room.amenities.each do |amenity| %>
 <div class="row feature text-center">
-<div class="col-3 col-sm"><%= amenity.hometype %></div>
-<div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
-<div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
-<div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+  <div class="col-3 col-sm"><%= amenity.hometype %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
 
 </div>
 <% end %>
@@ -50,53 +56,53 @@
 <br />
 
 
-            <div class="col-md-10 offset-md-1 text-center">
-       <% @room.photos.each do |photo| %>
-        <% if photo.images.attached? %>
-      <% (0...photo.images.count).each do |image| %>
-     <%= image_tag(photo.thumbnail(image))%>
+<div class="col-md-10 offset-md-1 text-center">
+  <% @room.photos.each do |photo| %>
+  <% if photo.images.attached? %>
+  <% (0...photo.images.count).each do |image| %>
+  <%= image_tag(photo.thumbnail(image))%>
   <%= photo.caption %>
-<% end %>
-<% end %>
-<% end %>
-</div>
-
-
-
-
-
-
-<br />
-
-    <div class=" box col-10 offset-1">
-       <h6><%= @room.address %></h6>
-  <% if @room.latitude.present? && @room.longitude.present? %>
-  
-  
-<script>
-
-  function initMap() {
-  var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-  }
-</script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
-  </script>
-  <div id="map">
-  </div>
+  <% end %>
+  <% end %>
   <% end %>
 </div>
+
+
+
+<br />
+
+<div class=" box col-10 offset-1">
+   <h6><%= @room.address %></h6>
+<% if @room.latitude.present? && @room.longitude.present? %>
+
+
+<script>
+
+function initMap() {
+var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+
+var map = new google.maps.Map(document.getElementById('map'), {
+zoom: 12,
+center: myLatLng
+});
+
+var marker = new google.maps.Marker({
+position: myLatLng,
+map: map,
+title: 'Hello World!'
+});
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+</script>
+<div id="map">
+</div>
+<% end %>
+</div>
+</div>
+</div>
+
 
 
 

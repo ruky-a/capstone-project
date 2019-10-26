@@ -1,23 +1,70 @@
- 
-<div class="box">  
-   <div class="row">
-    <div class="col-6 offset-3">
-    <%= image_tag avatar_url(@user), class: "avatar2" %>
+
+<div class="box col-10 offset-1">
+  <div class="row">
+    <div class="col-sm-4">
+      <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, class: "avatar2" %>
+      <% else %>
+      <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-4"><br />
+      <h4><%= @user.fullname %></h4><br />
+      <h5>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h5><br />
+      <h6><%= @user.email %></h6><br />
+      <h6><%= @user.phone_number%></h6>
+    </div>
+
+
+
+    <div class="col-md-4">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
+        <li class="sidebar-item"><%= link_to "Reservations", host_room_path, class: "sidebar-link active" %></li>
+      </ul>
+    </div>
   </div>
 </div>
-  <div class="col-6 offset-3"><br />
-  <h2><%= @user.fullname %></h2>
-  <h6><%= @user.email %></h6>
-  <h6><%= @user.phone_number %></h6>
-  <h6>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h6>
-</div>
-<div class="col-sm-3 offset-1">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
-    </ul>
-  </div>
-  </div>
-</div>
+
+
+
+
+
+<div class="col-10 offset-1">
+  <div class="card">
+    <div class="card-header profile">
+      <h3>My Listings</h3>
+    </div>
+    <div class="card-body">
+
+      <% @rooms.each do |room| %>
+      <div class="row">
+        <div class="col-md-2">
+          <% if room.image.attached? %><%= image_tag room.image.variant(resize: "280x180") %>
+          <% end %>
+        </div>
+        <div class="col-md-7">
+          <h4><%= room.listing_name %></h4>
+        </div>
+        <div class="col-md-3 right">
+          <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
+        </div>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+
+<br />
+
+
+
+
+
+
 
 
 

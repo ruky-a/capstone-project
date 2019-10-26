@@ -11,6 +11,8 @@
          <div class="card-header">
         <h4 class="text-center">Details of your room</h4>
       </div>
+
+      
      <div class="card-body">
   <%= form_for @amenity, url: host_room_amenities_path(@room) do |f| %>
   <div class="row">
@@ -20,6 +22,9 @@
         <%= f.select :hometype, [["Apartment", "Apartment"], ["House", "House"], ["Hotel", "Hotel"], ["Resort", "Resort"], ["Villa", "Villa"]], id: "home_type", prompt: "Select...", class: "form-control form-control-lg" %>
       </div>
     </div> 
+
+
+
 
     <div class="col-md-4 select">
      <div class="form-group">
@@ -127,4 +132,7 @@
 </div>
 </div>
 
+<div class="col-md offset-1">
+<%= link_to 'Back', host_room_path(@room) %>
+</div>
 

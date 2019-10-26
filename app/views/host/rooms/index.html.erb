@@ -1,28 +1,75 @@
 
-   
-     <div class="container">
-   <div class="card-deck">
-     <% @rooms.each do |room| %>
-      <div class="col-12.col-md-6.col-lg-6">
-    <img class="card-img-top"><% if room.image.attached? %><%= image_tag room.image.variant(resize: "500x280") %>
-    <div class="card-body">
-<h5 class="card-title"><%= link_to room.listing_name, room_path(room) %></h5>
-      <p class="card-text"><%= room.address %></p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
+  Add photos
+</button>
+<br /><br />
+
+
+<div class="container">
+  <div class="card-deck">
+    <% @rooms.each do |room| %>
+
+    
+    <div class="col-12.col-md-6.col-lg-6">
+      <img class="card-img-top"><% if room.image.attached? %><%= image_tag room.image.variant(resize: "500x280") %>
+      <div class="card-body">
+
+        <h5 class="card-title"><%= link_to room.listing_name, room_path(room) %></h5>
+        <p class="card-text"><%= room.address %></p>
+
         <div class="footer">
-    <span></i> $<%= room.rate %></span>
-    <span>Per Night</span>
-  </div>
-</div>
-    <div class="card-footer">
-  <%= link_to 'Book Now', room_path(room), class: " btn btn-danger" %></li>
+          <span></i> $<%= room.rate %></span>
+          <span>Per Night</span>
+        </div>
+      </div>
+
+
+      <div class="card-footer">
+        <%= link_to 'Book Now', room_path(room), class: " btn btn-danger" %></li>
+      </div>
     </div>
-  </div>
     <% end %>
   </div>
   <% end %>
 </div>
 </div>
 <br />
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">
-  Add photos
- </button>
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-link">
+      <li class="sidebar-item"><%= link_to "Your Listings", host_rooms_path, class: "sidebar-link active" %></li>
+    </ul>
+  </div>
+  <div class="col-9 offset-1">
+    <div class="card">
+      <div class="card-header">
+        Listings
+      </div>
+      <div class="card-body">
+
+
+        <% @rooms.each do |room| %>
+        <div class="row">
+          <div class="col-md-2">
+            <% if room.image.attached? %><%= image_tag room.image.variant(resize: "280x180") %>
+            <% end %>
+          </div>
+          <div class="col-md-7">
+            <h4><%= room.listing_name %></h4>
+          </div>
+          <div class="col-md-3 right">
+            <%= link_to "Update", host_rooms_path(room), class: "btn-btn-form" %>
+          </div>
+        </div>
+        <hr />
+        <% end %>
+      </div>
+    </div>
+  </div>

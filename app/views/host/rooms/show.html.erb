@@ -1,27 +1,69 @@
 <br />
 <div class="conatiner">
-<div class="row">
-<div class=" col-md-3">
-<%= render 'host/rooms/room_menu' %>
+  <div class="row">
+    <div class=" col-md-3">
+      <%= render 'host/rooms/room_menu' %>
+       
+      <br />
+    </div>
+
+
+    <div class="col-md-9">
+      <%= image_tag @room.image.variant(resize: "1200x500") %>
+      <h3><%= @room.listing_name %></h3>
+      <%= link_to 'Preview...', room_path(@room), class: 'btn btn-warning' %>
+      <p><%= @room.address %></p>
+
+    </div>
+
+  <br class="clr" />
+  </div>
+  <br />
+</div>
+</div>
+
+
+
+
+
 <br />
+<div class="container">
+  <div class="row feature text-center">
+    <div class="col-3 col-sm">
+      <i class="fa fa-home fa-2x"></i>
+    </div>
+
+
+    <div class="col-3 col-sm">
+      <i class="fa fa-user fa-2x"></i>
+    </div>
+
+    <div class="col-3 col-sm">
+      <i class="fa fa-bed fa-2x"></i>
+    </div>
+
+    <div class="col-3 col-sm">
+      <i class="fa fa-bath fa-2x"></i>
+    </div>
+
+  </div>
+  <br />
+
 </div>
+<% @room.amenities.each do |amenity| %>
+<div class="row feature text-center">
+  <div class="col-3 col-sm"><%= amenity.hometype %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+  <div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+</div>
+<% end %>
 
-
-
-
-
-
-<div class="col-md-9">
-<%= image_tag @room.image.variant(resize: "500x500") %>
-<h3><%= @room.listing_name %></h3>
-<p cla><%= @room.address %></p>
-<%= @room.description%></p>
-<div class="footer">
-<span></i> $<%= @room.rate %></span>
-<span>Per Night</span>
+</div>
 </div>
 <br />
-</div>
+
+
 
 <%= render 'host/rooms/modal' %>
 
@@ -35,6 +77,37 @@
 
 
 
+<br />
+
+<div class=" box col-10 offset-1">
+  <h6><%= @room.address %></h6>
+  <% if @room.latitude.present? && @room.longitude.present? %>
+
+
+  <script>
+
+    function initMap() {
+      var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+</script>
+<div id="map">
+</div>
+<% end %>
+</div>
 
 
 

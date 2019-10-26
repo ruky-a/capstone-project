@@ -56,12 +56,6 @@ end
     
 
   end
-
-  it "should return a 404 message if we cannot find a room with the id that is specified" do
-    delete :destroy, params: { id: 'SPACEDUCK'}
-    expect(response).to have_http_status(:found)
-
-  end
 end    
 
 
@@ -88,7 +82,7 @@ end
         user = FactoryBot.create(:user)
         sign_in user
         get :edit, params: {id: room.id }
-        expect(response).to have_http_status(:forbidden)
+        expect(response).to have_http_status(:unprocessable_entity)
         end
 
 
@@ -97,9 +91,7 @@ end
         get :edit, params: { id: room.id }
         expect(response).to redirect_to new_user_session_path
       end
-
     end
-
    end
 
 

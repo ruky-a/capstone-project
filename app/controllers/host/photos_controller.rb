@@ -1,34 +1,34 @@
 class Host::PhotosController < ApplicationController
-
+  before_action :authenticate_user!
 
   def new
-     @room = Room.find(params[:room_id])
+    @room = Room.find(params[:room_id])
     @photo = Photo.new
   end 
 
   def create
-   @room = Room.find(params[:room_id])
-   @photo = @room.photos.create(photo_params)
+    @room = Room.find(params[:room_id])
+    @photo = @room.photos.create(photo_params)
     redirect_to host_room_path(@room)
   end
 
   def show
   end
 
- def destroy
-  @photo = Photo.find(params[:id])
-  @room = @photo.room
+  def destroy
+    @photo = Photo.find(params[:id])
+    @room = @photo.room
     @photo.images.first.purge
-     @photos = Photo.where(room_id: @room.id)
-     respond_to :js
+    @photos = Photo.where(room_id: @room.id)
+    respond_to :js
 
   end
 
 
 
-    private 
-    
-    def photo_params
+  private 
+
+  def photo_params
     params.require(:photo).permit(:caption, images: [])
   end
 end

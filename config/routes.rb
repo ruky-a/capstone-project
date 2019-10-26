@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: :show 
   resources :rooms, only: [:index, :show]
   namespace :host do
-  resources :rooms, only: [:new, :create, :edit, :show, :update, :destroy] do
+  resources :rooms, only: [:new, :create, :edit, :show, :update, :destroy, :index] do
       resources :amenities, only: [:new, :create]
       resources :photos, only: [:create, :destroy]
     end
