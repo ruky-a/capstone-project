@@ -71,30 +71,37 @@
 
 <br />
 
-<div class=" box col-10 offset-1">
-   <h6><%= @room.address %></h6>
-<% if @room.latitude.present? && @room.longitude.present? %>
+
+<div class=" box col-md-6">
+  <h6><%= @room.address %></h6>
+  <% if @room.latitude.present? && @room.longitude.present? %>
 
 
-<script>
+  <script>
 
-function initMap() {
-var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+    function initMap() {
+      var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
 
-var map = new google.maps.Map(document.getElementById('map'), {
-zoom: 12,
-center: myLatLng
-});
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
 
-var marker = new google.maps.Marker({
-position: myLatLng,
-map: map,
-title: 'Hello World!'
-});
-}
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+         var infoWindow = new google.maps.InfoWindow ({
+        content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
+      });
+
+         infoWindow.open(map, marker);
+    
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
 </script>
 <div id="map">
 </div>
@@ -103,6 +110,26 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2
 </div>
 </div>
 
+
+<div class="container">
+  <h2>Rooms Nearby</h2>
+  <br />
+<div class="row">
+<% for room in @room.nearbys(10) %>
+<div class="col-md-4">
+<div class="card test-white">
+    <div class="card-header preview">
+<%= image_tag room.image.variant(resize: "280x180") %>
+</div>
+<div class="card-body">
+  <h3 class="card-title"><%= link_to room.listing_name, room%></h3> <br />
+  (<%= room.distance.round(2) %> miles away) 
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
 
 
 

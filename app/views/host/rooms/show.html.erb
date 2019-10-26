@@ -79,7 +79,7 @@
 
 <br />
 
-<div class=" box col-10 offset-1">
+<div class=" box col-6 offset-2">
   <h6><%= @room.address %></h6>
   <% if @room.latitude.present? && @room.longitude.present? %>
 
@@ -99,6 +99,12 @@
         map: map,
         title: 'Hello World!'
       });
+         var infoWindow = new google.maps.InfoWindow ({
+        content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
+      });
+
+         infoWindow.open(map, marker);
+    
     }
   </script>
   <script async defer
