@@ -1,6 +1,7 @@
 class Host::RoomsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_current_room, except: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_current_room, except: [:index, :new, :create]
+  before_action :require_authorized_for_set_current_room, only: [:show]
 
 
   def index
@@ -44,6 +45,7 @@ class Host::RoomsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
 
   def destroy
     @room.destroy
@@ -51,6 +53,12 @@ class Host::RoomsController < ApplicationController
   end
 
   private
+
+
+  def require_authorized_for_set_current_room
+         redirect_to root_path, alert: "You don't have permission" unless @room.user == current_user
+    end
+
   
 
   def set_current_room
