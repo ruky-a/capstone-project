@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+  <% @room.photos.each do |photo| %>
+  <% if photo.images.attached? %>
+  <% (0...photo.images.count).each do |image| %>
+<div class="col-md-4">
+<div class="card test-white">
+<div class="card-header preview">
+  <%= image_tag(photo.thumbnail(image)) %>
+</div>
+<div class="card-body">
+  <%= photo.caption %>
+  </div>
+  </div>
+  </div>
+  <% end %>
+  <% end %>
+  <% end %>
+  </div>
+  </div>
+  </div>
+

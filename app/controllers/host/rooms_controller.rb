@@ -37,6 +37,15 @@ class Host::RoomsController < ApplicationController
   end
 
 
+ def preload
+    today = Date.today
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+
+    render json: reservations
+end
+
+
+
   def create
     @room = current_user.rooms.create(room_params)
     if @room.save
@@ -52,7 +61,26 @@ class Host::RoomsController < ApplicationController
     redirect_to root_path, notice: "Listing Deleted.."
   end
 
+
+  def preview
+
+   start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+   
+   output = {
+    conflict: is_conflict(start_date, end_date, @room)
+   }
+
+   render json: output
+end
+
+
   private
+
+  def is_conflict(start_date, end_date, room)
+    check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+    check.size > 0? true :false
+  end
 
 
   def require_authorized_for_set_current_room

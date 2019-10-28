@@ -15,6 +15,7 @@
 //= require activestorage
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/widgets/datepicker
 //= require toastr
 //= require activestorage
 //= require turbolinks

@@ -3,7 +3,7 @@
   <div class="row">
     <div class=" col-md-3">
       <%= render 'host/rooms/room_menu' %>
-       
+
       <br />
     </div>
 
@@ -12,11 +12,10 @@
       <%= image_tag @room.image.variant(resize: "1200x500") %>
       <h3><%= @room.listing_name %></h3>
       <%= link_to 'Preview...', room_path(@room), class: 'btn btn-warning' %>
-      <p><%= @room.address %></p>
 
     </div>
 
-  <br class="clr" />
+    <br class="clr" />
   </div>
   <br />
 </div>
@@ -26,41 +25,39 @@
 
 
 
-<br />
+<% @room.amenities.each do |amenity| %>
 <div class="container">
-  <div class="row feature text-center">
-    <div class="col-3 col-sm">
+  <div class="row text-center row-space-1">
+    <div class="col-md-3 ">
       <i class="fa fa-home fa-2x"></i>
     </div>
 
 
-    <div class="col-3 col-sm">
+    <div class="col-md-3 ">
       <i class="fa fa-user fa-2x"></i>
     </div>
 
-    <div class="col-3 col-sm">
+    <div class="col-md-3 ">
       <i class="fa fa-bed fa-2x"></i>
     </div>
 
-    <div class="col-3 col-sm">
+    <div class="col-md-3">
       <i class="fa fa-bath fa-2x"></i>
     </div>
 
   </div>
-  <br />
 
+  <div class="row text-center">
+    <div class="col-md-3"><%= amenity.hometype %></div>
+    <div class="col-md-3"><%= pluralize(amenity.accommodate, "Guest") %></div>
+    <div class="col-md-3"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+    <div class="col-md-3"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+  </div>
+  <% end %>
 </div>
-<% @room.amenities.each do |amenity| %>
-<div class="row feature text-center">
-  <div class="col-3 col-sm"><%= amenity.hometype %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
 </div>
-<% end %>
+</div>
 
-</div>
-</div>
 <br />
 
 
@@ -79,7 +76,7 @@
 
 <br />
 
-<div class=" box col-6 offset-2">
+<div class=" box col-md">
   <h6><%= @room.address %></h6>
   <% if @room.latitude.present? && @room.longitude.present? %>
 
@@ -99,12 +96,12 @@
         map: map,
         title: 'Hello World!'
       });
-         var infoWindow = new google.maps.InfoWindow ({
+      var infoWindow = new google.maps.InfoWindow ({
         content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
       });
 
-         infoWindow.open(map, marker);
-    
+      infoWindow.open(map, marker);
+
     }
   </script>
   <script async defer

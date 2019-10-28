@@ -10,7 +10,7 @@
         <% if resource.avatar.attached? %>
         <%= image_tag resource.avatar, class: "avatar" %>
         <% else %>
-        <%= image_tag gravatar_image_url(@user.email), class: "avatar" %>
+        <%= image_tag gravatar_image_url(current_user.email), class: "avatar" %>
         <% end %>
       </div>
 

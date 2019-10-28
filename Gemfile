@@ -27,6 +27,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem "geocoder"
 gem 'toastr-rails'
 gem 'gravatar_image_tag'
+gem 'jquery-ui-rails'
 
 gem 'image_processing', '~> 1.2'
 

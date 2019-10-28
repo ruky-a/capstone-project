@@ -7,4 +7,5 @@ class RoomsController < ApplicationController
    @room = Room.find(params[:id])
   end
 
+ 
 end

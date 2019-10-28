@@ -1,78 +1,83 @@
-  <br />
-  <div class="container">
-    <div class="row">
-    <div class="col-sm-8">
-  <%= image_tag @room.image.variant(resize: "500x500") %>
-   <h2><%= @room.listing_name %></h2>
-    <h6><%= @room.description%></h6>
-     <p><%= @room.address %></p>
-  </div>
-
-
- <div class="col-sm-4">
-      <% if @room.user.avatar.attached? %>
-      <%= image_tag @room.user.avatar, class: "img-circle avatar3" %>
-      <% else %>
-      <%= image_tag gravatar_image_url(@user.email), class: "avatar2" %>
-      <% end %>
+<div class="container">
+  <div class="box col-md-12">
+  <div class="row">
+  <div class="col-sm-8">
+      <h3><%= @room.listing_name %>,<%= @room.address %></h3>
+    <%= image_tag @room.image, width: "100%", height: "400px" %><br />
     </div>
-  </div>
 
 
- <br />
- <div class="container">
-<div class="row feature text-center">
-  <div class="col-3 col-sm">
-   <i class="fa fa-home fa-2x"></i>
-  </div>
-
-
-  <div class="col-3 col-sm">
-    <i class="fa fa-user fa-2x"></i>
-  </div>
-
-  <div class="col-3 col-sm">
-   <i class="fa fa-bed fa-2x"></i>
-  </div>
-
-  <div class="col-3 col-sm">
-   <i class="fa fa-bath fa-2x"></i>
-  </div>
-
+     <div class=" col-sm-4">
+      <br /><br />
+     <%= render 'reservations/form' %>
+    </div>
+</div>
+</div>
 </div>
 <br />
 
 
+
+
+
+  <div class="row">
+<div class="container">
+   <div class="row">
+    <div class="col-sm-8">
 <% @room.amenities.each do |amenity| %>
-<div class="row feature text-center">
-  <div class="col-3 col-sm"><%= amenity.hometype %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
-  <div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+        <div class="row feature text-center">
+    <div class="col-3 col-sm">
+      <i class="fa fa-home fa-2x"></i>
+    </div>
+
+
+    <div class="col-3 col-sm ">
+      <i class="fa fa-user fa-2x"></i>
+    </div>
+
+    <div class="col-3 col-sm">
+      <i class="fa fa-bed fa-2x"></i>
+    </div>
+
+    <div class="col-3 col-sm">
+      <i class="fa fa-bath fa-2x"></i>
+    </div>
+
+  </div>
+
+      <div class="row feature text-center">
+    <div class="col-3 col-sm"><%= amenity.hometype %></div>
+    <div class="col-3 col-sm"><%= pluralize(amenity.accommodate, "Guest") %></div>
+    <div class="col-3 col-sm"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+    <div class="col-3 col-sm"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+  </div>
+  <% end %>
+</div>
+</div>
+
+
+
+<br />
+
+
+
+
+
+<%= render 'host/photos/photos' %>
+
 
 </div>
-<% end %>
-<br />
-<br />
-
-
-<div class="col-md-10 offset-md-1 text-center">
-  <% @room.photos.each do |photo| %>
-  <% if photo.images.attached? %>
-  <% (0...photo.images.count).each do |image| %>
-  <%= image_tag(photo.thumbnail(image))%>
-  <%= photo.caption %>
-  <% end %>
-  <% end %>
-  <% end %>
 </div>
 
-
-
 <br />
 
 
-<div class=" box col-md-6">
+
+
+
+<br />
+<div class="container">
+<div class=" box col-md-8">
   <h6><%= @room.address %></h6>
   <% if @room.latitude.present? && @room.longitude.present? %>
 
@@ -92,12 +97,12 @@
         map: map,
         title: 'Hello World!'
       });
-         var infoWindow = new google.maps.InfoWindow ({
+      var infoWindow = new google.maps.InfoWindow ({
         content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
       });
 
-         infoWindow.open(map, marker);
-    
+      infoWindow.open(map, marker);
+
     }
   </script>
   <script async defer
@@ -108,93 +113,32 @@
 <% end %>
 </div>
 </div>
-</div>
+<br /><br />
+      
 
-
-<div class="container">
-  <h2>Rooms Nearby</h2>
-  <br />
-<div class="row">
+<div class="container"> 
+     <h3>Rooms Nearby</h3>
+  <div class="row">
 <% for room in @room.nearbys(10) %>
-<div class="col-md-4">
-<div class="card test-white">
-    <div class="card-header preview">
-<%= image_tag room.image.variant(resize: "280x180") %>
-</div>
-<div class="card-body">
-  <h3 class="card-title"><%= link_to room.listing_name, room%></h3> <br />
-  (<%= room.distance.round(2) %> miles away) 
-</div>
-</div>
-</div>
-<% end %>
-</div>
-</div>
+  <div class="col-md-4">
+    <div class="card"> 
+      <%= image_tag room.image.variant(resize: "280x180") %>
+      <div class="card-body"> 
+          <h3 class="card-title"><%= link_to room.listing_name, room %></h3>  
+               <div class="footer">
+                  <span> $<%= room.rate %></span>
+                  <span>Per Night</span>
+                </div>
+                <br />
+            (<%= room.distance.round(2) %> miles away) 
 
+                </div> 
+            </div>
+            </div>
+         <% end %>
+          </div>
+          </div>
+   
 
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <br />
 
