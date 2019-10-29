@@ -28,52 +28,43 @@
   </div>
 </div>
 
-<br />
 
-  <div class="col-10 offset-1">
-    <br />
-    <div class="card">
-      <div class="card-header white">
-        <h3>Your Listings</h3>
-      </div>
-      <div class="card-body">
+<div class="col-10 offset-1">
+  <div class="card">
+    <div class="card-header">
+      Your Bookings
+    </div>
+    <div class="card-body">
 
-
-        <% @rooms.each do |room| %>
-        <div class="row">
-          <div class="col-md-2">
-            <% if room.image.attached? %><%= image_tag room.image.variant(resize: "280x180") %>
-            <% end %>
-          </div>
-          <div class="col-md-7">
-            <h4><%= room.listing_name %></h4>
-          </div>
-          <div class="col-md-3 right">
-            <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
-          </div>
+      <% @bookings.each do |booking| %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= booking.start_date.strftime('%v') %>  to
+            <%= booking.end_date.strftime('%v') %>
         </div>
-        <hr />
-        <% end %>
+        <div class="col-md-2">
+          <%= link_to room_path(booking.room) do %>
+          <%= image_tag booking.room.image.variant(resize: "280x180") %>
+          <% end %>
+        </div>
+        <br /><br />
+        <div class="col-md-6">
+          <%= link_to booking.room.listing_name, room_path(booking.room) %>
+          <span class="pull-right">
+            <%= link_to user_path(booking.user) do %>
+            <%= image_tag current_user.avatar, class: "avatar1" %>
+            <%= booking.user.fullname %>
+          </span>
+          <% end %>
+        </div>
       </div>
+      <hr>   
+      <% end %>
     </div>
   </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
 
 
 

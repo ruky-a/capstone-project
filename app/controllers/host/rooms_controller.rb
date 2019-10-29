@@ -57,6 +57,12 @@ end
   
 
   def destroy
+    @room = Room.find(params[:id])
+    if @room.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end 
+
+    
     @room.destroy
     redirect_to root_path, notice: "Listing Deleted.."
   end

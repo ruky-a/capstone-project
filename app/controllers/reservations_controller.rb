@@ -17,9 +17,18 @@ class ReservationsController < ApplicationController
     @reservation.save
 
     flash[:notice] = "Booked Successfully"
-    redirect_to room
+   end
+   redirect_to room
   end
 
+ 
+    def your_bookings
+    @bookings = current_user.reservations.order(start_date: :asc)
+  end
+
+
+   def your_reservations
+    @rooms = current_user.rooms
   end
 
   
