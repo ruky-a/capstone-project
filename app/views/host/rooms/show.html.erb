@@ -9,6 +9,8 @@
 
 
     <div class="col-md-9">
+
+  
       <%= image_tag @room.image.variant(resize: "1200x500") %>
       <h3><%= @room.listing_name %></h3>
       <br />
@@ -71,10 +73,9 @@
 
 
 
-
 <br />
-
-<div class=" box col-md">
+<div class="container">
+<div class=" box col-md-8">
   <h6><%= @room.address %></h6>
   <% if @room.latitude.present? && @room.longitude.present? %>
 
@@ -97,19 +98,18 @@
       var infoWindow = new google.maps.InfoWindow ({
         content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
       });
-       
-      infoWindow.open(map, marker);
-    }
 
-     google.maps.event.addDomListener(window, 'load', initialize);
+      infoWindow.open(map, marker);
+
+    }
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
 </script>
-<div id="map"></div>
+<div id="map">
+</div>
 <% end %>
 </div>
-
-
+</div>
 
 

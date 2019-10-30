@@ -18,36 +18,52 @@
 
 
 
-    <div class="col-md-4">
-      <ul class="sidebar-list">
-        <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
-        <li class="sidebar-item"><%= link_to "bookings", your_bookings_path, class: "sidebar-link active" %></li>
-          <li class="sidebar-item"><%= link_to "Reservations", your_reservations_path, class: "sidebar-link active" %></li>
-            <li class="sidebar-item"><%= link_to "Listings", host_rooms_path, class: "sidebar-link active" %></li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%= render 'users/sidebar' %>
 
 <br />
 
 
+  <div class="container">
+  <div class="col-md-9">
+
+  <h5>About me</h4><br />
+
+    <h2><%= @user.fullname %></h2>
+
+    <div class="description row-space-3">
+      <%= @user.description %>
+    </div><br />
+
+    <h4>Listings (<%= @rooms.length %>)</h4><br/>
+
+</div>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+   <div class="col-10 offset-1">
+    
+    <div class="card">
+      <div class="card-header white">
+        <h3>Your Listings</h3>
+      </div>
+      <div class="card-body">
+        <% @rooms.each do |room| %>
+        <div class="row">
+          <div class="col-md-2">
+            <% if room.image.attached? %><%= image_tag room.image.variant(resize: "280x180") %>
+            <% end %>
+          </div>
+          <div class="col-md-7">
+         <%= link_to room.listing_name, room %>
+          </div>
+        </div>
+        <hr />
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+   

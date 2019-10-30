@@ -1,46 +1,87 @@
 <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Home Rentals For Short Staycation</h2>
+    <p class="lead">Experience is the best way to understand hospitality.</p>
+
+    <p class="lead"></p><br /><br />
+  </div>
+
+  <div class="container">
+    <%= form_tag  search_path, method: :get do %>
+    <div class="row">
+      <div class="col-md-4 search">
+        <%= text_field_tag :search, params[:search], placeholder: 'Where are you going?', class: "form-control search" %><br />
+      </div>
+      <div class="col-md-2 search">
+        <%= text_field_tag :start_date, params[:start_date], placeholder: "Check_in", class: "form-control datepicker" %>
+      </div>
+      <br /><br />
+
+      <div class="col-md-2 search">
+        <%= text_field_tag :end_date, params[:start_date], placeholder: "Check_out", class: "form-control datepicker" %><br />
+      </div>
+
+
+      <div class="col-md-2 search">
+        <%= submit_tag "Search", class: " form-control search btn btn-dark btn-block" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<br /><br />
+
+
+
 <div class="container">
-  <h2 class="display-4">Home Rentals For Short Staycation</h2>
-  <p class="lead">Experience is the best way to understand hospitality.</p>
-  <hr class="my-4">
-  <p class="lead">
-<%= link_to 'Become a Host', rooms_path, class: 'btn btn-primary' %></li>
-</p>
-</div>
-</div>
-
-
-
-
- 
-
-
-<div class="container"> 
+  <div><h3>Featured Homes</h3></div>
+  <br /> 
   <div class="row">
-<% @rooms.each do |room| %>
-  <div class="col-md-4">
-    <div class="card"> 
-     <% if room.image.attached? %><%= image_tag room.image.variant(resize: "500x280") %>
-      <div class="card-body"> 
-          <h3 class="card-title"><%= link_to room.listing_name, room_path(room) %></h3>  
-              <p class="card-text"><%= room.address %></p>
-               <div class="footer">
-                  <span> $<%= room.rate %></span>
-                  <span>Per Night</span>
-                </div>
-                <br />
-            <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
-
-                </div> 
-             <% end %>
-            </div>
-            </div>
-         <% end %>
+    <% @rooms.each do |room| %>
+    <div class="col-md-4">
+      <div class="card"> 
+    <% if room.image.attached? %><%= image_tag room.image.variant(resize: "500x280") %>
+            <% end %>
+        <div class="card-body"> 
+          <h4 class="card-title"><%= link_to room.listing_name, room_path(room) %></h4>  
+          <p class="card-text"><%= room.address %></p>
+          <div class="footer">
+            <span> $<%= room.rate %></span>
+            <span>Per Night</span>
           </div>
-          </div>
-   
-
           <br />
+          <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
+        </div> 
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 
+<br />
 
+
+<script>
+  $('#start_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '6m',
+    onSelect: function(selected) {
+      $('#end_date').datepicker("option", "minDate", selected);
+      $('#end_date').attr("disabled", false);
+
+    }
+  });
+
+
+  $('#end_date').datepicker({
+    dateFormat: 'dd-mm-yy',
+    minDate: 0,
+    maxDate: '6m',
+    onSelect: function(selected) {
+      $('#start_date').datepicker("option", "maxDate", selected);   
+
+    }
+  });
+</script>

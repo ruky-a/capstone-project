@@ -102,6 +102,6 @@ end
 
 
   def room_params
-    params.require(:room).permit(:listing_name, :description, :address, :rate, :image)
+    params.require(:room).permit(:listing_name, :description, :address, :rate, :image, :active)
   end
 end

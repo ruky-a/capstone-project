@@ -28,6 +28,7 @@ gem "geocoder"
 gem 'toastr-rails'
 gem 'gravatar_image_tag'
 gem 'jquery-ui-rails'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 gem 'image_processing', '~> 1.2'
 

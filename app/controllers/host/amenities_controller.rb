@@ -3,6 +3,7 @@ class Host::AmenitiesController < ApplicationController
 
   def new
     @amenity = Amenity.new
+    
   end
 
   def create
@@ -12,6 +13,8 @@ class Host::AmenitiesController < ApplicationController
 
   def show
   end
+
+
 
 
   private
