@@ -51,7 +51,7 @@
                     <%= link_to reservation.room.listing_name, room_path(reservation.room) %>
                          <span class="pull-right">
                       <%= link_to user_path(reservation.user) do %>
-                        <%= image_tag current_user.avatar, class: "avatar1" %>
+              
                         <%= reservation.user.fullname %>
                       </span>
                       <% end %>

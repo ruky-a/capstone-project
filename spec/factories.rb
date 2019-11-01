@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :comment do
+    
+  end
+
+  factory :review do
+    
+  end
+
   factory :reservation do
     user { nil }
     room { nil }

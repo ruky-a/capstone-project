@@ -1,12 +1,18 @@
 
+
 <div class ="boxes">
+  
   <div class="row">
     <div class="col-md-4">
       <button id="filter" class="btn btn-outline-danger" data-toggle="collapse" data-target="#collapseCard">
         Advanced filters <i class="fa fa-chevron-down"></i>
       </button>
     </div>
-  </div>
+    <br />
+
+
+
+
   <br />
 
   <div class="row">
@@ -81,22 +87,24 @@
         <% end %>
       </div>
     </div>
-    <br />
-
-
-<div class="container"> 
+  </div>
+<div class="container">
   <div class="row" id="list_room">
 <%= render partial: 'host/rooms/list_room', locals: {rooms: @arrRooms}  %>
 </div>
 </div>
+</div>
+</div>
 
 
 
 
 
-<div class="box boxes">
+
+<div class="box col-md-8 boxes">
 <div id="map">
 </div>
+
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
 </script>
@@ -104,7 +112,7 @@
   <script>
 
     function initMap() {
-      var location = {lat: 44.5403, lng: -78.5463}
+      var location = {lat: 27.8769072, lng: -82.3461322}
       
 
       <% if @arrRooms.length > 0 %>
@@ -126,7 +134,7 @@
   
 
       var infoWindow = new google.maps.InfoWindow ({
-        content: '<div id="content">$"<%= room.rate %></div>'
+        content: '<div id="content">$<%= room.rate %></div>'
       });
 
       infoWindow.open(map, marker);
@@ -139,6 +147,26 @@
 </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
 <script>
   $(function() {
   $("#q_rate_gteq").val('50');
@@ -155,21 +183,14 @@
 
       }
     });
-      $(".ui-widget-header").css('background', '#00A699');
+
+      $(".ui-widget-header").css('background', ' #103D65');
     $(".ui-state-default, .ui-widget-content").css('background', 'white');
-    $(".ui-state-default, .ui-widget-content").css('border-color', '#00A699');
+    $(".ui-state-default, .ui-widget-content").css('border-color', '#103D65');
   })
 </script>
     
 
-
-
-
-
-
-
-
-  
 
 
 
@@ -196,19 +217,22 @@
     }
   });
 
-  // var open = true;
-  // $('#filter').click(function() {
-  //   if (open) {
-  //     $('#filter').html("Advanced filters <i class='fa fa-chevron-up'></i>")
+  var open = true;
+  $('#filter').click(function() {
+    if (open) {
+      $('#filter').html("Advanced filters <i class='fa fa-chevron-up'></i>")
 
-  //   } else {
-  //       $('#filter').html("Advanced filters <i class='fa fa-chevron-down'></i>")
-  //   }
+    } else {
+        $('#filter').html("Advanced filters <i class='fa fa-chevron-down'></i>")
+    }
 
-  //   open = !open;
-  // });
+    open = !open;
+  });
 
  
 
 </script>
 
+</div>
+</div>
+<br />
