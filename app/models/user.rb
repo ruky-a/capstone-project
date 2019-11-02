@@ -10,8 +10,6 @@ class User < ApplicationRecord
    has_one_attached :avatar
    has_many :reservations
    has_many :reviews
-    
-  
 
 
   def self.from_omniauth(auth)

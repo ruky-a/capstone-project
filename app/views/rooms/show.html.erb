@@ -69,6 +69,23 @@
 </div>
 
 <br />
+<div class="col-md-8">
+<%= simple_form_for Review.new, url: room_reviews_path(@room) do |f| %>
+<%= f.input :message %>
+<div id="stars"></div>
+<%= f.submit "Add a Review", class: 'btn btn-danger' %>
+
+<% end %>
+</div>
+<div class="col-md-4">
+<h1>Reviews</h1>
+<% @room.reviews.each do |review| %>
+<b><%= review.message %></b><br />
+<%= review.rating %><br />
+<%= review.user.email %>
+<% end %>
+</div>
+
 
 
 
@@ -142,4 +159,12 @@
    
 
           <br />
+
+          <script>
+            $('#stars').raty({
+              path: '/assets',
+              scoreName: 'guest_review[star]',
+              score: 1
+            });
+          </script>
 

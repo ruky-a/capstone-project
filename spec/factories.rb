@@ -1,4 +1,12 @@
 FactoryBot.define do
+  factory :host_review do
+    
+  end
+
+  factory :guest_review do
+    
+  end
+
   factory :comment do
     
   end

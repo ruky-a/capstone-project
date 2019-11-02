@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :users, only: :show 
   resources :rooms, only: [:index, :show] do
-      resources :reservations, only: [:create]
+      resources :reservations, only: [:create]  
+        resources :reviews, only: [:create, :destroy]  
+      
     end
 
     get '/your_bookings' => 'reservations#your_bookings'
@@ -24,6 +26,10 @@ Rails.application.routes.draw do
       resources :amenities, only: [:new, :create]
       resources :photos, only: [:create, :destroy]
     end
+
+
   end
+
    get '/your_reservations' => 'reservations#your_reservations'
+
 end

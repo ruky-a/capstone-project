@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+  @rooms = Room.paginate(page: params[:page])
   end
 
   def show
