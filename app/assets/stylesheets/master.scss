@@ -18,13 +18,6 @@ font-family: 'ambleregular', sans-serif;
 
 }
 
-
-.navbar.navbar-expand-lg.navbar-dark {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-
 body {
 font-family: 'ambleregular', sans-serif;
 
@@ -290,6 +283,7 @@ padding: 10px;
 text-align: left;
 
 
+
 }
 
 
@@ -299,6 +293,12 @@ font-size: 16px;
 font-weight: bold;
 border: none;
 padding-left: 0px;
+
+}
+
+.reservation-table {
+font-weight: bold;
+
 
 }
 
@@ -366,7 +366,7 @@ opacity: 0;
 
 
 .feature {
-color: #103D65;
+color: #000099;
 
 }
 
@@ -391,9 +391,10 @@ overflow: hidden;
 -webkit-border-radius: 0px;
 border-radius: 0px;
 border: 1px solid #020A10;
-
+background-color: #0f0f0f;
 
 }
+
 
 
 .boxes {
@@ -424,9 +425,6 @@ margin-left: 5%;
 
 
 
-
-
-
 .form-control.nav{
  -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
@@ -442,8 +440,19 @@ padding-bottom: 20px;
 .places-card {
   background-size: cover;
   background-position: center;
-  height: 326px;
+  height: 280px;
   }
+
+  .just-places {
+  background-size: cover;
+  background-position: center;
+  height: 378px;
+  }
+
+   .just-places h3{
+color: white;
+  }
+
 
  a:hover{
   text-decoration: none;
@@ -467,4 +476,33 @@ padding-bottom: 20px;
 
 .clear {
     clear: both;
+}
+
+#preview{
+  font-weight: bold;
+}
+
+.card-header preview {
+  background-color: white;
+}
+
+
+.publish {
+  border-radius: 50px;
+}
+
+
+.amenities li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  list-style-type: none;
+
+}
+
+
+.amenities.text-line-through {
+ text-decoration: line-through;
+ color: red;
+ font-size: 14px;
+  
 }

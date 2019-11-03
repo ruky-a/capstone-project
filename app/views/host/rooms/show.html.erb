@@ -13,6 +13,9 @@
   
       <%= image_tag @room.image.variant(resize: "1200x500") %>
       <h3><%= @room.listing_name %></h3>
+      
+      <%= link_to @room.listing_name, @room.web_url %><p>website</p>
+
       <br />
      <%= link_to 'Preview As Guest...', room_path(@room), class: 'btn btn-warning' %>
 
@@ -58,7 +61,19 @@
 </div>
 </div>
 
+
 <br />
+<div class="container">
+<div class="col-md-4">
+<ul class="amenities">
+<li class="<%= 'text-line-through' if !@amenity.tv %>">TV</li>
+<li class="<%= 'text-line-through' if !@amenity.kitchen %>">Kitchen</li>
+<li class="<%= 'text-line-through' if !@amenity.restaurant %>">Restaurant</li>
+<li class="<%= 'text-line-through' if !@amenity.swimming %>">Pool</li>
+<li class="<%= 'text-line-through' if !@amenity.air %>">Air condition</li>
+</ul>
+</div>
+</div>
 
 
 
@@ -70,7 +85,17 @@
 </div>
 <br />
 
-
+ 
+<br />
+<% @room.reviews.each do |review| %>
+<%= pluralize(@room.reviews.count, "Reviews") %>
+<div class=”star-rating” data-score = <%= review.rating %>></div>
+  <%= review.message %><br />
+<small><%= review.user.email %></small>
+  
+<% end %>
+</div>
+</div>
 
 
 </div>

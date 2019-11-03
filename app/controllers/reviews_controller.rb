@@ -4,9 +4,9 @@ class ReviewsController < ApplicationController
 
   def create
   @room = Room.find(params[:room_id])
-  @room.reviews.create(review_params.merge(user: current_user, reservation_id: @reservation_id))
+  @room.reviews.create(review_params.merge(user: current_user))
     flash[:success] = "Review created..."
-   redirect_back(fallback_location: request.referer)
+   redirect_to room_path(@room)
   end
 
 

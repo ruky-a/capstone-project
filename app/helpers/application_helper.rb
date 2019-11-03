@@ -10,6 +10,9 @@ module ApplicationHelper
 #         "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&150"
 #   end
 # end
+
+
+ 
 end
 
 

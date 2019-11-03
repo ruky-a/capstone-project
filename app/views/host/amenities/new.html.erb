@@ -94,18 +94,35 @@
               id: "home_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div> 
+<!--  -->
 
 
+        <div class="view">
+          <%= f.check_box :restaurant %> Restaurant
+        </div>
+        <div class="view">
+          <%= f.check_box :internet %> Internet
+        </div>
 
-          <div class="col-md-4 select">
-            <div class="form-group">
-              <label>Children</label>
-              <%= f.select :accommodate, [["0", 0], ["1", 1], ["2", 2], ["3", 3]],
-              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
-            </div>
+        <div class="view">
+          <%= f.check_box :swimming %> Swimming Pool
+        </div>
+        <div class="view">
+          <%= f.check_box :restaurant %> Heating
+        </div>
+        <div class="view">
+          <%= f.check_box :air %> Air Conditioning
+        </div>
+        <div class="view">
+          <%= f.check_box :kitchen %> Kitchen
+        </div>
+      </li>
+    </ul>
+  </div>
+ 
    
 
-<div class="text-center">
+<div class="publish">
   <%= f.submit "Publish", class: "btn btn-danger btn-lg" %>
 </div>
 <% end %>
@@ -115,6 +132,8 @@
 </div>
 </div>
 </div>
+
+
 
 
 <div class="col-md offset-1">
