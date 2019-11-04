@@ -1,3 +1,4 @@
+<br />
   <div class="text-center">
   <%= link_to 'Add Amenities...', new_host_room_amenity_path(@room), class: 'btn btn-danger btn-sm' %>
   </div>
@@ -11,10 +12,10 @@
   <br />
 
   <div class="text-center">
-  <%= link_to 'Edit Listing', edit_host_room_path(@room), class: 'btn btn-danger btn-sm' %>
-  </div>
-  <br />
-
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editlisting">
+ Update listing
+  </button>
+</div><br />
 
 
   <div class="text-center">

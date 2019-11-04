@@ -1,24 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #CC0000;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:  #ab150a;">
   <div class="container">
 
     <%= link_to 'Tripsort', root_path, class: 'navbar-brand' %>
+    <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Destination?", class: "form-control nav" %>
+      <% end %>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   <!--    <div class="form-group">
-          <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-        <br /><%= text_field_tag :search, params[:search], placeholder: "Destination?", class: "form-control nav" %>
-      </div> -->
-      <% end %>
+
+         
+
 
       <ul class="navbar-nav mr-auto"><li class="nav-item active"></li></ul>
 
 
 
       <ul class="navbar-nav navbar-right">
-        <li class="nav-item active">
+         <li class="nav-item active">
           <%= link_to new_host_room_path, class: 'nav-link' do %>
           <i class="fa fa-plus-circle"></i>
           Add Listing
@@ -26,18 +28,18 @@
         </li>
 
         <% if !user_signed_in? %>
-        <li class="nav-item">  
+        <li class="nav-item active">  
           <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
         </li>
 
 
-        <li class="nav-item link">
+        <li class="nav-item link active">
           <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %></li>
 
           <% else %>
 
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if current_user.avatar.attached? %>
               <%= image_tag current_user.avatar, class: "avatar1" %>
@@ -59,10 +61,3 @@
 
       </div>
     </nav>
-
-
-
-
-
-
-

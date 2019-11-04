@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "toastr";
-
+$theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 
 .navbar-toggler  { 
 border: none; 
@@ -13,7 +13,7 @@ outline: none!important;
 
 .navbar-brand {
 font-size: 25px;
-font-family: 'ambleregular', sans-serif;
+font-family: 'amblebold', sans-serif;
 
 
 }
@@ -26,9 +26,17 @@ font-family: 'ambleregular', sans-serif;
 .jumbotron h2 {
 font-size: 35px;
 font-family: 'amblebold', sans-serif;
-padding-top: 20px;
+padding-top: 10px;
+color: white;
 
 }
+
+.jumbotron p {
+color: white;
+font-weight: normal;
+
+}
+
 
 
 
@@ -71,6 +79,13 @@ h4 a {
   font-family: 'amblebold', sans-serif;
 }
 
+#rate {
+color: #B32C16;
+font-weight: bold;
+ont-family: 'amblebold', sans-serif;
+  
+}
+
 .form_main {
 width: 100%;
 margin-left: auto;
@@ -82,6 +97,15 @@ padding: 30px;
 
 
 }
+
+p {
+color: #103D65;
+font-weight: bold;
+ont-family: 'amblebold', sans-serif;
+  
+}
+
+h6 
 
 .form_main h2 {
 font-family: roboto;
@@ -299,7 +323,6 @@ padding-left: 0px;
 .reservation-table {
 font-weight: bold;
 
-
 }
 
 
@@ -386,16 +409,21 @@ overflow: hidden;
 }
 
 
-.form-control.search{
+.form-control.searche{
  -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
 border-radius: 0px;
 border: 1px solid #020A10;
-background-color: #0f0f0f;
+
 
 }
-
-
+.form-control.search.search {
+ -moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+border: 1px solid #020A10;
+ background-color: #ab150a;
+ }
 
 .boxes {
 float: left;
@@ -431,16 +459,18 @@ margin-left: 5%;
 border-radius: 50px;
 border: none;
 text-align: center;
-padding-bottom: 20px;
+margin-right: 30px;
 
 
 }
 
 
+
+
 .places-card {
   background-size: cover;
   background-position: center;
-  height: 280px;
+  height: 338px;
   }
 
   .just-places {
@@ -461,17 +491,6 @@ color: white;
   #dropdown {
  background-color: red;
   }
-
-
-.hero {
-  background: image_url('hero.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 250px;
-   box-shadow: 0px 3px 8px #2a2a2a;
-}
 
 
 .clear {
@@ -505,4 +524,33 @@ color: white;
  color: red;
  font-size: 14px;
   
+}
+
+
+.card-header {
+  color: white;
+  background-color: white;
+}
+
+.label {
+  color: white;
+}
+
+.where {
+  
+  color: white;
+}
+
+.jumbotron.card {
+    background: image_url('trav.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 370px;
+   box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.nav-link {
+ margin-left: 10px;
 }

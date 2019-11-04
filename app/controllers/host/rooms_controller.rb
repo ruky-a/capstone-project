@@ -68,7 +68,7 @@ class Host::RoomsController < ApplicationController
 
 
     @room.destroy
-    redirect_to root_path, notice: "Listing Deleted.."
+    redirect_to host_rooms_path, notice: "Listing Deleted.."
   end
 
 
@@ -106,6 +106,6 @@ class Host::RoomsController < ApplicationController
 
 
   def room_params
-    params.require(:room).permit(:listing_name, :description, :address, :rate, :image, :web_url)
+    params.require(:room).permit(:listing_name, :description, :address, :rate, :web_url, images: [])
   end
 end

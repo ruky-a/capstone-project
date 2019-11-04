@@ -3,10 +3,9 @@
   <div class="row">
   <div class="col-sm-8">
       <h3><%= @room.listing_name %></h3>
-
-
- <% if @room.image.attached? %><%= image_tag @room.image, width: "100%", height: "450px" %>
-            <% end %>
+  <% if @room.images.attached? %><%= image_tag @room.images.first, width: "100%", height: "400px"  %>
+  <% end %>
+<!--  -->
 <div class="footer">
 </div>
   </div>
@@ -20,6 +19,11 @@
 </div>
 </div>
 <br />
+
+
+
+
+
 
 
   <div class="col-md-12">
@@ -85,7 +89,7 @@
         title: 'Hello World!'
       });
       var infoWindow = new google.maps.InfoWindow ({
-        content: '<div id="content"><%= image_tag @room.image.variant(resize: "280x180") %></div>'
+        content: '<div id="content"><%= image_tag @room.images.first, width: "280px", height: "180px" %></div>'
       });
 
       infoWindow.open(map, marker);
@@ -131,8 +135,14 @@
 
 
 
-
+<div class="container">
+  <h3>Room Photos</h3>
+  <br />
 <%= render 'host/photos/photos' %>
+</div>
+
+
+<br /><br />
 
 
 
@@ -144,11 +154,12 @@
 
 <div class="container"> 
      <h3>Rooms Nearby</h3>
+     <br />
   <div class="row">
 <% for room in @room.nearbys(10) %>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <div class="card"> 
-     <% if room.image.attached? %><%= image_tag room.image, width: "100%", height: "100%"  %>
+     <% if room.images.attached? %><%= image_tag room.images.last, width: "100%", height: "180px"  %>
      <% end %>
       <div class="card-body"> 
           <h4 class="card-title"><%= link_to room.listing_name, room %></h4>  

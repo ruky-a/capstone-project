@@ -1,0 +1,31 @@
+<div class="modal fade" id="editlisting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <h4 class="modal-title" id="editlisting">Room details</h4>
+      </div>
+          <%= simple_form_for @room, url: host_room_path do |f| %>
+
+       <div class="modal-body">
+       <%= f.input :listing_name %>
+        
+            <%= f.input :description  %>
+       <br />
+          <%= f.input :address %>
+
+        <%= f.input :rate %>
+      
+      <%= f.file_field :images, multiple: true, direct_upload: true %>
+      
+       </div>
+         <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <%= f.submit "Update listing" , class: 'btn btn-primary' %>
+        <div id='preview'></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -7,7 +7,6 @@ class CreateReservations < ActiveRecord::Migration[5.2]
       t.datetime :end_date
       t.integer :rate
       t.integer :total
-
       t.timestamps
     end
   end

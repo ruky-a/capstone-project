@@ -14,6 +14,12 @@ class Host::AmenitiesController < ApplicationController
   def show
   end
 
+  def check_for_cancel
+  if params[:commit] == "Cancel"
+   new_host_room_amenity_path
+  end
+end
+
 
 
 

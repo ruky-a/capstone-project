@@ -1,48 +1,50 @@
 <br />
- <div class="container">
-  <div class="row">
- <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
-          <div class="card test-white">
-         <div class="card-header">
-        <h4 class="text-center">Add your Listing Details</h4>
-      </div>
-     <div class="card-body">
-        <%= form_for @room, url: host_rooms_path do |f| %>
-         <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %>
-         <br />
-         <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
-         <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
-       <br />
     
-            <div class="col-md-4">
-                <label>Rate</label>
-                <%= f.text_field :rate, placeholder: "eg: $100", class: "form-control", required: true %>
-              </div>
+<div class="container">
+<div class="col-md-6 offset-md-3">
 
-                <div class="col-md-4">
-                <label>Website</label>
-            <%= f.url_field :web_url%>
-              </div>
-              <br />
+  <%= form_for @room, url: host_rooms_path do |f| %>
 
-             <div class="col-md-4">
-                <label>Photo</label>
-            <%= f.file_field :image %>
+  <div class="card test-white">
+      <div class="card-header bg-dark">
+          <h4 class="text-center">Add your Listing Details</h4>
+        </div>
+        <div class="card-body">
+          
+
+          <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %><br />
+       
+          <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
+
+
+          <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+          <br />
+
+          <div class="col-md-4">
+          
+            <%= f.text_field :rate, placeholder: "Rate, eg: $100", class: "form-control", required: true %><br />
           </div>
+
+        
+
+          <div class="col-md-4">
+            <%= f.file_field :images, multiple: true, direct_upload: true %><br>
+          </div><br />
 
 
 
           <br />
 
-            <div class="text-center">
-              <%= f.submit "Save!", class: "btn btn-danger btn-block" %>
-            </div>
-            <% end %>
+          <div class="text-center">
+            <%= f.submit "Publish", class: "btn btn-danger btn-block" %><br
+             <%= button_tag "Reset", type: :reset %>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+  
 
 
 

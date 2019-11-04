@@ -1,0 +1,28 @@
+<div class="modal fade" id="newlisting" tabindex="-4" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <h4 class="modal-title" id="newlisting">Add listing</h4>
+      </div>
+          <%= form_for @room, url: host_room_path(@room) do |f| %>
+       <div class="modal-body">
+       <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %>
+         <br />
+            <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+       <br />
+          <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
+      
+      <%= f.file_field :images, multiple: true, direct_upload: true %><br />
+       </div>
+         <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <%= f.submit "Add listing" , class: 'btn btn-primary' %>
+        <div id='preview'></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
