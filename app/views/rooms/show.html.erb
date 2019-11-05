@@ -23,9 +23,6 @@
 
 
 
-
-
-
   <div class="col-md-12">
 <div class="row">
 <div class="box col-md-4">
@@ -115,22 +112,6 @@
 
 
 
-
-<div class="container">
-   <div class="box col-md-6 0ffset-3">
- <%= render 'reviews/review_new' %>'
-<br />
-<%= pluralize(@room.reviews.count, "Reviews") %><br />
-<% @room.reviews.each do |review| %>
-
-<small><%= review.user.email %></small>
-
-<div class='stars' data-score=<%= review.rating %>></div>
-  <%= review.message %><br />
-
-<% end %>
-</div>
-</div>
 
 
 
