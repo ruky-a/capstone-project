@@ -43,8 +43,7 @@ end
   end
  @api = TravelPayouts.api
 prices = @api.cheap_prices(origin: 'ODS', destination: 'MOW', depart_date: '2015-04-01')
-hotel_search_start(city_id:nil,hotel_id:nil,iata:nil,check_in:,check_out:,adults_count:,user_ip:,
-  children_count:0,child_age1:0,child_age2:0,child_age3:0,lang:nil,currency:nil,wait_for_result:0,timeout:
+
   end
 
 
