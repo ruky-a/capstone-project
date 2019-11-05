@@ -41,6 +41,9 @@ end
       end
     end
   end
+ @api = TravelPayouts.api
+prices = @api.cheap_prices(origin: 'ODS', destination: 'MOW', depart_date: '2015-04-01')
+
   end
 
 

@@ -68,7 +68,7 @@ class Host::RoomsController < ApplicationController
 
 
     @room.destroy
-    redirect_to host_rooms_path, notice: "Listing Deleted.."
+    redirect_to root_path, notice: "Listing Deleted.."
   end
 
 

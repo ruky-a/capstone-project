@@ -32,6 +32,12 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'image_processing', '~> 1.2'
+<<<<<<< HEAD
+=======
+gem 'stripe', '~> 3.0.0'
+gem 'rails-assets-card', source: 'https://rails-assets.org'
+gem 'travelpayouts_api'
+>>>>>>> add-stripe-api
 gem 'mini_racer'
 
 source 'https://rails-assets.org' do
