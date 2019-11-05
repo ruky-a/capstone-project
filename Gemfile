@@ -32,6 +32,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'image_processing', '~> 1.2'
+gem 'mini_racer'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
