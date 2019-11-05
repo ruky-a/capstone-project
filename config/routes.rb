@@ -31,7 +31,5 @@ Rails.application.routes.draw do
   end
 
    get '/your_reservations' => 'reservations#your_reservations'
-   get '/payment_method' => "users#payment"
-   post '/add_card' => "users#add_card"
 
 end

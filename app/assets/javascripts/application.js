@@ -24,7 +24,6 @@
 //= require popper
 //= require tether
 //= require bootstrap-sprockets
-//= require card
 //= require_tree .
 
 
