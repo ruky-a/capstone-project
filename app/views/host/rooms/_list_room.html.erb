@@ -1,0 +1,17 @@
+
+  <% rooms.each do |room| %>
+    <div class="col-md-6">
+      <div class="card"> 
+        <%= image_tag room.image.variant(resize: "180x180") %>
+        <div class="card-body"> 
+          <h4><%= link_to room.listing_name, room_path(room) %></h4>
+          <p class="card-text"><%= room.address %></p>
+          <div class="footer">
+            
+          </div>
+          <br />
+          <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
+        </div> 
+      </div>
+    </div>
+    <% end %>

@@ -20,5 +20,6 @@ module Hospitality
 
 
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.active_storage.variant_processor = :vips
   end
 end

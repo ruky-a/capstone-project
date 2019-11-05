@@ -1,0 +1,13 @@
+
+<div class="container">
+ <h1>Enter Your Listing Details</h1>
+  <%= simple_form_for @photo, url: host_room_photos_path(@room) do |f| %>
+  <%= f.file_field :images, multiple: true, direct_upload: true %><br>
+  <%= f.input :caption %>
+  <br />
+  <%= f.submit 'Add photo', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+</div>
+
+

@@ -1,0 +1,78 @@
+<br />
+<div class="conatiner">
+  <div class="row">
+    <div class=" col-md-3">
+      <%= render 'host/rooms/room_menu' %>
+
+      <br />
+    </div>
+
+
+    <div class="col-md-9">
+
+  
+      <%= image_tag @room.image.variant(resize: "1200x500") %>
+      <h3><%= @room.listing_name %></h3>
+      <br />
+     <%= link_to 'Preview As Guest...', room_path(@room), class: 'btn btn-warning' %>
+
+    </div>
+
+    <br class="clr" />
+  </div>
+  <br />
+</div>
+</div>
+
+
+<% @room.amenities.each do |amenity| %>
+<div class="container">
+  <div class="row text-center row-space-1">
+    <div class="col-md-3 ">
+      <i class="fa fa-home fa-2x"></i>
+    </div>
+
+
+    <div class="col-md-3 ">
+      <i class="fa fa-user fa-2x"></i>
+    </div>
+
+    <div class="col-md-3 ">
+      <i class="fa fa-bed fa-2x"></i>
+    </div>
+
+    <div class="col-md-3">
+      <i class="fa fa-bath fa-2x"></i>
+    </div>
+
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-3"><%= amenity.hometype %></div>
+    <div class="col-md-3"><%= pluralize(amenity.accommodate, "Guest") %></div>
+    <div class="col-md-3"><%= pluralize(amenity.bedroom, "Bedroom") %></div>
+    <div class="col-md-3"><%= pluralize(amenity.bathroom, "Bathroom") %></div>
+  </div>
+  <% end %>
+</div>
+</div>
+</div>
+
+<br />
+
+
+
+<%= render 'host/rooms/modal' %>
+
+<%= render 'host/photos/photos_list' %>
+
+</div>
+</div>
+<br />
+
+
+
+
+</div>
+
+

@@ -1,0 +1,134 @@
+
+<br />
+   <%= form_for @amenity, url: host_room_amenities_path(@room) do |f| %>
+<div class="row">
+  <div class="box col-md-3 offset-1">
+    <ul class="todo-list">
+      <li>
+        <div class="view">
+          <%= f.check_box :restaurant %> Restaurant
+        </div>
+        <div class="view">
+          <%= f.check_box :internet %> Internet
+        </div>
+
+        <div class="view">
+          <%= f.check_box :swimming %> Swimming Pool
+        </div>
+        <div class="view">
+          <%= f.check_box :restaurant %> Heating
+        </div>
+        <div class="view">
+          <%= f.check_box :air %> Air Conditioning
+        </div>
+        <div class="view">
+          <%= f.check_box :kitchen %> Kitchen
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="col-9 offset-1 col-sm-8 col-md-6">
+    <div class="card test-white">
+      <div class="card-header">
+       Room Details & Amenities
+      </div>
+
+
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-md-4  select">
+            <div class="form-group">
+              <label>Home Type</label>
+              <%= f.select :hometype, [["Apartment", "Apartment"], ["House", "House"], ["Hotel", "Hotel"], ["Resort", "Resort"], ["Villa", "Villa"]], id: "home_type", prompt: "Select...", class: "form-control form-control-lg" %>
+            </div>
+          </div> 
+
+
+
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Room Type</label>
+              <%= f.select :roomtype, [["Single room", "Single room"], ["Double-room", "Double-room"], ["One-Bedroom", "One-Bedroom"]],
+              id: "home_type", prompt: "Select...", class: "form-control form-control-lg" %>
+            </div>
+          </div> 
+
+
+
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bathroom</label>
+              <%= f.select :bathroom, [["1", 1], ["2", 2], ["3", 3]],
+              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
+            </div>
+          </div> 
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Bed</label>
+              <%= f.select :bedroom, [["1", 1], ["2", 2], ["3", 3]],
+              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Adults</label>
+              <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["6", 6]],
+              id: "home_type", prompt: "Select...", class: "form-control" %>
+            </div>
+          </div> 
+
+
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Children</label>
+              <%= f.select :accommodate, [["0", 0], ["1", 1], ["2", 2], ["3", 3]],
+              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
+            </div>
+   
+
+<div class="text-center">
+  <%= f.submit "Publish", class: "btn btn-danger btn-lg" %>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-md offset-1">
+  <%= link_to 'Back', host_room_path(@room) %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

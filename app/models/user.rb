@@ -3,6 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
+ validates :fullname, length: {maximum: 35}
+
+        
+   has_many :rooms
+   has_one_attached :avatar
+   has_many :reservations
+   has_many :reviews
 
 
   def self.from_omniauth(auth)

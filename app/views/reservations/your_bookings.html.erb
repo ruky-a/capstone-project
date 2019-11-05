@@ -1,0 +1,71 @@
+
+<div class="box col-10 offset-1">
+  <div class="row">
+    <div class="col-sm-4">
+      <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, class: "avatar2" %>
+      <% else %>
+      <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-4"><br />
+      <h4><%= current_user.fullname %></h4><br />
+      <h5>Member Since: <%= current_user.created_at.strftime("%B %d, %Y") %></h5><br />
+      <h6><%= current_user.email %></h6><br />
+      <h6><%= current_user.phone_number%></h6>
+    </div>
+
+
+
+    <div class="col-md-4">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
+        <li class="sidebar-item"><%= link_to "bookings", your_bookings_path, class: "sidebar-link active" %></li>
+          <li class="sidebar-item"><%= link_to "Reservations", your_reservations_path, class: "sidebar-link active" %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-10 offset-1">
+  <div class="card">
+    <div class="card-header">
+      Your Bookings
+    </div>
+    <div class="card-body">
+
+      <% @bookings.each do |booking| %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= booking.start_date.strftime('%v') %>  to
+            <%= booking.end_date.strftime('%v') %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to room_path(booking.room) do %>
+          <%= image_tag booking.room.image.variant(resize: "280x180") %>
+          <% end %>
+        </div>
+        <br /><br />
+        <div class="col-md-6">
+          <%= link_to booking.room.listing_name, room_path(booking.room) %>
+          <span class="pull-right">
+            <%= link_to user_path(booking.user) do %>
+           <!--  -->
+            <%= booking.user.fullname %>
+          </span>
+          <% end %>
+        </div>
+      </div>
+      <hr>   
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,2 @@
+module Host::AmenitiesHelper
+end

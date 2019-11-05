@@ -19,12 +19,19 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'popper_js'
 gem "font-awesome-rails"
-gem 'font-awesome-rails'
 gem 'devise'
 gem 'simple_form'
 gem "figaro"
 gem 'omniauth', '~> 1.7'
 gem 'omniauth-facebook', '~> 4.0'
+gem "geocoder"
+gem 'toastr-rails'
+gem 'gravatar_image_tag'
+gem 'jquery-ui-rails'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'will_paginate', '~> 3.1.0'
+
+gem 'image_processing', '~> 1.2'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
@@ -41,7 +48,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
+gem "aws-sdk-s3", require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -65,10 +73,9 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+ gem 'selenium-webdriver'
+  gem 'webdrivers', '~> 4.0'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -77,4 +84,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem "factory_bot_rails"
+  gem 'capybara'
 end

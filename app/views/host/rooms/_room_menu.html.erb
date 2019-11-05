@@ -1,0 +1,26 @@
+  <div class="text-center">
+  <%= link_to 'Add Amenities...', new_host_room_amenity_path(@room), class: 'btn btn-danger btn-sm' %>
+  </div>
+  <br />
+
+  <div class="text-center">
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#mymodal">
+  Add photos
+  </button>
+  </div>
+  <br />
+
+  <div class="text-center">
+  <%= link_to 'Edit Listing', edit_host_room_path(@room), class: 'btn btn-danger btn-sm' %>
+  </div>
+  <br />
+
+
+
+  <div class="text-center">
+  <%= link_to 'Delete Listing', host_room_path(@room), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger btn-sm' %> 
+  </div>
+  <br />
+
+
+  
