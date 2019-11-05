@@ -1,4 +1,6 @@
 class Room < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode
   belongs_to :user
   has_many :amenities
   geocoded_by :address
