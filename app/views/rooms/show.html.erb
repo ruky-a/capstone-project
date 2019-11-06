@@ -63,9 +63,9 @@
 
     <div class="box col-md-8">
        <h6>Contact</h6>
-  <% if @room.latitude.present? && @room.longitude.present? %>
 
 
+ <% if @room.latitude.present? && @room.longitude.present? %>
   <script>
   function initMap() {
       var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
@@ -85,22 +85,30 @@
       });
 
       infoWindow.open(map, marker);
-  
 
     }
   </script>
- 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc6bNlBjr2qhUDAPTIAGp9VdyAeNYXICk&callback=initMap">
-  </script>
-<div id="map">
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+    </script>
+    <div id="map"></div>
+  <% end %>
+
+
+</div>
+</div>
+</div>
+
+
+
+
 </div>
   <span class="pull-left"><i class="fa fa-map-marker fa-1x" style="color:  #404040"> </i> <%= link_to @room.address %></span><br />
   <span class="pull-left"><i class="fa fa-envelope fa-1x" style="color:  #404040"> </i> <%= @room.user.email %></span><br />
  <span class="pull-left"><i class="fa fa-phone fa-1x" style="color:  #404040"> </i>  
   <%= @room.user.phone_number %></span><br />
 
-<% end %>
+
 </div>
 </div>
 </div>
@@ -127,11 +135,6 @@
 
 
 
-      
-
-
-                  
-        
    
 
      

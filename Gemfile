@@ -21,7 +21,6 @@ gem 'popper_js'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'simple_form'
-gem "figaro"
 gem 'omniauth', '~> 1.7'
 gem 'omniauth-facebook', '~> 4.0'
 gem "geocoder"
@@ -30,6 +29,7 @@ gem 'gravatar_image_tag'
 gem 'jquery-ui-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1.0'
+gem "figaro"
 
 gem 'image_processing', '~> 1.2'
 

@@ -29,12 +29,26 @@ font-family: 'amblebold', sans-serif;
 padding-top: 10px;
 color: white;
 
+
 }
 
 .jumbotron p {
-color: white;
-font-weight: normal;
 
+font-weight: normal;
+color: white
+
+}
+
+
+.jumbotron.jumbotron-fluid{
+    background: image_url('bb1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 350px;
+   box-shadow: 0px 3px 8px #2a2a2a;
+  padding-bottom: 20px;
 }
 
 
