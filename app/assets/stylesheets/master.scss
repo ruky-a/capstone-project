@@ -37,17 +37,24 @@ text: bold;
 
 
 .jumbotron.jumbotron-fluid {
-  background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.3),
-    ),
-    url(homes.jpg);
-    height: 100%;
+background-image: 
+linear-gradient(
+rgba(0, 0, 0, 0.3),
+),
+url(homes.jpg);
+height: 100%;
+margin-bottom: 10px;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100% 100%;
+box-shadow: 0px 3px 8px #2a2a2a;
 }
 
 .jumbotron.jumbotron-fluid p{
-  color: white;
-  padding-bottom: 20px;
+color: white;
+padding-bottom: 20px;
+
 }
 
 
@@ -55,7 +62,7 @@ text: bold;
 
 
 .btn {
-  border-radius: 0;
+border-radius: 0;
 }
 
 
@@ -98,15 +105,15 @@ font-family: 'amblebold', sans-serif;
 
 
 .facebook{
-  background-color: #103D65;
+background-color: #103D65;
 
 }
 
 .btn.btn-facebook {
-  outline: none;
-  border-color: #2d467b;
-  background-color: #2d467b;
-   color: white;
+outline: none;
+border-color: #2d467b;
+background-color: #2d467b;
+color: white;
 }
 
 
