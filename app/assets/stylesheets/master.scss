@@ -37,11 +37,12 @@ text: bold;
 
 
 .jumbotron.jumbotron-fluid {
-background-image: 
+background: 
 linear-gradient(
 rgba(0, 0, 0, 0.3),
+rgba(0, 0, 0, 0.3),
 ),
-url(homes.jpg);
+image_url('homes.jpg');
 margin-bottom: 10px;
 -webkit-background-size: 100% 100%;
 -moz-background-size: 100% 100%;
@@ -55,8 +56,6 @@ color: white;
 padding-bottom: 20px;
 
 }
-
-
 
 
 
