@@ -50,18 +50,10 @@
  <br /><br />
 
 
-   
-
-
-
-
-
-
-
 
 <div class="container">
  <div class="row">
-    <div class="box col-md-8">
+    <div class="box col-md-7">
       <% if @room.latitude.present? && @room.longitude.present? %>
       <script>
         function initMap() {
@@ -99,7 +91,7 @@
   
 
   
-    <div class="col-md-4">
+    <div class="col-md-5">
   
      <%= render 'reservations/form' %>
    </div>
@@ -114,11 +106,6 @@
 <div class="container">
   <%= render 'host/photos/photos' %>
 </div><br />
-
-
-
-
-
 
 
 
