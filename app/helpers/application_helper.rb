@@ -11,24 +11,19 @@ module ApplicationHelper
 #   end
 # end
 
+def avatar_for(user, options = {size: 80})
+  if user.avatar.attached?
+    "http://graph.facebook.com/#{user.uid}/picture?type=large"
+  else
+    gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+    size = options[:size]
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+    image_tag(gravatar_url, alt: user.email, class: "rounded-circle")
+  end
+end
 
- 
 end
 
 
 
 
-# def thumbnail input
-#     return self.images.variant(resize: "300x300!").processed
-#   end
-
-
-
-  
-
-    # def avatar(user)
-    #   if avatar.attached?
-    #     return self.avatar.variant(resize: "100 X 100").processed
-        #else
-    #   gravatar_image_url
-       #end

@@ -1,34 +1,36 @@
 
-<div class="jumbotron jumbotron-fluid"style="background-color:  #212529;">
+<div class="jumbotron jumbotron-fluid"style="background-size: 100% 100%; margin-bottom: 10px;">
   <div class="container">
     <h2 class="display-4">Home Rentals For Short Staycation</h2>
-      <p class="lead">Experience hospitality like never before.</p>
+    <p class="lead">Experience hopsitality like never before</p>
    </div>
-   <br />
-
+ </div>
+ <br />
+ 
 
   <div class="container">
-    <div class="col-md-12">
+    <div class="box col-md-12"style=" margin-top: -60px;">
+      <br />
     <%= form_tag  search_path, method: :get do %>
     <div class="row">
-      <div class="col-md-5 col-sm-12where">
+      <div class="col-md-5 where">
         <%= text_field_tag :search, params[:search], placeholder: 'Where are you going?   eg. New York', class: "form-control searche", id: "autolocation"%><br />
       </div>
-      <div class="col-md-2 col-sm-12 search">
+      <div class="col-md-2 search">
 
         <%= text_field_tag :start_date, params[:start_date], placeholder: "Check In", class: "form-control datepicker" %><br />
 
       </div>
       <br /><br />
 
-      <div class="col-md-2 col-sm-12 search">
+      <div class="col-md-2 search">
     
         <%= text_field_tag :end_date, params[:start_date], placeholder: "Check Out", class: "form-control datepicker" %>
       </div><br /><br />
 
 
-      <div class="col-md-3 col-sm-12 search">
-        <%= submit_tag "Search", class: " form-control search search btn btn-danger btn-block" %>
+      <div class="col-md-3  search">
+        <%= submit_tag "Search", class: " form-control search btn btn-dark btn-block" %>
       </div>
     </div>
   </div>
@@ -36,69 +38,57 @@
 </div>
 </div>
 
+ <hr>
 
 <div class="container">
-  <div><h3>Featured Homes</h3></div>
+  <div><h3 class="text-center">Featured Homes</h3></div>
   <br /> 
   <div class="row">
     <% @rooms.each do |room| %>
     <div class="col-md-4 col-sm-12">
       <div class="card"> 
-    <% if room.images.attached? %><%= image_tag room.images.last, width: "100%", height: "180px%" %>
+    <% if room.images.attached? %><%= image_tag room.images.last, width: "100%", height: "180px" %>
             <% end %>
         <div class="card-body"> 
           <h4><%= link_to room.listing_name, room_path(room) %></h4>  
-          <p class="card-text"><%= room.address %></p>
-     
-            <div id="rate"><span> $<%= room.rate %></span></div>
+     <div id="rate"><span> $<%= room.rate %></span></div>
             <%= pluralize(room.reviews.count, "Reviews") %>
 
           <br /><br />
-          <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %><br /><br />
+          <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
         </div> 
       </div>
     </div>
     <% end %>
   </div>
 </div>
-<br />
+<br /><br />
 
-<div class="container">
-<div class="jumbotron card card-image">
-  <div class="text-white text-center py-5 px-4">
-    <div>
-      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>PLAN YOUR DREAM TRIP</strong></h2>
-
-    </div>
-  </div>
-</div>
-</div>
-<br />
 
 
 <div class="container">
-<div><h3>Top Destinations</h3></div>
+<div><h3 class="text-center">Top Destinations</h3></div>
 
 <br />
 <div class="row">
   <div class="col-md-3 col-sm-12">
     <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=paris">
-      <div class="places-cards"><div class="places-text"><h3>PARIS</h3></div></div>
+      <div class="paris-card"><div class="paris-text"><h3>PARIS</h3></div></div>
     </a>
   </div>
   <div class="col-md-3 col-sm-12">
     <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=london&start_date=&end_date=&commit=Search">
-       <div class="places-card" style="background-image: url(/assets/london.jpg)"><div class="places-text"><h3>LONDON</h3></div></div>
+       <div class="london-card"><div class="london-text"><h3>LONDON</h3></div></div>
     </a>
   </div>
   <div class="col-md-3 col-sm-12">
-     <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=africa">
-      <div class="places-card" style="background-image: url(/assets/africa.jpg)"><div class="places-text"><h3>SOUTH AFRICA</h3></div></div>
+     <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=orlando">
+      <div class="orlando-card"><div class="orlando-text"><h3>ORLANDO</h3></div></div>
     </a>
   </div>
     
   <div class="col-md-3 col-sm-12">
-    <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=newyork"> <div class="places-card" style="background-image: url(/assets/newyork.jpg)"><div class="places-text"><h3>NEW YORK</h3></div></div>
+    <a href="https://hospitality-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=newyork"> <div class="newyork-card"><div class="newyork-text"><h3>NEW YORK</h3></div></div>
     </a>
   </div>
     

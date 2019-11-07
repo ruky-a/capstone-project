@@ -31,11 +31,11 @@
 <br />
 
   <div class="col-8 offset-2">
+      <div class="card-header bg-dark">
+        <h4 class="text-center">Your Listings</h4>
+      </div>
     <div class="card">
       <% @rooms.each do |room| %>
-      <div class="card-header bg-secondary">
-        <h3>Your Listings</h3>
-      </div>
       <div class="card-body">
         
         <div class="row">
@@ -57,47 +57,5 @@
     </div>
   </div>
   
-
-
-
-
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 100%;
-    }
-  </style>
-  </head>
-  <body>
-  <div id="map"></div>
-  <script>
-
-    function initMap() {
-      var myLatLng = {lat: -25.363, lng: 131.044};
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: myLatLng
-      });
-
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-      });
-    }
-  </script>
-
-
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc6bNlBjr2qhUDAPTIAGp9VdyAeNYXICk&callback=initMap">
-  </script>
-
-    <div id="map"></div>
-
 
 
