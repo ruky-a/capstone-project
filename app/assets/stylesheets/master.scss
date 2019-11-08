@@ -95,10 +95,12 @@ padding: 0;
 
 h3 {
 font-family: 'amblebold', sans-serif;
+color: #20394F;
 }
 
 h4 a {
 font-family: 'amblebold', sans-serif;
+color: #20394F;
 }
 
 
@@ -514,8 +516,8 @@ padding-bottom: 20px;
 }
 
 
-.london-card {
-background: image_url('london.jpg');
+.lasvegas-card {
+background: image_url('lv.jpg');
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -556,13 +558,13 @@ color: white;
 }
 
 
-.london-text {
+.lv-text {
 text-align: center;
 padding: 20px;
 
 }
 
-.london-text h3 {
+.lv-text h3 {
 color: #b3251b;
 }
 
@@ -645,14 +647,6 @@ color: white;
 background-color: white;
 }
 
-.label {
-color: white;
-}
-
-.where {
-
-color: white;
-}
 
 
 .nav-link {
