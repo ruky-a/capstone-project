@@ -1,1 +1,0 @@
-guest_reviews_controller.rb
