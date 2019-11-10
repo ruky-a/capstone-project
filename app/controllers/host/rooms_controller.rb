@@ -18,7 +18,6 @@ class Host::RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @amenity = Amenity.new
     @photo = Photo.new
-  @sguest_reviews = @room.guest_reviews
   end
 
 
