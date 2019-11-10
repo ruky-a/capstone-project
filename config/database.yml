@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: hospitality_development
+  database: capstone-project_development
 
 test:
   <<: *default
-  database: hospitality_test
+  database: capstone-project_test
 
 production:
   <<: *default
-  database: hospitality_production
+  database: capstone-project_production
   # username: hospitality
   # password: <%= ENV['HOSPITALITY_DATABASE_PASSWORD'] %>
