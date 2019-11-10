@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: :show 
   resources :rooms, only: [:index, :show] do
       resources :reservations, only: [:create]  
-        resources :reviews, only: [:create, :destroy]  
+      
       
     end
 
@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
 
   end
+    resources :guest_reviews, only: [:create, :destroy]
+    resources :host_reviews, only: [:create, :destroy]
+   
 
    get '/your_reservations' => 'reservations#your_reservations'
    get '/payment_method' => "users#payment"

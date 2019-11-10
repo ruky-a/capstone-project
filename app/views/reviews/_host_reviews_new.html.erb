@@ -1,6 +1,6 @@
 <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal_<%= reservation.id %>">
-  Review Host
+<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal_<%= reservation.id %>">
+  Review Guest
 </button>
 
 <!-- Modal -->
@@ -10,10 +10,10 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title text-left">Review Your Host</h4>
+        <h4 class="modal-title text-left">Review Your Guest</h4>
       </div>
       <div class="modal-body">
-        <%= form_for current_user.guest_reviews.new do |f| %>
+        <%= form_for current_user.host_reviews.new do |f| %>
             <div class="form-group text-center">
               <div id="stars"></div>
             </div>
@@ -23,11 +23,11 @@
 
             <%= f.hidden_field :room_id, value: reservation.room.id %>
             <%= f.hidden_field :reservation_id, value: reservation.id %>
-            <%= f.hidden_field :host_id, value: reservation.room.user.id %>
+            <%= f.hidden_field :guest_id, value: reservation.user.id %>
 
-            <div class="modal-footer">
+          <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit "Add a Review", class: 'btn btn-danger btn-sm' %>
+          <%= f.submit "Add a Review", class: 'btn btn-primary btn-sm' %>
         </div>
         <% end %>
       </div>
@@ -39,7 +39,15 @@
 <script>
   $('#stars').raty({
     path: '/assets',
-    scoreName: 'guest_review[star]',
+    scoreName: 'host_review[star]',
     score: 1
   });
 </script>
+
+
+
+
+
+
+
+

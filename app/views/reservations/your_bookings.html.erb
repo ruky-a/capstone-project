@@ -28,13 +28,18 @@
   </div>
 </div>
 
-
+<% if @bookings.count == 0 %>
+  <div class="text-center">
+    <h4>You have no bookings.</h4>
+  </div>
+<% else %>
 <div class="col-10 offset-1">
   <div class="card">
-      <% @bookings.each do |booking| %>
-    <div class="card-header">
+     <div class="card-header">
       <h3>Your Bookings</h3>
     </div>
+      <% @bookings.each do |booking| %>
+   
     <div class="card-body">
 
     
@@ -45,19 +50,20 @@
         </div>
         <div class="col-md-2">
           <%= link_to room_path(booking.room) do %>
-   <%= image_tag booking.room.images.first, width: "200px", height: "180px"  %>
-  <% end %> 
+            <%= link_to booking.room.listing_name, room_path(booking.room) %>
+      <%= image_tag booking.room.images.first, width: "200px", height: "180px"  %>
+        <% end %> 
      
         </div>
         <br /><br />
-        <div class="col-md-6">
-          <%= link_to booking.room.listing_name, room_path(booking.room) %>
-          <span class="pull-right">
-            <%= link_to user_path(booking.user) do %>
-           <!--  -->
-            <%= booking.user.fullname %>
-          </span>
-          <% end %>
+        <div class="col-md-4">
+            <%= image_tag booking.room.user.avatar, class: "rounded-circle", size: 80 %>
+            <%= booking.room.user.fullname %>
+          </div>
+     
+            <div class="col-md-4">
+              <%= render partial: "reviews/review_new", locals: {reservation: booking} %>
+            </div>
         </div>
       </div>
       <hr>   
@@ -67,6 +73,7 @@
 </div>
 </div>
 </div>
+<% end %>
 
 
 

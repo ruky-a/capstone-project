@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+     @guest_reviews = @room.guest_reviews
   end
   #   @reviews = Review.where(room_id: @room)
   #   if @reviews.blank?

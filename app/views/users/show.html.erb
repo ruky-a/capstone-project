@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-4">
       <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar, class: "avatar2" %>
+      <%= image_tag current_user.avatar, class: "rounded-circle", size: 120 %>
       <% else %>
       <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
       <% end %>
@@ -34,14 +34,16 @@
 
 
 
+
    <div class="col-8">
     
     <div class="card">
-      <div class="card-header bg-secondary">
-        <h3>Your Listings</h3>
-      </div>
+      
       <div class="card-body">
         <% @rooms.each do |room| %>
+        <div class="card-header bg-secondary">
+        <h3>Your Listings</h3>
+      </div>
         <div class="row">
           <div class="col-md-4">
              <%= link_to room.listing_name, room %>
@@ -61,6 +63,22 @@
 </div>
 </div>
 </div>
+
+<div class="container">
+<h6>Reviews from Guest (<%= @guest_reviews.count %>)</h6>
+  <%= render "reviews/guest_list" %>
+</div>
+<br />
+
+
+<div class="container">
+<h6>Reviews from Host (<%= @host_reviews.count %>)</h6>
+  <%= render "reviews/host_list" %>
+</div>
+</div>
+</div>
+
+
 
 
 

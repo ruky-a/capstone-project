@@ -18,7 +18,7 @@ class Host::RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @amenity = Amenity.new
     @photo = Photo.new
-    @review = Review.new
+  @sguest_reviews = @room.guest_reviews
   end
 
 
@@ -28,6 +28,8 @@ class Host::RoomsController < ApplicationController
       return render :new, status: :unprocessable_entity
     end
   end
+
+
 
   def update
     if @room.user != current_user

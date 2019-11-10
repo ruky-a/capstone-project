@@ -49,6 +49,20 @@
  </div>
  <br /><br />
 
+<div class="container">
+ <div class="row">
+  <div class="col-md-12">
+    <h3>
+      <%= pluralize(@guest_reviews.count, "Review") %>
+      <span id="average_rating"></span></h3>
+      <div class="container">
+<%= render "reviews/guest_list" %>
+</div>
+</div>
+</div>
+</div>
+
+
 
 
 <div class="container">
@@ -89,8 +103,6 @@
     </div>
 
   
-
-  
     <div class="col-md-5">
   
      <%= render 'reservations/form' %>
@@ -106,6 +118,18 @@
 <div class="container">
   <%= render 'host/photos/photos' %>
 </div><br />
+
+
+
+
+<script>
+$('#average_rating').raty({
+path: '/assets',
+readonly: true,
+score: <%= @room.average_rating %>
+
+});
+</script>
 
 
 

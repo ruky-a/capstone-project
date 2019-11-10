@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @rooms = @user.rooms   
+    @guest_reviews = Review.where(type: "GuestReview", host_id: @user.id)
+    @host_reviews = Review.where(type: "HostReview", guest_id: @user.id)
   end
 
   def payment
@@ -34,17 +36,15 @@ class UsersController < ApplicationController
     flash[:notice] = 'Your card is saved'.
     redirect_to payment_method_path
   rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to payment_method_path
-
-     
+    flash[:error] = e.message
+    redirect_to payment_method_path   
   end
 
 
- private
+  private
 
-  
- def user_params
+
+  def user_params
     params.require(:user).permit(:avatar)
-    end
   end
+end
