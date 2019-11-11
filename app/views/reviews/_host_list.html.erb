@@ -8,7 +8,9 @@
     <hr/>
     <div class="row">
       <div class="col-md-3 text-center">
+            <% if r.host.avatar.attached? %>
         <%= image_tag r.host.avatar, class: "rounded-circle", size: 80 %><br/><br/>
+        <% end %>
         <strong><%= r.host.fullname %></strong>
       </div>
       <div class="col-md-9">
