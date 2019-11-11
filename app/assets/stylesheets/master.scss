@@ -24,17 +24,26 @@ font-family: 'ambleregular', sans-serif;
 
 }
 
-.jumbotron h2 {
-font-size: 35px;
-font-weight: 600px;
-font-family: 'amblebold', sans-serif;
-color: white;
-padding: 0px;
-text-transform: uppercase;
-text: bold;
-
+.card h3 {
+  color: black;
 }
 
+.jumbotron.card {
+background: 
+linear-gradient(
+rgba(0, 0, 0, 0.3),
+rgba(0, 0, 0, 0.3),
+),
+image_url('homes.jpg');
+margin-bottom: 10px;
+-webkit-background-size: 100% 100%;
+-moz-background-size: 100% 100%;
+-o-background-size: 100% 100%;
+background-size: 100% 100%;
+box-shadow: 0px 3px 8px #2a2a2a;
+boder-radius: none;
+
+}
 
 .jumbotron.jumbotron-fluid {
 background: 
@@ -49,13 +58,13 @@ margin-bottom: 10px;
 -o-background-size: 100% 100%;
 background-size: 100% 100%;
 box-shadow: 0px 3px 8px #2a2a2a;
-}
 
-.jumbotron.jumbotron-fluid p{
-color: white;
-padding-bottom: 20px;
+
 
 }
+
+
+
 
 
 
@@ -95,13 +104,14 @@ padding: 0;
 
 h3 {
 font-family: 'amblebold', sans-serif;
-color: #20394F;
 }
 
-h4 a {
+h6 a{
 font-family: 'amblebold', sans-serif;
-color: #20394F;
+color: black;
 }
+
+
 
 
 .facebook{
@@ -120,7 +130,6 @@ color: white;
 
 #rate {
 color: #B32C16;
-font-weight: bold;
 font-family: 'amblebold', sans-serif;
 
 }
@@ -140,7 +149,7 @@ padding: 30px;
 p {
 color: #103D65;
 font-weight: bold;
-ont-family: 'amblebold', sans-serif;
+font-family: 'amblebold', sans-serif;
 
 }
 
@@ -453,12 +462,15 @@ border-radius: 0px;
 border: 1px solid #020A10;
 
 
+
 }
 .form-control.search {
 -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
 border-radius: 0px;
 border: 1px solid #020A10;
+margin-left: 0px;
+background-color: #ab150a;
 }
 
 .boxes {
@@ -499,8 +511,6 @@ margin-right: 30px;
 
 
 }
-
-
 
 
 
@@ -551,7 +561,11 @@ padding-bottom: 20px;
 }
 
 
+.search {
+  padding: 0px;
+  paddin-top: 20px;
 
+}
 
 .just-places h3{
 color: white;
@@ -657,3 +671,5 @@ margin-left: 10px;
 .modal-header {
   text-align: left;
 }
+
+
