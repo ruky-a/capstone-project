@@ -13,11 +13,11 @@ class Host::RoomsController < ApplicationController
 
   end
 
-
   def show
     @room = Room.find(params[:id])
     @amenity = Amenity.new
     @photo = Photo.new
+    @guest_reviews = @room.guest_reviews
   end
 
 

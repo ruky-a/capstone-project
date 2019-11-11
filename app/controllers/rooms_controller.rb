@@ -7,12 +7,5 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
      @guest_reviews = @room.guest_reviews
   end
-  #   @reviews = Review.where(room_id: @room)
-  #   if @reviews.blank?
-  #     @avg_rating = 0
-  #   else
-  #     @avg_rating = @reviews.average(:rating).round(1)
-  #   end 
-  # end
 
 end
