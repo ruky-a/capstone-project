@@ -15,18 +15,17 @@
           <div class="row">
 
             <div class="col-md-12">
-              <label>Destination?</label>
               <%= text_field_tag :search, params[:search], placeholder: 'Where are you going?   eg. New York', class: "form-control searche", id: "autolocation"%><br />
             </div>
 
 
             <div class="col-md-6">
               <label>Check In</label>
-              <%= text_field_tag :start_date, params[:start_date], placeholder: "Check In", class: "form-control datepicker" %><br />
+              <%= text_field_tag :start_date, params[:start_date], placeholder: "start_date", class: "form-control datepicker" %><br />
             </div>
             <div class="col-md-6">
               <label>Check Out</label>
-              <%= text_field_tag :end_date, params[:start_date], placeholder: "Check Out", class: "form-control datepicker" %>
+              <%= text_field_tag :end_date, params[:start_date], placeholder: "end_date", class: "form-control datepicker" %>
               <br />
             </div>
           </div>
@@ -41,10 +40,10 @@
 
 
 <div class="container">
-  <h3 class="text-center">Luxury and Comfortable Homes For your Next Vacation</h3><br />
+  <h3 class="text-center">Amazing Homes for Your Short Staycation</h3><br />
   <div class="jumbotron card card-image">
     <div class="text-white text-center py-5 px-4">
-      <h2>Amazing Homes For Short Staycation</h2>
+      <p>Luxury & Comfort</p>
       <div>
         <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong></strong></h2>
       </div>
