@@ -561,7 +561,7 @@ padding-bottom: 20px;
 }
 
 .london-card {
-background: image_url('london.jpg');
+background: image_url('uk.jpg');
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -637,7 +637,6 @@ box-sizing: border-box;
 
 body {
 margin: 0;
-background-color: $brand__color--1;
 }
 
 .show--mobile {
@@ -802,14 +801,8 @@ height: 2px;
 }
 
 
-
-
-.page-video {
-width: 50vw;
-height: 50vh; 
+video {
+height: auto;
+width: auto;
 
 }
-
-
-
-
