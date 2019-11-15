@@ -1,6 +1,6 @@
   <% if @host_reviews.count == 0 %>
   <div class="text-center">
- <div class="card-header bg-dark">
+ <div class="card-header">
     <h4>There are no reviews.</h4>
   </div>
 <% else %>
@@ -10,7 +10,7 @@
    
   <% @host_reviews.order(id: :desc).each do |r| %>
   <div class="card test-white">
-      <div class="card-header bg-dark">
+      <div class="card-header">
       <h3>Reviews</h3>
       </div>
     <div class="card-body">

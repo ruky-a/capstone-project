@@ -27,7 +27,7 @@ font-family: 'ambleregular', sans-serif;
 }
 
 .card h3 {
-  color: black;
+color: black;
 }
 
 .jumbotron.card {
@@ -61,10 +61,10 @@ height: 400px;
 
 
 .search {
-  padding: 0px;
-  paddin-top: 20px;
+padding: 0px;
+paddin-top: 20px;
 
-  }
+}
 
 
 .btn {
@@ -470,8 +470,8 @@ padding: 0px;
 }
 
 .search.btn {
-  background-color:  #ab150a;
-  color: white;
+background-color:  #ab150a;
+color: white;
 }
 
 
@@ -515,7 +515,7 @@ margin-right: 30px;
 }
 
 .luxury {
-  
+
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -550,7 +550,7 @@ padding-bottom: 20px;
 }
 
 
-.newyork-card {
+.miami-card {
 background: image_url('newyork.jpg');
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -621,201 +621,194 @@ margin-left: 10px;
 
 
 .modal-header {
-  text-align: left;
+text-align: left;
 }
 
 
-$brand__color--1: white; // Dark Grey
+$brand__color--1: #d1270d; // Dark Grey
 $brand__color--2: #54c1f5; // Blue
 $brand__color--3: #ff7a71; // Red
 $brand__color--4: #77787a; // Light Grey
 $brand__color--5: black; // Off-White
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background-color: $brand__color--1;
+margin: 0;
+background-color: $brand__color--1;
 }
 
 .show--mobile {
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-  }
+display: none;
+@media screen and (max-width: 768px) {
+display: inline-block;
+}
 }
 
 
 
 .post__container--sidebar {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 30px;
-  align-items: start;
-  
-  max-width: 1150px;
-  margin: 0 auto;
-  background: white;
-  color: $brand__color--5;
-  padding: 20px 40px;
-  @media screen and (max-width: 768px) {
-    grid-column-gap: 0;
-    padding: 20px;
-    padding-left:20px;
-  }
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-gap: 30px;
+align-items: start;
+
+max-width: 1150px;
+margin: 0 auto;
+background: white;
+color: $brand__color--5;
+padding: 20px 40px;
+@media screen and (max-width: 768px) {
+grid-column-gap: 0;
+padding: 20px;
+padding-left:20px;
+}
 }
 .page__header__content,
 .post__content {
-   // Span the first seven columns
-   grid-column: 1/8;
-   @media screen and (max-width: 768px) {
-     // Full grid width on mobile
-     grid-column: 1/13;
-     
-     margin: 0;
-   }
+// Span the first seven columns
+grid-column: 1/8;
+@media screen and (max-width: 768px) {
+// Full grid width on mobile
+grid-column: 1/13;
+
+margin: 0;
 }
-.page__header__content {
-  // Fix header content in the first row, always at the top of the page
-  grid-row: 1;
-  
-  h1 {
-    color: $brand__color--2;
-  }
 }
+
 .post__content {
-  // Fix post content in row 3 on mobile - below the tabs which are in row 2 
-  @media screen and (max-width: 768px) {
-    grid-row: 3;
-    
-    padding: 0;
-  }
+// Fix post content in row 3 on mobile - below the tabs which are in row 2 
+@media screen and (max-width: 768px) {
+grid-row: 3;
+
+padding: 0;
+}
 }
 .post__sidebar {
-  // Span the last four columns
-  grid-column: 9/13;
-  grid-row: 1/4;
-  
-  margin-top: -20px;
-  background: white;
-  color: $brand__color--1;
-  padding: 20px;
-  @media screen and (max-width: 1000px) {
-    grid-column: 8/13;
-  }
-  @media screen and (max-width: 768px) {
-    // Full grid width on mobile
-    grid-column: 1/13;
-    grid-row: 3;
-    
-    margin: 0 auto;
-    width: 100%;
-  }
+// Span the last four columns
+grid-column: 9/13;
+grid-row: 1/4;
+
+margin-top: -20px;
+background: white;
+color: $brand__color--1;
+padding: 20px;
+@media screen and (max-width: 1000px) {
+grid-column: 8/13;
+}
+@media screen and (max-width: 768px) {
+// Full grid width on mobile
+grid-column: 1/13;
+grid-row: 3;
+
+margin: 0 auto;
+width: 100%;
+}
 }
 
 .tabs {
-  clear: both;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
+clear: both;
+@media screen and (max-width: 768px) {
+width: 100%;
+}
 }
 .tabs__content--hidden {
-  @media screen and (max-width: 768px) {
-    display: none !important;
-  }
+@media screen and (max-width: 768px) {
+display: none !important;
+}
 }
 .tabs__content--revealed {
-  @media screen and (min-width: 768px) {
-    display: block !important;
-  }
+@media screen and (min-width: 768px) {
+display: block !important;
+}
 }
 
 // Fix the tabs in the second grid row, below the header content
 .tabs__post {
-  grid-row: 2;
-  grid-column: 1/13;
-  
-  background-color: $brand__color--5;
-  border-top: 2px solid $brand__color--5;
-  position: relative;
-  span {
-    display: block;
-    color: $brand__color--1;
-    text-align: center;
-    line-height: 44px;
-    margin: 0;
-    word-break: break-all;
-    &:hover {
-      cursor: pointer;
-      cursor: hand;
-    }
-    &.tab--active {
-      background-color: $brand__color--4;
-      color: $brand__color--5;
-      cursor: default;
-    }
-  }
+grid-row: 2;
+grid-column: 1/13;
+
+background-color: $brand__color--5;
+border-top: 2px solid $brand__color--5;
+position: relative;
+span {
+display: block;
+color: $brand__color--1;
+text-align: center;
+line-height: 44px;
+margin: 0;
+word-break: break-all;
+&:hover {
+cursor: pointer;
+cursor: hand;
+}
+&.tab--active {
+background-color: $brand__color--4;
+color: $brand__color--5;
+cursor: default;
+}
+}
 }
 
 .tab {
-  display: inline-block;
-  margin: 0;
-  width: 50%;
-  float: left;
-  // box-sizing: border-box;
+display: inline-block;
+margin: 0;
+width: 50%;
+float: left;
+// box-sizing: border-box;
 }
 
 // The before and after elements on the tabs make them appear full-width
 .tab--js--content {
-  padding-right: 10px;
-  margin: 0;
-  &:before {
-    content: "";
-    position: absolute;
-    background: $brand__color--5;
-    top: -2px;
-    left: -20px;
-    height: calc(100% + 2px);
-    width: 20px;
-  }
-  &.tab--active {
-    &:before {
-      background: $brand__color--5;
-      height: 2px;
-    }
-  }
+padding-right: 10px;
+margin: 0;
+&:before {
+content: "";
+position: absolute;
+background: $brand__color--5;
+top: -2px;
+left: -20px;
+height: calc(100% + 2px);
+width: 20px;
+}
+&.tab--active {
+&:before {
+background: $brand__color--5;
+height: 2px;
+}
+}
 }
 
 .tab--js--sidebar {
-  float: right;
-  padding-left: 10px;
-  &:before {
-    content: "";
-    position: absolute;
-    background: $brand__color--5;
-    top: -2px;
-    right: -20px;
-    height: calc(100% + 2px);
-    width: 20px;
-  }
-  &.tab--active {
-    &:before {
-      background: $brand__color--5;
-      height: 2px;
-    }
-  }
+float: right;
+padding-left: 10px;
+&:before {
+content: "";
+position: absolute;
+background: $brand__color--5;
+top: -2px;
+right: -20px;
+height: calc(100% + 2px);
+width: 20px;
+}
+&.tab--active {
+&:before {
+background: $brand__color--5;
+height: 2px;
+}
+}
 }
 
 
 
 
 .page-video {
- width: 50vw;
- height: 50vh; 
-  
- }
+width: 50vw;
+height: 50vh; 
+
+}
 
 
 

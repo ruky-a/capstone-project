@@ -39,7 +39,7 @@
 <%= video_tag "Coquillade_.mp4",:controls => true, class: 'page-video' %>
 </div>
 </div>
-<br /><br />
+<br /><br /><br />
 
 
 
@@ -50,8 +50,9 @@
       <h3> Do you have a luxurious accommodation?</h3>
       <p>Hotel-Resort-Home<br />
       Join Now to Upload your Listing</p><br />
-       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-danger btn-lg' %></li><br />
+       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-danger btn-lg' %></li><br /><br />
      </div>
+
   
       <div class="col-md-8 luxury"style="background-image: url(/assets/luxury5.jpg);">
     </div>
@@ -59,9 +60,9 @@
 </div>
 
 
-  <br /><br />
+  <br /><br /><br />
   <div class="container">
-    <div><h3 class="text-center">Featured Homes Around the World!</h3></div><br /><br />
+    <div><h3 class="text-center">Featured Homes Around the World!</h3></div><br />
     <div class="row">
       <% @rooms.each do |room| %>
       <div class="col-md-4 col-sm-12">
@@ -91,23 +92,23 @@
     <br />
 
     <div class="container">
-      <div><h3 class="text-center">Top Destinations To Explore</h3></div>
-
-      <br /><br />
+      <div><h3 class="text-center">Top Destinations To Explore</h3></div><br />
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <a href="https://capstone-project-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=paris">
             <div class="paris-card"></div>
           </a>
         </div>
-        <div class="col-md-3 col-sm-12">
-
-          <a href="https://capstone-project-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=london"> <div class="london-card"></div>
+        
+         <div class="col-md-3 col-sm-12">
+          <a href="https://capstone-project-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=london">
+            <div class="london-card"></div>
           </a>
         </div>
 
+
         <div class="col-md-3 col-sm-12">
-          <a href="https://capstone-project-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=miami"> <div class="newyork-card"></div>
+          <a href="https://capstone-project-ruky-a.herokuapp.com/search?utf8=%E2%9C%93&search=miami"> <div class="miami-card"></div>
           </a>
         </div>
   
