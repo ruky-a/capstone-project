@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     member do
     get 'preload'
     get 'preview'
+    get 'photo_upload'
 
   end
 

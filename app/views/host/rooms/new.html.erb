@@ -1,52 +1,83 @@
-<br />
-    
-<div class="container">
-<div class="col-md-6 offset-md-3">
-
-  <%= form_for @room, url: host_rooms_path do |f| %>
-
-  <div class="card test-white">
-      <div class="card-header bg-dark">
-          <h4 class="text-center">Add your Listing Details</h4>
-        </div>
-        <div class="card-body">
-          
-
-          <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %><br />
-       
-          <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
-
-
-          <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
-          <br />
-
-          <div class="col-md-4">
-          
-            <%= f.text_field :rate, placeholder: "Rate, eg: $100", class: "form-control", required: true %><br />
-          </div>
-
-        
-
-          <div class="col-md-4">
-            <%= f.file_field :images, multiple: true %><br>
-          </div><br />
-
-
-
-          <br />
-
-          <div class="text-center">
-            <%= f.submit "Publish", class: "btn btn-danger btn-block" %><br>
-             <%= button_tag "Reset", type: :reset %>
-          </div>
-          <% end %>
-        </div>
+<!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(/assets/building.jpg);">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+      <h5 class="h5 orange-text"><i class="fa fa-camera-retro"></i></h5>
+      <h2 class="card-title h2 my-4 py-2"></h2>
+      <br />
+      <div class="text-center">
+        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#newlisting">
+          Upload listing
+        </button>
       </div>
     </div>
   </div>
-  
+</div>
+<br /><br />
+
+    
+
+
+<div class="container">
+  <div class="row feature text-center">
+    <div class="col-12 col-sm">
+      <p>Sign Up</p>
+    </div>
 
 
 
+    <div class="col-12 col-sm">
+      <p>Upload Video</p>
+    </div>
+
+    <div class="col-12 col-sm">
+      <p>Get Bookings</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div><br />
+
+<div class="modal fade" id="newlisting" tabindex="-7" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title" id="newlisting">Add listing</h4>
+      </div>
+      <%= form_for @room, url: host_rooms_path do |f| %>
+      <div class="modal-body">
+        <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %>
+        <br />
+        <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+        <br />
+        <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
+
+        <div class="field">
+          <%= f.label :photo %>
+          <%= f.file_field :images, multiple: true, direct_upload: true %>
+        </div>
+        <br />
+
+        <div class="field">
+          <%= f.label :video %>
+          <%= f.file_field :video %>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit "Add listing" , class: 'btn btn-danger' %>
+        <div id='preview'></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
 

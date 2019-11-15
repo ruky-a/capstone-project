@@ -1,19 +1,26 @@
-<% if @guest_reviews.count == 0 %>
+  <% if @guest_reviews.count == 0 %>
   <div class="text-center">
+ <div class="card-header bg-dark">
     <h4>There are no reviews.</h4>
   </div>
 <% else %>
 
+<div class="container">
+<div class="col-md-12">
+   
   <% @guest_reviews.order(id: :desc).each do |r| %>
-    <hr/>
+  <div class="card test-white">
+      <div class="card-header bg-dark">
+      <h3>Reviews</h3>
+      </div>
+    <div class="card-body">
     <div class="row">
       <div class="col-md-3 text-center">
        <% if r.guest.avatar.attached? %>
         <%= image_tag r.guest.avatar, class: "rounded-circle", size: 60 %><br/><br/>
-        <% end %>
-        <strong><%= r.guest.fullname %></strong>
+         <strong><%= r.guest.fullname %></strong>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-6">
         <div id="star_<%= r.id %>"></div>
 
         <% if current_user && current_user == r.guest %>
@@ -27,6 +34,10 @@
         <div><%= r.comment %></div>
       </div>
     </div>
+    <% end %>
+    <hr />
+  </div>
+    
 
 
 

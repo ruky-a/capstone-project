@@ -1,7 +1,7 @@
 class Host::RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_current_room, except: [:index, :new, :create]
-  before_action :require_authorized_for_set_current_room, only: [:show]
+  before_action :require_authorized_for_set_current_room, only: [:show, :photo_upload]
 
 
   def index
@@ -10,14 +10,17 @@ class Host::RoomsController < ApplicationController
 
   def new
     @room = Room.new
-
-  end
+ end
 
   def show
     @room = Room.find(params[:id])
     @amenity = Amenity.new
-    @photo = Photo.new
+    @photos = Photo.new
     @guest_reviews = @room.guest_reviews
+  end
+
+  def photo_upload
+  @photos = @room.photos
   end
 
 
@@ -95,7 +98,7 @@ class Host::RoomsController < ApplicationController
 
 
   def require_authorized_for_set_current_room
-    redirect_to root_path, alert: "You don't have permission" unless @room.user == current_user
+    redirect_to root_path, alert: "You don't have permission" unless @room.user.id == current_user.id
   end
 
 
@@ -107,6 +110,6 @@ class Host::RoomsController < ApplicationController
 
 
   def room_params
-    params.require(:room).permit(:listing_name, :description, :address, :rate, :web_url, images: [])
+    params.require(:room).permit(:listing_name, :description, :address, :rate, :web_url, :video, :thumbnail, images: [])
   end
 end

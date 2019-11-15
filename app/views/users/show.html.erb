@@ -1,68 +1,68 @@
-
-<div class="box col-10 offset-1">
+ <hr />
+<div class="container">
+  <div class="col-md-12">
   <div class="row">
-    <div class="col-sm-4">
-      <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar, class: "rounded-circle", size: 120 %>
+    <div class="col-md-4">
+  <div class="card" style="width:300px">
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, class: "avatar2" %>
       <% else %>
       <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
       <% end %>
+    <div class="card-body">
+      <h4><%= @user.fullname %></h4>
+      <p>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></p>
+      
+ <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-danger" %></li>
     </div>
+  </div>
+</div>
 
-    <div class="col-sm-4"><br />
-      <h4><%= @user.fullname %></h4><br />
-      <h5>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h5><br />
-      <h6><%= @user.email %></h6><br />
-      <h6><%= @user.phone_number%></h6>
-    </div>
-
-
-
-<%= render 'users/sidebar' %>
-
-<div class="container">
-<div class="row">
-      <div class="box col-md-4">
-  <p>About me</p>
-    <h3><%= @user.fullname %></h3>
-      <%= @user.description %>
-
-    <p>Listings (<%= @rooms.length %>)</p><br/>
+<div class="col-md-4"><br />
+  <h3 class="text-center">About me</h3>
+  <br />
+  <h5 class="text-center">Contact</h5>
+   <p class="text-center"><%= @user.email %>
+    <br /><%= @user.phone_number%></p>
   </div>
 
+    <div class="col-md-4">
+<%= render 'users/sidebar' %>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
-
-
-   <div class="col-8">
-    
-    <div class="card">
-      
-      <div class="card-body">
-        <% @rooms.each do |room| %>
-        <div class="card-header bg-secondary">
+    <div class="container">
+        <div class="card">
+      <div class="card-header bg-secondary">
         <h3>Your Listings</h3>
       </div>
-        <div class="row">
+          <div class="card-body">
+        <% @rooms.each do |room| %>
+       
+          <div class="row">
           <div class="col-md-4">
-             <%= link_to room.listing_name, room %>
-  <% if room.images.attached? %><%= image_tag room.images.first, width: "100%", height: "180px" %><br />
-  <% end %>   
+               <p><%= room.listing_name %></p>
+            <% if room.images.attached? %><%= image_tag room.images.first, width: "280", height: "180px" %>
+         <% end %> 
           </div>
-          <div class="col-md-6">
-        
+          <div class="col-md-4 offset-md-4"><br />
+            <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
           </div>
         </div>
         <hr />
         <% end %>
-     </div>
-   </div>
- </div>
-</div>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+
+
 
 <div class="container">
 <h6>Reviews from Guest (<%= @guest_reviews.count %>)</h6>

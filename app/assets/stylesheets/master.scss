@@ -17,10 +17,12 @@ font-size: 25px;
 font-family: 'amblebold', sans-serif;
 
 
+
 }
 
 body {
 font-family: 'ambleregular', sans-serif;
+
 
 }
 
@@ -45,27 +47,24 @@ boder-radius: none;
 
 }
 
-.jumbotron.jumbotron-fluid {
+.card.card-image {
 background: 
 linear-gradient(
 rgba(0, 0, 0, 0.3),
 rgba(0, 0, 0, 0.3),
 ),
-image_url('luxury2.jpg');
+image_url('luxury3.jpg');
 margin-bottom: 10px;
--webkit-background-size: 100% 100%;
--moz-background-size: 100% 100%;
--o-background-size: 100% 100%;
-background-size: 100% 100%;
-box-shadow: 0px 3px 8px #2a2a2a;
-
-
+height: 400px;
 
 }
 
 
+.search {
+  padding: 0px;
+  paddin-top: 20px;
 
-
+  }
 
 
 .btn {
@@ -187,15 +186,10 @@ width:28px;
 
 
 .avatar2 {
-width: 50%;
-margin-top: 10px;
-margin-left: 100px;
-border-radius: 100%;
+width:300px;
+
 }
-.avatar3 {
-width: 68px;
-border-radius: 100%;
-}
+
 
 .avatar {
 vertical-align: middle;
@@ -327,15 +321,11 @@ display: block;
 
 
 
-.card {
-background-color: none;
-}
-
-
 .card{
 bottom-margin: 10px;
 margin-bottom: 10px;
 text-align: center;
+background-color: none;
 }
 
 
@@ -455,23 +445,35 @@ overflow: hidden;
 }
 
 
-.form-control.searche{
--moz-border-radius: 0px;
--webkit-border-radius: 0px;
-border-radius: 0px;
-border: 1px solid #020A10;
-
-
-
-}
 .form-control.search {
 -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
 border-radius: 0px;
 border: 1px solid #020A10;
-margin-left: 0px;
-background-color: #ab150a;
+display: block;
+width: 100%;
+font-size: 0.980rem;
+line-height: 1.5;
+color: #010a17;
+background-color: #fff;
+border: 1px solid #ccc;
+height: calc(3rem + 2px) !important;
+border-radius:0;
+position: relative;
+text-align: center;
+
+
 }
+
+.search{
+padding: 0px;
+}
+
+.search.btn {
+  background-color:  #ab150a;
+  color: white;
+}
+
 
 .boxes {
 float: left;
@@ -512,6 +514,18 @@ margin-right: 30px;
 
 }
 
+.luxury {
+  
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+height:350px;
+
+}
+
+
+
 
 
 .paris-card {
@@ -520,20 +534,18 @@ background: image_url('pari.jpg');
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-height: 350px;
-box-shadow: 0px 3px 8px #2a2a2a;
+height: 326px;
 padding-bottom: 20px;
 }
 
 
 .lasvegas-card {
-background: image_url('lv.jpg');
+background: image_url('lasvegas.jpg');
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-height: 350px;
-box-shadow: 0px 3px 8px #2a2a2a;
+height: 326px;
 padding-bottom: 20px;
 }
 
@@ -544,73 +556,21 @@ background: image_url('newyork.jpg');
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-height: 350px;
-box-shadow: 0px 3px 8px #2a2a2a;
+height: 326px;
 padding-bottom: 20px;
 }
 
-.orlando-card {
-background: image_url('orlando.jpg');
+.london-card {
+background: image_url('london.jpg');
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-height: 350px;
-box-shadow: 0px 3px 8px #2a2a2a;
+height: 326px;
 padding-bottom: 20px;
 }
 
 
-.search {
-  padding: 0px;
-  paddin-top: 20px;
-
-}
-
-.just-places h3{
-color: white;
-}
-
-
-.lv-text {
-text-align: center;
-padding: 20px;
-
-}
-
-.lv-text h3 {
-color: #b3251b;
-}
-
-
-.newyork-text {
-text-align: center;
-padding-top: 20px;
-}
-
-.orlando-text {
-text-align: center;
-padding-top: 20px;
-}
-
-.orlando-text h3 {
-color: #1b28b3;
-}
-
-.paris-text {
-text-align: center;
-padding-top: 20px;
-}
-
-
-.newyork-text h3{
-color: white;
-}
-
-.paris-text h3 {
-color: #b31b25;
-
-}
 a:hover{
 text-decoration: none;
 }
@@ -648,14 +608,6 @@ list-style-type: none;
 }
 
 
-.amenities.text-line-through {
-text-decoration: line-through;
-color: red;
-font-size: 14px;
-
-}
-
-
 .card-header {
 color: white;
 background-color: white;
@@ -671,5 +623,200 @@ margin-left: 10px;
 .modal-header {
   text-align: left;
 }
+
+
+$brand__color--1: white; // Dark Grey
+$brand__color--2: #54c1f5; // Blue
+$brand__color--3: #ff7a71; // Red
+$brand__color--4: #77787a; // Light Grey
+$brand__color--5: black; // Off-White
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $brand__color--1;
+}
+
+.show--mobile {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: inline-block;
+  }
+}
+
+
+
+.post__container--sidebar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 30px;
+  align-items: start;
+  
+  max-width: 1150px;
+  margin: 0 auto;
+  background: white;
+  color: $brand__color--5;
+  padding: 20px 40px;
+  @media screen and (max-width: 768px) {
+    grid-column-gap: 0;
+    padding: 20px;
+    padding-left:20px;
+  }
+}
+.page__header__content,
+.post__content {
+   // Span the first seven columns
+   grid-column: 1/8;
+   @media screen and (max-width: 768px) {
+     // Full grid width on mobile
+     grid-column: 1/13;
+     
+     margin: 0;
+   }
+}
+.page__header__content {
+  // Fix header content in the first row, always at the top of the page
+  grid-row: 1;
+  
+  h1 {
+    color: $brand__color--2;
+  }
+}
+.post__content {
+  // Fix post content in row 3 on mobile - below the tabs which are in row 2 
+  @media screen and (max-width: 768px) {
+    grid-row: 3;
+    
+    padding: 0;
+  }
+}
+.post__sidebar {
+  // Span the last four columns
+  grid-column: 9/13;
+  grid-row: 1/4;
+  
+  margin-top: -20px;
+  background: white;
+  color: $brand__color--1;
+  padding: 20px;
+  @media screen and (max-width: 1000px) {
+    grid-column: 8/13;
+  }
+  @media screen and (max-width: 768px) {
+    // Full grid width on mobile
+    grid-column: 1/13;
+    grid-row: 3;
+    
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.tabs {
+  clear: both;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.tabs__content--hidden {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+.tabs__content--revealed {
+  @media screen and (min-width: 768px) {
+    display: block !important;
+  }
+}
+
+// Fix the tabs in the second grid row, below the header content
+.tabs__post {
+  grid-row: 2;
+  grid-column: 1/13;
+  
+  background-color: $brand__color--5;
+  border-top: 2px solid $brand__color--5;
+  position: relative;
+  span {
+    display: block;
+    color: $brand__color--1;
+    text-align: center;
+    line-height: 44px;
+    margin: 0;
+    word-break: break-all;
+    &:hover {
+      cursor: pointer;
+      cursor: hand;
+    }
+    &.tab--active {
+      background-color: $brand__color--4;
+      color: $brand__color--5;
+      cursor: default;
+    }
+  }
+}
+
+.tab {
+  display: inline-block;
+  margin: 0;
+  width: 50%;
+  float: left;
+  // box-sizing: border-box;
+}
+
+// The before and after elements on the tabs make them appear full-width
+.tab--js--content {
+  padding-right: 10px;
+  margin: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $brand__color--5;
+    top: -2px;
+    left: -20px;
+    height: calc(100% + 2px);
+    width: 20px;
+  }
+  &.tab--active {
+    &:before {
+      background: $brand__color--5;
+      height: 2px;
+    }
+  }
+}
+
+.tab--js--sidebar {
+  float: right;
+  padding-left: 10px;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $brand__color--5;
+    top: -2px;
+    right: -20px;
+    height: calc(100% + 2px);
+    width: 20px;
+  }
+  &.tab--active {
+    &:before {
+      background: $brand__color--5;
+      height: 2px;
+    }
+  }
+}
+
+
+
+
+.page-video {
+ width: 50vw;
+ height: 50vh; 
+  
+ }
+
+
 
 

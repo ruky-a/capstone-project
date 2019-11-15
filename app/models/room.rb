@@ -5,10 +5,12 @@ class Room < ApplicationRecord
   has_many :amenities
   geocoded_by :address
   after_validation :geocode
-  # has_many :photos
+  has_many :photos
   has_many_attached :images
   has_many :reservations
   has_many :guest_reviews
+  has_one_attached :video
+  has_one_attached :thumbnail
 
   # def thumbnail input
  #    return self.images[input].variant(resize: "1200x500").processed

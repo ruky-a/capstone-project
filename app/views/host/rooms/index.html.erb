@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-4">
       <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar, class: "avatar2" %>
+      <%= image_tag current_user.avatar, class: "rounded-circle", size: 120 %>
       <% else %>
       <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
       <% end %>
@@ -31,23 +31,20 @@
 <br />
 
   <div class="col-8 offset-2">
+     <div class="card">
       <div class="card-header bg-dark">
         <h4 class="text-center">Your Listings</h4>
       </div>
-    <div class="card">
+       <div class="card-body">
       <% @rooms.each do |room| %>
-      <div class="card-body">
-        
+  
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-4">
                <p><%= room.listing_name %></p>
-            <% if room.images.attached? %><%= image_tag room.images.first, width: "280px", height: "180px" %>
+            <% if room.images.attached? %><%= image_tag room.images.first, width: "280", height: "180px" %>
          <% end %> 
           </div>
-          <div class="col-md-7">
-         
-          </div>
-          <div class="col-md-3 right">
+          <div class="col-md-4 offset-md-4"><br />
             <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
           </div>
         </div>

@@ -17,6 +17,7 @@ module Hospitality
     # the framework and any gems in your application.
 
    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+  config.assets.paths << "#{Rails.root}/app/assets/videos"
 
 
     config.assets.precompile += %w( .svg .eot .woff .ttf )

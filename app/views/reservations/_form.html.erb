@@ -1,7 +1,5 @@
 
-
-
-<div class="box card test-white">
+<div class="card">
   <div class="card-header" style="background-color:  #ab150a;" >
     <span class="pull-left"><i class="fa fa-bolt" style="color: #CC0000"></i> $<%= @room.rate %></span>
     <span class="pull-right">Per Night</span>
@@ -11,7 +9,7 @@
     <div class="row">
       <div class="col-md-6">
         <label>Check In</label>
-        <%= f.text_field :start_date, readonly: true, placeholder: "Start_Date", class: "form-control datepicker" %>
+        <%= f.text_field :start_date, readonly: true, placeholder: "Start_Date", class: "form-control datepicker" %><br />
       </div>
       <div class="col-md-6">
         <label>Check Out</label>
@@ -19,6 +17,7 @@
         <br />
       </div>
     </div>
+    <hr />
 
     <h4 class="message-alert text"><span id="message"></span></h4>
     <div id="preview" style="display: none">

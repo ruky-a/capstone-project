@@ -1,155 +1,315 @@
+ <hr/>
+ <div class="box col-8 offset-2">
+    <h3><%= @room.listing_name %></h3>
+    <% if @room.images.attached? %><%= image_tag @room.images.first, width: "100%", height: "400px"  %>
+    <% end %>
+   
+    <div class="footer">
+    </div>
+  </div>
+
+  
+<div class="container">
+  <div class="col-md-12">
+    <div class="row"> 
+      <div class="col-md-8">
+        <h3><%= @room.listing_name %></h3>
+      </div>
+
+      <div class="col-md-4">
+        <span class="pull-right">
+          <span id="average_rating"></span>
+          <div id="star_<%= @room.id %>"></div> <%= pluralize(@room.guest_reviews.count, "review") %></span>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <div class="row">
+            <% @room.amenities.each do |amenity| %>
+
+            <div class="col-md 2 ">
+              <span class="pull-left"><i class="fa fa-home fa-2x"  style="color:  #E43A21;"></i> <%= amenity.hometype %></span><br />
+            </div>
+
+            <div class="col-md 2 ">
+              <span class="pull-left"><i class="fa fa-user fa-2x"  style="color:  #E43A21;"></i> <%=  pluralize(amenity.accommodate, "Guest") %></span>
+            </div>
+
+
+            <div class="col-md 2">
+              <span class="pull-left"><i class="fa fa-bed fa-2x" style="color:  #E43A21"></i> 
+                <%= pluralize(amenity.bedroom, "Bedroom") %></span><br />
+              </div>
+
+              <div class="col-md 2">
+                <span class="pull-left"><i class="fa fa-bath fa-2x" style="color:  #E43A21;"></i> <%=  pluralize(amenity.bathroom, "Bathroom") %></span><br />
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+
+
+
+
+    <div class="post__container--sidebar">
+      <div class="page__header__content">
+      </div>
+
+      <div class="tabs tabs__post show--mobile">
+        <span class="h5 tab tab--js--content tab--active">Description</span>
+        <span class="h5 tab tab--js--sidebar">Book Now</span>
+      </div>
+
+      <div class="post__content">
+        <h3>About Listing</h3>
+       <p><%= @room.description %></p>
+      </div>
+
+
+      <div class="post__sidebar tabs__content--hidden">
+        <%= render 'reservations/form' %>
+      </div>
+      <hr />
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="container">
+
+    <hr />
+    <div class="row">
+      <div class="box col-md-8">
+        <% @room.amenities.each do |amenity| %>
+         <h3>Amenities </h3>
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="amenities">
+              <br />
+              <li class="<%= 'text-line-through' if !amenity.tv %>">TV</li>
+              <li class="<%= 'text-line-through' if !amenity.kitchen %>">Kitchen</li>
+              <li class="<%= 'text-line-through' if !amenity.internet %>">Wifi</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="amenities">
+              <br />
+              <li class="<%= 'text-line-through' if !amenity.swimming %>">Swimming Pool</li>
+              <li class="<%= 'text-line-through' if !amenity.air %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !amenity.restaurant %>">Restaurant</li>
+            </ul>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
+      <div class="box col-md-4">
+        <h6 class="text-center">Owner
+          <br /><% if @room.user.avatar.attached? %>
+
+          <%= image_tag @room.user.avatar, class: "rounded-circle", size: 80 %>
+          <% end %>
+        </h6>
+        <div class="text-center">
+          <p><%= @room.user.fullname %><br />Member Since: <%= @room.user.created_at.strftime("%Y") %></p>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+
+
 <div class="container">
   <div class="row">
-  <div class="box col-md-10">
-        <h3><%= @room.listing_name %></h3>
-        <% if @room.images.attached? %><%= image_tag @room.images.first, width: "100%", height: "400px"  %>
-        <% end %>
-        <br />
-        <div class="footer">
-      <br />
-       <div class="row">
-        <% @room.amenities.each do |amenity| %>
-        <div class="col-md 4 ">
-          <span class="pull-left"><i class="fa fa-home fa-1x"></i> <%= amenity.hometype %></span><br />
+     <% if @room.video.attached? %>
+<div style="width: 800px; height:500px">
 
-
-          <span class="pull-left"><i class="fa fa-user fa-1x"></i> <%=  pluralize(amenity.accommodate, "Guest") %></span>
-        </div>
-
-
-        <div class="col-md 4">
-          <span class="pull-left"><i class="fa fa-bed fa-1x"></i> <%= pluralize(amenity.bedroom, "Bedroom") %></span><br />
-
-          <span class="pull-left"><i class="fa fa-bath fa-1x"></i> <%=  pluralize(amenity.bathroom, "Bathroom") %></span><br />
-
-        </div>
-        <% end %>
-      </div>
-        </div>
-      </div>
-      <div class="box col-md-2">
-          <br />
-          <% if @room.user.avatar.attached? %>
-       <%= image_tag @room.user.avatar, class: "rounded-circle", size: 120 %>
-       <% end %>
-     </div>
-   </div>
- </div>
+  <video id='my-video' class='video-js vjs-big-play-centered vjs-fluid' controls preload='auto' width='auto' height='auto'
+  poster="<%= image_path('black.jpg') %>" data-setup='{}'>
  
-   
-     
-      <div class="container">
-        <div class="row">
-      <div class="box col-md-6">
-        <h3>About Listing</h3><hr />
-      <p><%= @room.description %></p>
-    </div>
-        <div class="box col-md-6">
-       <div class="row">
-<!--        <span class="text-center"><%= pluralize(@guest_reviews.count, "Review") %></span> -->
-   <!--    <span id="average_rating"></span> -->
-      <div class="container">
-   <%= render "reviews/guest_list" %>
-     </div>
-   </div>
-   </div>
- </div>
+      <source src="<%= url_for(@room.video)%>" type='video/mp4'>
+        <% end %>
+    <noscript>
+      <p class='vjs-no-js'>
+        To view this video please enable JavaScript, and consider upgrading to a web browser that
+        <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+      </p>
+    </noscript>
+  </video>
+  </div>
+</div>
 </div>
 
 
-       
-   <div class="container">
-  <%= render 'host/photos/photos' %>
-</div><br />
+ 
+  <div class="container">
+    <% if @room.latitude.present? && @room.longitude.present? %>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
 
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+        var infoWindow = new google.maps.InfoWindow ({
+          content: '<div id="content"><%= image_tag @room.images.first, width: "280px", height: "180px" %></div>'
+        });
+
+        infoWindow.open(map, marker);
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
+  </script>
+  <div id="map"></div>
+  <% end %>
+</div>
+<br />
+
+
+
+
+<% if @guest_reviews.count == 0 %>
+<div class="text-center">
+  <h4>There are no reviews.</h4>
+</div>
+<% else %>
 
 
 <div class="container">
- <div class="row">
-    <div class="box col-md-7">
-      <% if @room.latitude.present? && @room.longitude.present? %>
-      <script>
-        function initMap() {
-          var myLatLng = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+  <div class="row">
+    <div class="col-md-10">
+      <% @guest_reviews.order(id: :desc).each do |r| %>
+      <div class="card-header">
+        <p>Reviews</p>
+      </div>
+      <div class="card-body">
+        <div class="col-md-2">
+          <% if r.guest.avatar.attached? %>
+          <%= image_tag r.guest.avatar, class: "rounded-circle", size: 40 %>
+          <strong><%= r.guest.fullname %></strong>
+        </div>
+        <div class="col-md-8">
+          <div id="star_<%= r.id %>"></div>
 
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: myLatLng
-          });
-
-          var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-          });
-          var infoWindow = new google.maps.InfoWindow ({
-            content: '<div id="content"><%= image_tag @room.images.first, width: "280px", height: "180px" %></div>'
-          });
-
-          infoWindow.open(map, marker);
-
-        }
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&callback=initMap">
-    </script>
-    <div id="map"></div>
-    <% end %>
-
-    <span class="pull-left"><i class="fa fa-map-marker fa-1x" style="color:  #404040"> </i> <%= link_to @room.address %></span><br />
-    <span class="pull-left"><i class="fa fa-envelope fa-1x" style="color:  #404040"> </i> <%= @room.user.email %></span><br />
-  
+          <% if current_user && current_user == r.guest %>
+          <span class="pull-right">
+            <%= link_to r, method: :delete, data: {confirm: "Are you sure?"} do %>
+            <i class="fa fa-trash-o fa-lg"></i>
+            <% end %>
+          </span>
+          <% end %>
+          <div><%= r.created_at.strftime("%v") %></div>
+          <div><%= r.comment %></div>
+          <hr />
+        </div>
+      </div>
+      <% end %>
     </div>
-
-  
-    <div class="col-md-5">
-  
-     <%= render 'reservations/form' %>
-   </div>
- </div>
+  </div>
 </div>
 
+<script>
+  $('#star_<%= r.id %>').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= r.star %>
+  });
+</script>
 
-
-
-
-
+<% end %>
+<% end %>
+</div>
+</div>
+</div>
+</div>
 
 
 
 
 <script>
-$('#average_rating').raty({
-path: '/assets',
-readonly: true,
-score: <%= @room.average_rating %>
+  $('#average_rating').raty({
+    path: '/assets',
+    readonly: true,
+    score: <%= @room.average_rating %>
 
-});
+  });
 </script>
 
 
 
-
+<br /><br />
 
 <div class="container"> 
-     <h3 class="text-center">Rooms Nearby</h3>
+  <h3 class="text-center">Rooms Nearby</h3><br />
   <div class="row">
-<% for room in @room.nearbys(10) %>
-  <div class="col-md-3">
-    <div class="card"> 
-     <%= image_tag room.images.first, width: "100%", height: "100%"  %>
-      <div class="card-body"> 
+    <% for room in @room.nearbys(10) %>
+    <div class="col-md-3">
+      <div class="card"> 
+            <% if room.images.attached? %>
+        <%= image_tag room.images.last, width: "100%", height: "100%"  %>
+        <% end %>
+        <div class="card-body"> 
           <h4 class="card-title"><%= link_to room.listing_name, room %></h4>  
-               <div class="footer">
-                  <span> $<%= room.rate %></span>
-                  <span>Per Night</span>
-                </div>
-                <br />
-            (<%= room.distance.round(2) %> miles away) 
-               <% end %>
-                </div> 
-            </div>
-            </div>
+          <div class="footer">
+            <span> $<%= room.rate %></span>
+            <span>Per Night</span>
           </div>
-          </div>
+          (<%= room.distance.round(2) %> miles away) 
+        </div>
+      </div>
+    </div>
+          <% end %>
+      </div>
+    </div>
+
+
+
+
+<script>
+  $(".tab").on('click', function() {
+    $(".tab").removeClass("tab--active");
+    $(this).addClass("tab--active");
+
+    if ($(this).hasClass("tab--js--content")) {
+      $(".post__content")
+      .removeClass("tabs__content--hidden")
+      .addClass("tabs__content--revealed");
+      $(".post__sidebar")
+      .removeClass("tabs__content--revealed")
+      .addClass("tabs__content--hidden");
+    } else if ($(this).hasClass("tab--js--sidebar")) {
+      $(".post__sidebar")
+      .removeClass("tabs__content--hidden")
+      .addClass("tabs__content--revealed");
+      $(".post__content")
+      .removeClass("tabs__content--revealed")
+      .addClass("tabs__content--hidden");
+    }
+  });
+</script>
 
