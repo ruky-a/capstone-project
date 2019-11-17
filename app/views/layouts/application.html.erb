@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hospitality</title>
+    <title>Tripsort</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVI2DOGtO42Xt_-e9elvVoFH2vL0WyaMI&libraries=places"></script>
      
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
      <link href="https://vjs.zencdn.net/7.6.5/video-js.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
@@ -22,7 +23,6 @@
   <%= render "devise/shared/flash" %>
 
  <div id="flex-content-container">
-  <%= yield :sidebar %>
     <%= yield %>
       
   </div>

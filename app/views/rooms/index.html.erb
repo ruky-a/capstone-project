@@ -16,7 +16,6 @@
 
 <br /><br />
 <div class="container"> 
-  <%= will_paginate @rooms %>
   <div class="row">
     <% @rooms.each do |room| %>
     <div class="col-md-4">
@@ -29,7 +28,8 @@
           <div class="footer">
             <span> $<%= room.rate %></span>
             <span>Per Night</span>
-
+            <br />
+      <%= pluralize(room.guest_reviews.count, "review") %>
           </div>
           <br />
           <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
@@ -38,6 +38,13 @@
 
       </div>
     </div>
+      <script>
+      $('#star_<%= room.id %>').raty({
+        path: '/assets',
+        readOnly: true,
+        score: <%= room.average_rating %>
+      });
+    </script>
     <% end %>
   </div>
 </div>

@@ -17,7 +17,6 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/widgets/slider
-//= require jquery.raty.js
 //= require toastr
 //= require activestorage
 //= require turbolinks

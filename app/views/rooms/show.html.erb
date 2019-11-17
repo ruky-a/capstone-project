@@ -39,14 +39,11 @@
 
 
         <div class="col-md-4">
-          <span class="pull-right">
-            <span id="average_rating"></span>
-            <div id="star_<%= @room.id %>"></div> <%= pluralize(@room.guest_reviews.count, "review") %></span>
           </div>
         </div>
       </div>
     </div>
-
+         
 
     <hr />
 
@@ -188,76 +185,16 @@
 
 
 
-<% if @guest_reviews.count == 0 %>
-<div class="text-center">
-  <h4>There are no reviews.</h4>
-</div>
-<% else %>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <% @guest_reviews.order(id: :desc).each do |r| %>
-      <div class="card-header">
-        <p>Reviews</p>
-      </div>
-      <div class="card-body">
-        <div class="col-md-2">
-          <% if r.guest.avatar.attached? %>
-          <%= image_tag r.guest.avatar, class: "rounded-circle", size: 40 %>
-          <strong><%= r.guest.fullname %></strong>
-        </div>
-        <div class="col-md-8">
-          <div id="star_<%= r.id %>"></div>
-
-          <% if current_user && current_user == r.guest %>
-          <span class="pull-right">
-            <%= link_to r, method: :delete, data: {confirm: "Are you sure?"} do %>
-            <i class="fa fa-trash-o fa-lg"></i>
-            <% end %>
-          </span>
-          <% end %>
-          <div><%= r.created_at.strftime("%v") %></div>
-          <div><%= r.comment %></div>
-          <hr />
+<!-- REVIEWS -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container">
+          <div><%= render "reviews/guest_list" %></div>
         </div>
       </div>
-      <% end %>
     </div>
-  </div>
-</div>
+    <br/>
 
-<script>
-  $('#star_<%= r.id %>').raty({
-    path: '/assets',
-    readOnly: true,
-    score: <%= r.star %>
-  });
-</script>
-
-<% end %>
-<% end %>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-<script>
-  $('#average_rating').raty({
-    path: '/assets',
-    readonly: true,
-    score: <%= @room.average_rating %>
-
-  });
-</script>
-
-
-
-<br /><br />
 
 <div class="container"> 
   <h3>Rooms Nearby</h3><br />
@@ -285,6 +222,20 @@
 
 
 
+
+
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @room.average_rating %>
+  }); 
+</script>
+
+
+
+
 <script>
   $(".tab").on('click', function() {
     $(".tab").removeClass("tab--active");
@@ -307,4 +258,5 @@
     }
   });
 </script>
+
 
