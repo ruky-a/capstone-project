@@ -1,4 +1,4 @@
-<section>
+
    <div class="card card-image" style="background-image: url(/assets/couple.jpg);">
   <div class="text-white text-center rgba-stylish-strong py-5 px-4"><h2>Luxury Homes For Short Staycation</h2>
      <p>Experience hospitality like never before</p>
@@ -30,28 +30,10 @@
         </div>
       </div>
     </div>
-  </section>
+    <br />
 
 
-  <br />
-
-<div class="col-md-12 offset-md-3">
-  <div class="video">
-<%= video_tag "Coquillade_.mp4",:controls => true  %>
-</div>
-</div>
-
-
-
-
-
-<br /><br />
-
-
-
-
-
-<div class="container">
+    <div class="container">
   <div class="row">
    <div class="col-md-4" style="max-width: 500px; text-align: center; padding-top: 20px;">
       <h3> Do you have a luxurious accommodation?</h3>
@@ -65,6 +47,23 @@
     </div>
   </div>
 </div>
+
+
+    
+    <div class="col-md-8 offset-md-2">
+  <video id='my-video' controls=true width=480 height=360
+      poster="<%= image_path('luxury4.jpg') %>">
+      <source src="<%= video_path('beach.mp4')%>" type='video/mp4'>
+        <noscript>
+          <p class='vjs-no-js'>
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+          </p>
+        </noscript>
+      </video>
+    </div>
+    <br /><br />
+
 
 
   <br /><br /><br />
@@ -155,4 +154,4 @@
         $("#autolocation").geocomplete();
       })
     </script>
-
+</div>
