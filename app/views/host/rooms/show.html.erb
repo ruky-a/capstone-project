@@ -69,16 +69,6 @@
 
 
 
-
-<div class="container">
-  <%= pluralize(@guest_reviews.count, "Review") %>
-  <span id="average-rating"></span>
-  <div><%= render "reviews/guest_list" %>
-  </div>
-</div>
-<br />
-
-
 <%= render 'host/photos/photos_list' %>
 <%= render 'host/rooms/modal' %>
 <%= render 'host/rooms/roomratemodal' %>

@@ -24,14 +24,10 @@
         <% end %>
         <div class="card-body"> 
           <h3 class="card-title"><%= link_to room.listing_name, room_path(room) %></h3>  
-          <p class="card-text"><%= room.address %></p>
-          <div class="footer">
+          <h6 class="card-text"><%= room.address %></h6>
             <span> $<%= room.rate %></span>
-            <span>Per Night</span>
-            <br />
-      <%= pluralize(room.guest_reviews.count, "review") %>
-          </div>
-          <br />
+            <span>Per Night</span><br />
+      <%= pluralize(room.guest_reviews.count, "review") %><br />
           <%= link_to 'Book Now', room_path(room), class: " btn btn-danger btn-sm" %>
 
         </div> 

@@ -1,13 +1,12 @@
 
    <div class="card card-image" style="background-image: url(/assets/couple.jpg);">
   <div class="text-white text-center rgba-stylish-strong py-5 px-4"><h2>Luxury Homes For Short Staycation</h2>
-     <p>Experience hospitality like never before</p>
+     <p>Plan your Dream Vacation to Experience Hospitality Like Never Before</p>
+   </div>
     <div class="py-5"> 
-    
     </div>
   </div>
-</div>
-        
+
         <div class=" box col-12"  style="background-color: rgba(26, 70, 104, 0.20); margin-top: -10px; padding-bottom: 0px;">
         <div class="container">
            <%= form_tag search_path, method: :get do %>
@@ -24,20 +23,18 @@
               <br />
             </div>
            <div class="col-md-2 search">
-          <%= submit_tag "Search", class: " form-control search btn btn-danger" %>
+          <%= submit_tag "Search", class: " form-control search btn btn-dark" %>
         </div>
           <% end %>
         </div>
       </div>
     </div>
-    <br />
+
 
 <div class="col-6 offset-3">
 <div class="wrapper">
   <div class="videocontent">
-<video id="myvideo" class="video-js vjs-fluid vjs-big-play-centered" controls
- preload="auto" width="640" height="360" poster="<%= image_path('luxury4.jpg')%>"
-data-setup='{}'>
+<video class="video-fluid z-depth-1" autoplay loop controls muted>
  <source src="<%= video_path('Coquillade_.mp4')%>" type='video/mp4'>
 </video>
 </div>
@@ -45,32 +42,27 @@ data-setup='{}'>
 </div>
 <br />
 
-
-
     <div class="container">
   <div class="row">
-   <div class="col-md-6" style="max-width: 500px; text-align: center; padding-top: 20px;">
-      <h3> Do you have a luxurious accommodation?</h3>
-      <p>Hotel-Resort-Home<br />
-      Join Now to Upload your Listing</p><br />
-       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-danger btn-lg' %></li><br /><br />
+   <div class="col-md-6" style="max-width: 500px; text-align: center; padding-top: 50px;">
+        <h3><span class="red">Do you own a luxurious accommodation?</span></h3><h3>
+         <h3>Hotel-Resort-Home</h3>
+         <br />
+       <p>Upload Listing to Get Bookings</p>
+        
+       <%= link_to 'Sign up and become a host', new_user_registration_path, class: 'btn btn-danger ' %></li><br /><br />
      </div>
-
-  
       <div class="col-md-6 luxury"style="background-image: url(/assets/luxury5.jpg);">
     </div>
   </div>
 </div>
-<br />
+<br /><br />
 
-  
+<div><h3 class="text-center">Featured Accommodations Around the World.</h3></div><br />
  <div class="row">
   <%= render "host/rooms/list_room" %>
 </div>
-
-
-
-<br />
+<br /><br />
       
     <div class="container">
       <div><h3 class="text-center">Top Destinations To Explore</h3></div><br />
