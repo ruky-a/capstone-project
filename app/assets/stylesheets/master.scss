@@ -7,18 +7,19 @@ $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 .navbar-toggler  { 
 border: none; 
 outline: none!important;
-
-
 }
 
 
-.navbar-brand {
-font-size: 25px;
-font-family: 'amblebold', sans-serif;
 
 
-
+a.navbar-brand{
+color: #DA3B20;
+font-family: 'roboto';
+font-size: 28px;
+font-color: red;
+ 
 }
+
 
 body {
 font-family: 'ambleregular', sans-serif;
@@ -47,14 +48,24 @@ boder-radius: none;
 }
 
 .card.card-image {
-background: image_url('couple.jpg');
+background: 
+linear-gradient(
+rgba(0, 0, 0, 0.3),
+rgba(0, 0, 0, 0.3),
+),
+image_url('couple.jpg');
 -webkit-background-size: 100% 100%;
 -moz-background-size: 100% 100%;
 -o-background-size: 100% 100%;
 background-size: 100% 100%;
-box-shadow: 0px 3px 8px #2a2a2a;
+boder-radius: none;
 margin-bottom: 10px;
 height: 400px;
+}
+
+.card.card-image h2{
+  font-weight: 200;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
 }
 
 .btn {
@@ -335,51 +346,6 @@ color: white;
 }
 
 
-
-
-.todo-list {
-margin-left: 100px;
-padding: 0;
-padding-top: 5px;
-list-style: none;
-
-}
-
-.todo-list li {
-position: relative;
-font-size: 18px;
-border-bottom: 1px solid #ededed;
-
-}
-
-.todo-list li:last-child {
-border-bottom: none;
-}
-
-
-.todo-list li.editing .view {
-display: none;
-}
-
-.todo-list li .toggle {
-text-align: center;
-width: 40px;
-/* auto, since non-WebKit browsers doesn't support input styling */
-height: auto;
-position: absolute;
-top: 0;
-bottom: 0;
-margin: auto 0;
-border: none; /* Mobile Safari */
--webkit-appearance: none;
-appearance: none;
-}
-
-.todo-list li .toggle {
-opacity: 0;
-}
-
-
 .message-alert {
 color: #103D65;
 }
@@ -409,7 +375,6 @@ background-color: #fff;
 border: 1px solid #ccc;
 height: calc(3rem + 2px) !important;
 position: relative;
-text-align: center;
 }
 
 
@@ -421,9 +386,9 @@ paddin-top: 20px;
 
 
 .search.btn {
-background-color:  #ab150a
-  
-;
+background-color:  #ab150a;
+
+
 color: white;
 }
 
@@ -541,8 +506,6 @@ background-color: white;
 }
 
 
-
-
 .publish {
 border-radius: 50px;
 }
@@ -560,170 +523,12 @@ color: white;
 background-color: white;
 }
 
-
-.nav-link {
-margin-left: 10px;
-}
-
-
 .modal-header {
 text-align: left;
 }
 
 
-* {
-box-sizing: border-box;
-}
-
-.show--mobile {
-display: none;
-@media screen and (max-width: 768px) {
-display: inline-block;
-}
-}
-
-
-
-.post__container--sidebar {
-display: grid;
-grid-template-columns: 2;
-grid-gap: 10px;
-align-items: start;
-max-width: 1200px;
-margin: 0 auto;
-background: white;
-color: black;
-padding: 20px 30px;
-padding: 20px;
-padding-left:20px;
-}
-
-
-
-.post__content {
-// Fix post content in row 3 on mobile - below the tabs which are in row 2 
-@media screen and (max-width: 768px) {
-grid-row: 3;
-
-padding: 0;
-}
-}
-.post__sidebar {
-// Span the last four columns
-grid-column: 9/13;
-grid-row: 1/4;
-
-margin-top: -20px;
-background: white;
-color: #d1270d;
-padding: 20px;
-@media screen and (max-width: 1000px) {
-grid-column: 8/13;
-}
-@media screen and (max-width: 768px) {
-// Full grid width on mobile
-grid-column: 1/13;
-grid-row: 3;
-
-margin: 0 auto;
-width: 100%;
-}
-}
-
-.tabs {
-clear: both;
-@media screen and (max-width: 768px) {
-width: 100%;
-}
-}
-.tabs__content--hidden {
-@media screen and (max-width: 768px) {
-display: none !important;
-}
-}
-.tabs__content--revealed {
-@media screen and (min-width: 768px) {
-display: block !important;
-}
-}
-
-
-.tabs__post {
-grid-row: 2;
-grid-column: 1/13;
-
-background-color: black;
-border-top: 2px solid black;
-position: relative;
-span {
-display: block;
-color: #d1270d;
-text-align: center;
-line-height: 44px;
-margin: 0;
-word-break: break-all;
-&:hover {
-cursor: pointer;
-cursor: hand;
-}
-&.tab--active {
-background-color: #77787a;
-color: black;
-cursor: default;
-}
-}
-}
-
-.tab {
-display: inline-block;
-margin: 0;
-width: 50%;
-float: left;
-// box-sizing: border-box;
-}
-
-// The before and after elements on the tabs make them appear full-width
-.tab--js--content {
-padding-right: 10px;
-margin: 0;
-&:before {
-content: "";
-position: absolute;
-background: black;
-top: -2px;
-left: -20px;
-height: calc(100% + 2px);
-
-}
-&.tab--active {
-&:before {
-background: black;
-height: 2px;
-}
-}
-}
-
-.tab--js--sidebar {
-float: right;
-padding-left: 10px;
-&:before {
-content: "";
-position: absolute;
-background: black;
-top: -2px;
-right: -20px;
-height: calc(100% + 2px);
-width: 20px;
-}
-&.tab--active {
-&:before {
-background: black;
-height: 2px;
-}
-}
-}
-
-  .video-fluid {
+.video-fluid {
   width: 100%;
   height: auto;
 }
@@ -731,4 +536,8 @@ height: 2px;
 
 .red {
   color: red;
+}
+
+.host {
+  margin-left: 10px;
 }

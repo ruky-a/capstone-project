@@ -11,20 +11,20 @@
           <% end %>
           <div class="card-body">
             <h4><%= @user.fullname %></h4>
-            <p>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></p>
-            </div>
-            <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-dark btn-block" %>
+            Member Since: <%= @user.created_at.strftime("%B %d, %Y") %>
+          </div>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-dark btn-block" %>
         </div>
       </div>
 
       <div class="col-md-4"><br />
         <div class="box">
-        <h3 class="text-center">About me</h3>
-        <br />
-        <h5 class="text-center">Contact</h5>
-        <p class="text-center"><%= @user.email %>
-          <br /><%= @user.phone_number%></p>
-        </div>
+          <h3 class="text-center">About me</h3>
+          <br />
+          <h5 class="text-center">Contact</h5>
+          <p class="text-center"><%= @user.email %>
+            <br /><%= @user.phone_number%></p>
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -35,34 +35,34 @@
   </div>
 
 
-<div class="container"> 
-  <h3>Your Listings</h3><br />
-  <div class="row">
-    <% @rooms.each do |room| %>
-    <div class="col-md-6">
-      <div class="card"> 
-            <% if room.images.attached? %><%= image_tag room.images.first, width: "100%", height: "100%" %>
-            <% end %> 
-        <div class="card-body"> 
-          <p><%= room.listing_name %></p>
-   <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
- </div>
-</div>
-</div>
-   <% end %>
- </div>
-</div>
+  <div class="container"> 
+    <h3 class="text-center">Your Listings</h3><br />
+    <div class="row">
+      <% @rooms.each do |room| %>
+      <div class="col-md-6">
+        <div class="card"> 
+          <% if room.images.attached? %><%= image_tag room.images.first, width: "100%", height: "100%" %>
+          <% end %> 
+          <div class="card-body"> 
+            <p><%= room.listing_name %></p>
+            <%= link_to "Update", host_room_path(room), class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
 
   <div class="container">
-    <h6>Reviews from Guest (<%= @guest_reviews.count %>)</h6>
+    <h6 class="text-center">Reviews from Guest (<%= @guest_reviews.count %>)</h6>
     <%= render "reviews/guest_list" %>
   </div>
 
 
 
   <div class="container">
-    <h6>Reviews from Host (<%= @host_reviews.count %>)</h6>
+    <h6 class="text-center">Reviews from Host (<%= @host_reviews.count %>)</h6>
     <%= render "reviews/host_list" %>
   </div>
 </div>
