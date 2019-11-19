@@ -1,0 +1,20 @@
+
+  <div class="box col-10 offset-1">
+  <h2>user dashboard</h2>
+     <div class="col-md-4">
+        <div class="card" style="width:250px">
+          <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, class: "avatar2" %>
+          <% else %>
+          <%= image_tag gravatar_image_url(current_user.email), class: "avatar2" %>
+          <% end %>
+          
+          <div class="card-header">
+            <h3><%= current_user.fullname %></h3>
+          </div>
+          <div class="card-body">
+          </div>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-danger btn-block" %>
+        </div>
+      </div>
+

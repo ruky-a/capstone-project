@@ -30,6 +30,7 @@ gem 'jquery-ui-rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1.0'
 gem "figaro"
+gem 'twilio-ruby'
 
 gem 'image_processing', '~> 1.2'
 
