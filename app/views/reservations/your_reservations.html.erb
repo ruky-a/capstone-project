@@ -72,7 +72,7 @@
           <% end %>
      
             <div class="col-md-4">
-              <%= render partial: "reviews/host_reviews_new", locals: {reservation: reservation} %>
+              <%= render partial: "reviews/host_reviews_new", locals: {reservation: reservation} if reservation.Approved?%>
             </div>
         </div>
       </div>
