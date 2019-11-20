@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_reservation, only: [:approve, :decline]
 
   def create
     room = Room.find(params[:room_id])
@@ -14,9 +15,19 @@ class ReservationsController < ApplicationController
     @reservation.room = room
     @reservation.rate = room.rate
     @reservation.total = room.rate * days
-    @reservation.save
+    # @reservation.save
 
-    flash[:notice] = "Booked Successfully"
+    if @reservation.save
+      if room.Request?
+        flash[:notice] ='Request sent successfully!'
+    else
+      @reservation.Approved! 
+          flash[:notice] = "Reservation created Successfully"
+        end
+      else
+    flash[:notice] = "Cannot make a Reservation"
+   end
+    
    end
    redirect_to room
   end
@@ -31,8 +42,23 @@ class ReservationsController < ApplicationController
     @rooms = current_user.rooms
   end
 
+  def approve
+   @reservation.Approved!
+      redirect_to your_reservations_path
+  end
+
+
+  def decline
+    @reservation.Declined!
+    redirect_to your_reservations_path
+  end
+
   
   private
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)

@@ -109,6 +109,6 @@ class Host::RoomsController < ApplicationController
 
 
   def room_params
-    params.require(:room).permit(:listing_name, :description, :address, :rate, :web_url, :video, :thumbnail, images: [])
+    params.require(:room).permit(:listing_name, :description, :address, :home_type, :room_type, :adult, :kids, :bedroom, :bathroom, :rate, :web_url, :video, :thumbnail, :instant, images: [])
   end
 end

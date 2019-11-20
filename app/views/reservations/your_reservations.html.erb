@@ -42,23 +42,33 @@
 
     
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
  <%= reservation.start_date.strftime('%v') %>  to
    <%= reservation.end_date.strftime('%v') %>
+   <p><%= reservation.status %></p>
+   <div class="form-inline">
+    <% if reservation.Waiting? %>
+  <%= link_to approve_reservation_path(reservation), method: :post do %> <i class="fa fa-thumbs-up fa-lg"></i> <% end %>   | 
+     <%= link_to  decline_reservation_path(reservation), method: :post do %><i class="fa fa-thumbs-down fa-lg"></i><% end %>
+     <% end %>
+  </div>
+
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
            <%= link_to room_path(reservation.room) do %>
           <%= link_to reservation.room.listing_name, room_path(reservation.room) %>
-          <%= image_tag reservation.room.images.first, width: "100%", height: "180px"  %>
+          <%= image_tag reservation.room.images.first, width: "100%", height: "100px"  %>
           <% end %>
      
         </div>
         <br /><br />
-        <div class="col-md-4">
+        <div class="col-md-2">
                    <%= link_to user_path(reservation.user) do %>
+                      <% if reservation.user.avatar.attached? %>
             <%= image_tag reservation.user.avatar, class: "rounded-circle", size: 40 %>
             <%= reservation.user.fullname %>
           </div>
+          <% end %>
           <% end %>
      
             <div class="col-md-4">

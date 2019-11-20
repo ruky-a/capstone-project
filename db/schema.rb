@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_022354) do
+ActiveRecord::Schema.define(version: 2019_11_19_234855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_022354) do
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -103,6 +104,13 @@ ActiveRecord::Schema.define(version: 2019_11_19_022354) do
     t.boolean "active"
     t.decimal "price"
     t.string "web_url"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "adult"
+    t.integer "kids"
+    t.integer "bathroom"
+    t.integer "bedroom"
+    t.integer "instant", default: 1
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
@@ -127,5 +135,11 @@ ActiveRecord::Schema.define(version: 2019_11_19_022354) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reservations", "rooms"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "reservations"
+  add_foreign_key "reviews", "rooms"
+  add_foreign_key "reviews", "users", column: "guest_id"
+  add_foreign_key "reviews", "users", column: "host_id"
 end

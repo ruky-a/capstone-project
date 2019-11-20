@@ -38,6 +38,12 @@ Rails.application.routes.draw do
   end
     resources :guest_reviews, only: [:create, :destroy]
     resources :host_reviews, only: [:create, :destroy]
+    resources :reservations, only: [:approve, :decline] do
+      member do 
+        post '/approve' => "reservations#approve"
+        post '/decline' => "reservations#decline"
+      end
+    end
    
 
    get '/your_reservations' => 'reservations#your_reservations'

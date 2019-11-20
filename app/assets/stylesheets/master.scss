@@ -169,11 +169,11 @@ border-radius: 100%;
 }
 
 
-.form-group select {
+.field select {
 width: 100%;
 color: #eddad5c;
 background-color: white;
-border: 1px solid #db2727;
+border: 1px solid #3e2723;
 border-radius: 2px;
 padding: 10px;
 appearance: none;
@@ -181,13 +181,16 @@ appearance: none;
 -webkit-appearance: none; /* Safari & Chrome */
 }
 
+.form-field {
+  border: 1px solid #3e2723;
+}
 
 .select:before {
 content: '\25bc';
 font-size: 0.90em;
 position: absolute;
-color: #db2727;
-top: 45px;
+color: #3e2723;
+top: 15px;
 right: 30px;
 transform: scale(0.94, 0.62);
 }

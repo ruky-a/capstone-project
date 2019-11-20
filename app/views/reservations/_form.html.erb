@@ -1,7 +1,7 @@
 
 <div class="card">
   <div class="card-header" style="background-color:  #ab150a;" >
-    <span class="pull-left"><i class="fa fa-bolt" style="color: #CC0000"></i> $<%= @room.rate %></span>
+    <span class="pull-left"><% if @room.Instant? %><i class="fa fa-bolt" style="color: #CC0000"></i> <% end %>$<%= @room.rate %></span>
     <span class="pull-right">Per Night</span>
   </div>
   <div class="card-body">
@@ -40,10 +40,14 @@
       </table>
     </div>
 
-
+    <% if @room.Instant? %>
     <%= f.submit "Book Now", id: "btn_book", class: 'my-btn btn-block', disabled: true %>
+    <% else %>
 
-    <% end %>
+ <%= f.submit "Request Now", id: "btn_book", class: 'my-btn btn-block', disabled: true %>
+
+      <% end %>
+      <% end %>
   </div>
 
 

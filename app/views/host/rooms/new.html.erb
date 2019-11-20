@@ -15,9 +15,6 @@
 </div>
 <br /><br />
 
-    
-
-
 <div class="container">
   <div class="row feature text-center">
     <div class="col-12 col-sm">
@@ -36,25 +33,96 @@
   </div>
 </div>
 
-
-
-
 </div><br />
 
 <div class="modal fade" id="newlisting" tabindex="-7" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="background-color: #3e2723; color: white;">
 
         <h4 class="modal-title" id="newlisting">Add listing</h4>
       </div>
       <%= form_for @room, url: host_rooms_path do |f| %>
       <div class="modal-body">
-        <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %>
+        <div class="form-field">
+          <%= f.text_field :listing_name, placeholder: "Listing name", class: "form-control", required: true %>
+        </div>
         <br />
-        <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+        <div class="form-field">
+          <%= f.text_area :description, rows: 5, placeholder: "Write a brief description of your home", class: "form-control", required: true %>
+        </div>
         <br />
-        <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %><br />
+        <div class="form-field">
+          <%= f.text_field :address, placeholder: "Address", class: "form-control", required: true %>
+        </div><br />
+
+
+        <div class="row">
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Hotel", "Hotel"], ["Resort", "Resort"], ["Villa", "Villa"]], id: "home_type", prompt: "Accommodation type", class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :room_type, [["Single room", "Single room"], ["Double-room", "Double-room"], ["One-Bedroom", "One-Bedroom"]],
+              id: "room_type", prompt: "Room_type...", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :bathroom, [["1", 1], ["2", 2], ["3", 3]],
+              id: "bathroom", prompt: "Bathroom...", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :bedroom, [["1", 1], ["2", 2], ["3", 3]],
+              id: "bedroom", prompt: "Bedroom...", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <br />
+
+
+
+
+
+        <div class="row">
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :adult, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["6", 6]],
+              id: "adult", prompt: "Adult...", class: "form-control" %>
+            </div>
+          </div>
+
+
+          <div class="col-6 select">
+            <div class="field">
+              <%= f.select :kids, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["6", 6]],
+              id: "kids", prompt: "kids...", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <br />
+           
+        <div class="col-6 select">
+         <div class="field">
+              <%= f.select :instant, Room.instants.map {|key, value| [key.humanize, key]}, selected: 'Instant', prompt: "Booking Type..", class: "form-control" %>
+            </div>
+          </div>
+          <br />
+
+        <div class="form-field">
+          <%= f.text_field :rate, placeholder: "Rate eg: $100", class: "form-control", required: true %>
+        </div>
+        <br />
 
         <div class="field">
           <%= f.label :photo %>
