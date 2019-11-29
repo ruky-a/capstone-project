@@ -11,7 +11,7 @@ module ApplicationHelper
 #   end
 # end
 
-def avatar_for(user, options = {size: 80})
+def avatar_for(user, options = {size: 40})
   if user.avatar.attached?
     "http://graph.facebook.com/#{user.uid}/picture?type=large"
   else

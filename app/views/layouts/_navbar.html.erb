@@ -1,12 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:  white; padding:5px;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:  #4a148c; padding: 0px;">
   <div class="container">
 
-
-    <%= link_to 'Tripsort', root_path, class: 'navbar-brand' %>
-    <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Destination?", class: "btn btn-outline-secondary" %>
-      <% end %>
-
+   <!--  <%= image_tag 'logo.png' %> -->
+    <%= link_to 'Hospitality9ja', root_path, class: 'navbar-brand' %>
+   
+   
 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +39,7 @@
               <% else %>
               <%= image_tag gravatar_image_url(current_user.email), class: "rounded-circle",size: 60 %>
               <% end %>
-              hi, <%= current_user.fullname%> <span class="caret"></span>
+              Hi, <%= current_user.fullname%> <span class="caret"></span>
 
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -55,7 +53,7 @@
             <% end %>
           </li>   
         </ul> 
-        <%= link_to new_host_room_path, class: 'btn btn-danger host' do %>
+        <%= link_to new_host_room_path, class: 'btn btn-warning host' do %>
           Become a host
           <% end %>
       </div>

@@ -31,6 +31,8 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'will_paginate', '~> 3.1.0'
 gem "figaro"
 gem 'twilio-ruby'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 gem 'image_processing', '~> 1.2'
 

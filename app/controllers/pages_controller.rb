@@ -35,7 +35,7 @@ end
       AND status = ?",
       start_date, end_date,
       start_date, end_date,
-      start_date, end_date),
+      start_date, end_date,
       1
       ).limit(1)
 

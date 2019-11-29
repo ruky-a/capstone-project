@@ -44,13 +44,12 @@ class Host::RoomsController < ApplicationController
   end
 
 
-  def preload
+ def preload
     today = Date.today
-    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?) AND status = ?", today, today, 1)
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
 
     render json: reservations
   end
-
 
 
   def create

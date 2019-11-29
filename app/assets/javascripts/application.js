@@ -17,6 +17,8 @@
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/widgets/slider
 //= require toastr
+//= require moment 
+//= require fullcalendar
 //= require activestorage
 //= require jquery_ujs
 //= require turbolinks

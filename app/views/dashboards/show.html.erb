@@ -18,3 +18,24 @@
         </div>
       </div>
 
+
+  <h1> Listing</h1>
+  <% current_user.rooms.each do |room| %>
+   <h4 class="text-center">
+    <%= link_to room.listing_name,rooms_path(room) %>
+   </h4>
+   <br />
+   <% if room.images.attached? %><%= image_tag room.images.first, width: "280px", height: "180px" %>
+         <% end %> 
+   <br />
+   <div class="row">
+    <div class="col-12 col-sm-8">
+     <%= room.description %>
+    </div>
+ </div>
+  <hr class="col-8 offset-2">
+  <br class="clr" />
+ <% end %>
+</div>
+
+

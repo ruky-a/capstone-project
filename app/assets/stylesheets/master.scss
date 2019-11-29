@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "fullcalendar";
 @import "toastr";
 $theme-colors: ( "bootstrap": #563d7c, "simpleform": #00617f );
 
@@ -10,13 +11,11 @@ outline: none!important;
 }
 
 
-
-
 a.navbar-brand{
 color: #DA3B20;
 font-family: 'roboto';
-font-size: 28px;
-font-color: red;
+font-size: 25px;
+color: red;
  
 }
 
@@ -106,6 +105,10 @@ font-family: 'amblebold', sans-serif;
 color: black;
 }
 
+h5 a {
+font-family: 'amblebold', sans-serif;
+color: black;
+}
 
 
 
@@ -160,12 +163,16 @@ width:250px;
 
 }
 
+.avatar-small {
+  width: 28px;
+}
 
 .avatar {
 vertical-align: middle;
 width: 100px;
 height: 100px;
 border-radius: 100%;
+
 }
 
 
@@ -333,16 +340,22 @@ font-weight: bold;
 
 
 .form-control.datepicker {
-color : #103D65;
 background-color: white;
-border: 1px solid #020A10;
 text-align: center;
 -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
 border-radius: 0px;
 }
 
+.form-control.date search{
+background-color: white;
 
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+text-align: center;
+
+}
 
 .card-header {
 color: white;
@@ -373,28 +386,27 @@ display: block;
 width: 100%;
 font-size: 0.912rem;
 line-height: 1.5;
-text-color: black;
 background-color: #fff;
-border: 1px solid #ccc;
 height: calc(3rem + 2px) !important;
 position: relative;
+border: 1px solid #C88DEE;
+
 }
 
 
 .search {
 padding: 0px;
-paddin-top: 20px;
 
 }
 
 
 .search.btn {
-background-color:  #ab150a;
-
-
+background-color:   #4a148c;
 color: white;
-}
+font-weight: bold;
 
+
+}
 
 .boxes {
 float: left;
@@ -435,9 +447,47 @@ margin-right: 30px;
 }
 
 .luxury {
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
+background: 
+linear-gradient(
+rgba(0, 0, 0, 0.3),
+rgba(0, 0, 0, 0.3),
+),
+image_url('couple.jpg');
+-webkit-background-size: 100% 100%;
+-moz-background-size: 100% 100%;
+-o-background-size: 100% 100%;
+background-size: 100% 100%;
+height:350px;
+
+}
+
+.luxury h2{
+  font-weight: 200;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.luxury1 h2{
+  font-weight: 600;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+.luxury1 p{
+  font-weight: 600;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+}
+
+
+.luxury1 {
+background-image: 
+linear-gradient(
+rgba(0, 15, 200, 0.5),
+rgba(0, 15, 200, 0.5)
+),
+
+url(luxury7.jpg);
+-webkit-background-size: 100% 100%;
+-moz-background-size: 100% 100%;
+-o-background-size: 100% 100%;
 background-size: cover;
 height:350px;
 
@@ -485,6 +535,8 @@ background-size: 100% 100%;
 height: 326px;
 padding-bottom: 20px;
 }
+
+
 
 
 a:hover{
@@ -543,4 +595,89 @@ text-align: left;
 
 .host {
   margin-left: 10px;
+}
+
+.nav-link {
+   margin-left: 5px;
+
+}
+
+
+.fc-past {
+  background-color: lightgray;
+}
+
+
+.fc-content.Waiting {
+  background-color: #C9CC6D;
+}
+
+.fc-content.Approved {
+  background-color: #ab150a;
+}
+
+.fc-day {
+  position: relative;
+}
+
+.fc-content {
+  height: 40px;
+  border-radius: 30px;
+
+}
+
+.fc-event {
+  border: 0px;
+  background-color: transparent;
+
+  
+}
+
+.fc-event.fc-event-dot {
+    background-color: white;
+}
+
+.fc-title {
+  font-size: 14px;
+  position: relative;
+  top: 7px;
+  left: 20px;
+   color: white;
+}
+
+.jumbotron h3 {
+  color: black;
+
+}
+.room {
+text-align: left;
+ border-radius: 2px;
+
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+input::placeholder {
+  padding-left: 10px;
+
+}
+
+.navbar-brand {
+  size: 28px;
+}
+
+.yellow h3{
+  color: #ffc107;
+}
+
+
+.grey{
+  height: 1px;
+  background-color: #4a148c;
+  border: none; 
+
 }
