@@ -2,17 +2,13 @@
 <div class ="boxes">
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <button id="filter" class="btn btn-outline" data-toggle="collapse" data-target="#collapseCard">
         Advanced filters <i class="fa fa-chevron-down"></i>
       </button>
-    </div>
-    <br />
+    </div><br /><br />
 
 
-
-
-    <br />
 
     <div class="row">
       <br/>
@@ -87,6 +83,7 @@
         </div>
       </div>
     </div>
+    <br />
     <div class="container">
       <div class="row" id="list_room">
         <%= render partial: 'host/rooms/room_list', locals: {rooms: @arrRooms}  %>
