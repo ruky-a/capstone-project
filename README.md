@@ -1,24 +1,11 @@
-# README
+# Accommodation booking App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a two way market place booking application.
 
-Things you may want to cover:
+User can upload their accommodations as listings.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ it has a video and photo upload functionality
+ 
+ Also integrated is Google Maps API, Stripe API for payments, Facebook API as an option for Sign-up and also twilio for phone sign-up and verification.
+ 
+User can change avatar by uploading photo.
