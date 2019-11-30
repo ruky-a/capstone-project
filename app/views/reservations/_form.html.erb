@@ -41,10 +41,10 @@
     </div>
 
     <% if @room.Instant? %>
-    <%= f.submit "Book Now", id: "btn_book", class: 'my-btn btn-block', disabled: true %>
+    <%= f.submit "Book Now", id: "btn_book", class: 'my-btn btn-block' %>
     <% else %>
 
- <%= f.submit "Request Now", id: "btn_book", class: 'my-btn btn-block', disabled: true %>
+ <%= f.submit "Request Now", id: "btn_book", class: 'my-btn btn-block' %>
 
       <% end %>
       <% end %>
