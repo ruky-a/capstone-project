@@ -58,3 +58,13 @@
     font-style: normal;
 
 }
+
+
+@font-face {
+    font-family: 'haettenschweilerregular';
+    src: font_url('hatten-webfont.woff2') format('woff2'),
+         font_url('hatten-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

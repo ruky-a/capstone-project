@@ -13,9 +13,10 @@ outline: none!important;
 
 a.navbar-brand{
 color: #DA3B20;
-font-family: 'roboto';
-font-size: 25px;
-color: red;
+font-family: 'haettenschweilerregular', sans-serif;
+font-size: 28px;
+padding-left: 5px;
+letter-spacing: 1px; 
  
 }
 
@@ -209,7 +210,7 @@ margin-bottom: -0.25em;
 margin-right: 5px;
 vertical-align: top;
 border: 1px solid #db2727;
-border-radius: 2px;
+border-radius: 1px;
 appearance: none;
 -moz-appearance: none;
 -webkit-appearance: none;
@@ -225,7 +226,7 @@ color: #db2727;
 }
 
 .card-header {
-background-color:   #292b2c;
+background-color: #292b2c;
 font-family: 'ambleregular', sans-serif;
 }
 
@@ -389,7 +390,6 @@ line-height: 1.5;
 background-color: #fff;
 height: calc(3rem + 2px) !important;
 position: relative;
-border: 1px solid #C88DEE;
 
 }
 
@@ -401,7 +401,7 @@ padding: 0px;
 
 
 .search.btn {
-background-color:   #4a148c;
+background-color: #ab150a;
 color: white;
 font-weight: bold;
 
@@ -590,6 +590,15 @@ text-align: left;
 
 
 .red {
+  color: #61BB31;
+  font-size: 35px;
+  font-family: 'robotobold';
+  font-weight: 600px;
+
+}
+
+
+.jumbotron  p{
   color: red;
 }
 
@@ -681,3 +690,4 @@ input::placeholder {
   border: none; 
 
 }
+

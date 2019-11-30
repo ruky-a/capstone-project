@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+
+
+
   def index
     @rooms = Room.limit(4)
   end

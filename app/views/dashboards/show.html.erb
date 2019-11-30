@@ -17,13 +17,16 @@
           <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-danger btn-block" %>
         </div>
       </div>
+    </div>
 
 
-  <h1> Listing</h1>
+
+  <div class="container">
+    <h3> Listing</h3>
   <% current_user.rooms.each do |room| %>
-   <h4 class="text-center">
+   <h6 class="text-center">
     <%= link_to room.listing_name,rooms_path(room) %>
-   </h4>
+   </h6>
    <br />
    <% if room.images.attached? %><%= image_tag room.images.first, width: "280px", height: "180px" %>
          <% end %> 
@@ -37,5 +40,6 @@
   <br class="clr" />
  <% end %>
 </div>
+
 
 
