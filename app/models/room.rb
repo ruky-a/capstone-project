@@ -13,6 +13,11 @@ class Room < ApplicationRecord
   has_one_attached :video
   has_one_attached :thumbnail
 
+  validates :home_type, presence: true
+  validates :bathroom, presence: true
+  validates :bedroom, presence: true
+  validates :adult, presence: true
+
   # def thumbnail input
  #    return self.images[input].variant(resize: "1200x500").processed
  #  end

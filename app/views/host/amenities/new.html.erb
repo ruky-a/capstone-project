@@ -1,111 +1,55 @@
 <br />
 <div class="container">
-<div class="col-md-8 offset-md-2">
-   <%= simple_form_for @amenity, url: host_room_amenities_path(@room) do |f| %>
-  
+  <div class="col-md-8 offset-md-2">
+    <%= simple_form_for @amenity, url: host_room_amenities_path(@room) do |f| %>
+
     <div class="card test-white">
       <div class="card-header bg-dark">
-       Room Details & Amenities
+        Room Amenities
       </div>
-
-
       <div class="card-body">
-
+        <div class="col-12">
         <div class="row">
-     <div class="col-md-12  select">
-           <div class="form-group">
-              <label>Type of Accommodation</label>
-              <%= f.select :hometype, [["Apartment", "Apartment"], ["House", "House"], ["Hotel", "Hotel"], ["Resort", "Resort"], ["Villa", "Villa"]], id: "home_type", prompt: "Select...", class: "form-control form-control-lg" %>
-            </div>
-          </div> 
-
-          <div class="col-md-6  select">
-            <div class="form-group">
-              <label>How many Bathroom</label>
-              <%= f.select :bathroom, [["1", 1], ["2", 2], ["3", 3]],
-              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
-            </div>
-          </div> 
-           
-
-
-
-
-          <div class="col-md-6 select">
-            <div class="form-group">
-              <label>Room Type</label>
-              <%= f.select :roomtype, [["Single room", "Single room"], ["Double-room", "Double-room"], ["One-Bedroom", "One-Bedroom"]],
-              id: "home_type", prompt: "Select...", class: "form-control form-control-lg" %>
-            </div>
-          </div> 
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-6 select">
-            <div class="form-group">
-              <label>how many Beds</label>
-              <%= f.select :bedroom, [["1", 1], ["2", 2], ["3", 3]],
-              id: "home_type", prompt: "Select...", class: "form-control-lg" %>
-            </div>
+          <div class="col-md-4">
+            <%= f.check_box :kitchen, as: :check_boxes %> Kitchenette
           </div>
 
+          <div class="col-md-4">
+            <%= f.check_box :restaurant, as: :check_boxes %> Restaurant
+          </div>
+          <div class="col-md-4">
+            <%= f.check_box :internet, as: :check_boxes %> Free Wifi
+          </div>
+        </div>
+        <br />
 
 
-          <div class="col-md-6 select">
-            <div class="form-group">
-              <label>Adults</label>
-              <%= f.select :accommodate, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["6", 6]],
-              id: "home_type", prompt: "Select...", class: "form-control" %>
-            </div>
-          </div> 
-</div>
-        
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.check_box :air, as: :check_boxes %> Air Conditioning
+          </div>
 
-   
+          <div class="col-md-4">
+            <%= f.check_box  :swimming, as: :check_boxes %> Swimming Pool
+          </div>
 
- <div class="row">
-        <div class="col-md-4">
-        <%= f.check_box :kitchen, as: :check_boxes %> Kitchenette
-</div>
+          <div class="col-md-4">
+            <%= f.check_box :tv, as: :check_boxes %> Tv
+          </div>
+        </div>
+        <br />
 
-         <div class="col-md-4">
-       <%= f.check_box :restaurant, as: :check_boxes %> Restaurant
-</div>
-    <div class="col-md-4">
-       <%= f.check_box :internet, as: :check_boxes %> Free Wifi
+        <%= f.submit "Publish", class: "btn btn-danger" %>
+
+        <%= f.button :button, "Cancel", type: "cancel", class: "btn-outline-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
-<br />
-    
 
- <div class="row">
-    <div class="col-md-4">
-   <%= f.check_box :air, as: :check_boxes %> Air Conditioning
- </div>
-
-  <div class="col-md-4">
-   <%= f.check_box  :swimming, as: :check_boxes %> Swimming Pool
- </div>
-
- <div class="col-md-4">
-   <%= f.check_box :tv, as: :check_boxes %> Tv
- </div>
-</div>
-<br />
-
-   <%= f.submit "Publish", class: "btn btn-danger" %>
-
-    <%= f.button :button, "Cancel", type: "cancel", class: "btn-outline-primary" %>
-  <% end %>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
+     
 
 <div class="col-md offset-1">
   <%= link_to 'Back', host_room_path(@room) %>

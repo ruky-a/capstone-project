@@ -4,7 +4,7 @@
   <h3><%= @room.listing_name %></h3>
   <% if @room.images.attached? %><%= image_tag @room.images.first, width: "100%", height: "400px"  %>
   <% end %>
-</div>
+</div><br />
 
 
 <div class="col-md-4">
@@ -12,62 +12,54 @@
 <%= render 'reservations/form' %> 
     </div>
   </div>
+  <br /><br />
+
+
 
 
 <div class="container">
-  <div class="col-md-12">
-    <div class="row"> 
-      <div class="col-md-8">
+
+      <div class="col-8">
         <div class="row">
-          <% @room.amenities.each do |amenity| %>
 
           <div class="col-md 2 ">
-            <span class="pull-left"><i class="fa fa-home fa-2x"  style="color:  #E43A21;"></i> <%= amenity.hometype %></span><br />
+            <span class="pull-left"><i class="fa fa-home"  style="color:  #E43A21;"></i> <%= @room.home_type %></span><br />
           </div>
 
           <div class="col-md 2 ">
-            <span class="pull-left"><i class="fa fa-user fa-2x"  style="color:  #E43A21;"></i> <%=  pluralize(amenity.accommodate, "Guest") %></span>
+            <span class="pull-left"><i class="fa fa-user"  style="color:  #E43A21;"></i> <%=  pluralize(@room.adult, "Guest") %></span>
           </div>
 
 
           <div class="col-md 2">
-            <span class="pull-left"><i class="fa fa-bed fa-2x" style="color:  #E43A21"></i> 
-              <%= pluralize(amenity.bedroom, "Bedroom") %></span><br />
+            <span class="pull-left"><i class="fa fa-bed " style="color:  #E43A21"></i> 
+              <%= pluralize(@room.bedroom, "Bedroom") %></span><br />
             </div>
 
             <div class="col-md 2">
-              <span class="pull-left"><i class="fa fa-bath fa-2x" style="color:  #E43A21;"></i> <%=  pluralize(amenity.bathroom, "Bathroom") %></span><br />
+              <span class="pull-left"><i class="fa fa-bath" style="color:  #E43A21;"></i> <%=  pluralize(@room.bathroom, "Bathroom") %></span><br />
             </div>
-            <% end %>
-          </div>
-        </div>
-
-
-        <div class="col-md-4">
+    
           </div>
         </div>
       </div>
-    </div>
-    <br />
-         
-
-    <hr />
+      <br /><br />
 
 
+        
 
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+      <br />
     <h3>Description</h3>
     <hr />
     <p><%= @room.description %></p>
     </div>
-    <br />
 
 
 
   <div class="box col-md-6">
-  <br />
   <% if @room.latitude.present? && @room.longitude.present? %>
   <script>
     function initMap() {
@@ -117,7 +109,7 @@
           <div class="col-md-4">
             <ul class="amenities">
               <br />
-              <li class="<%= 'text-line-through' if !amenity.tv %>">TV</li>
+              <li class="<%= @room.amenity.tv %>">TV</li>
               <li class="<%= 'text-line-through' if !amenity.kitchen %>">Kitchen</li>
               <li class="<%= 'text-line-through' if !amenity.internet %>">Wifi</li>
             </ul>
@@ -196,7 +188,7 @@
     <div class="col-md-3">
       <div class="card"> 
         <% if room.images.attached? %>
-        <%= image_tag room.images.last, width: "100%", height: "100%"  %>
+        <%= image_tag room.images.last, width: "100%", height: "180px"  %>
         <% end %>
         <div class="card-body"> 
           <h4 class="card-title"><%= link_to room.listing_name, room %></h4>  

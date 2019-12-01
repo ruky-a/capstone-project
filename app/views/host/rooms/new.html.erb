@@ -101,22 +101,28 @@
               id: "adult", prompt: "Adult...", class: "form-control" %>
             </div>
           </div>
+          <br /><br />
 
 
-          <div class="col-6 select">
+        <!--   <div class="col-6 select">
             <div class="field">
               <%= f.select :kids, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["6", 6]],
               id: "kids", prompt: "kids...", class: "form-control" %>
             </div>
           </div>
-        </div>
-        <br />
+        </div> -->
+          <br />
+      
+   
            
         <div class="col-6 select">
          <div class="field">
               <%= f.select :instant, Room.instants.map {|key, value| [key.humanize, key]}, selected: 'Instant', prompt: "Booking Type..", class: "form-control" %>
             </div>
           </div>
+        </div>
+      
+
           <br />
 
         <div class="form-field">

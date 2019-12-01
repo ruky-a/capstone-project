@@ -14,9 +14,6 @@
   <br />
 
 
-
-
-
   <div class="box col-md-6 offset-md-3">
     <%= link_to @room.listing_name, @room.web_url %>
     <br /><br />
@@ -31,40 +28,6 @@
 <br />
 
 
-<% @room.amenities.each do |amenity| %>
-<div class="container">
-  <div class="row text-center row-space-1">
-    <div class="col-md-3 ">
-      <i class="fa fa-home fa-2x"></i>
-    </div>
-
-
-    <div class="col-md-3 ">
-      <i class="fa fa-user fa-2x"></i>
-    </div>
-
-    <div class="col-md-3 ">
-      <i class="fa fa-bed fa-2x"></i>
-    </div>
-
-    <div class="col-md-3">
-      <i class="fa fa-bath fa-2x"></i>
-    </div>
-
-  </div>
-
-  <div class="row text-center">
-    <div class="col-md-3"><%= @room.home_type %></div>
-    <div class="col-md-3"><%= pluralize(@room.adult, "Adult") %></div>
-    <div class="col-md-3"><%= pluralize(@room.bedroom, "Bedroom") %></div>
-    <div class="col-md-3"><%= pluralize(@room.bathroom, "Bathroom") %></div>
-
-<% end %>
-
-  </div>
-</div>
-</div>
-<br />
 
 
 <div class="container">
