@@ -19,3 +19,11 @@ How it works.
 
 . User can upload sign-up to upload accommodation as listings with photo and video upload functionality
 
+<<<<<<< HEAD
+=======
+
+
+<img src="screenshot.png" alt="App screenshot">
+
+
+>>>>>>> Add-readme
