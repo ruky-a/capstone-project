@@ -12,4 +12,4 @@ User can change avatar by uploading photo.
 
 
 
-<img src="assets/screenshot.png" alt="App show page Screenshot">
+<img src="assets/screenshot.png">
