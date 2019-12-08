@@ -26,3 +26,7 @@ How it works.
 
 
 
+<<<<<<< HEAD
+=======
+<img src="assets/screenshot.png">
+>>>>>>> 8d2c5323a33da283eb27bceee0c493ad763d18e1
