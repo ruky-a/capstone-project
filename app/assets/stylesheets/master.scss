@@ -12,13 +12,15 @@ outline: none!important;
 
 
 a.navbar-brand{
-color: #DA3B20;
+color: #ab150a;
 font-family: 'haettenschweilerregular', sans-serif;
 font-size: 28px;
 padding-left: 5px;
 letter-spacing: 1px; 
+
  
 }
+
 
 
 body {
@@ -106,6 +108,7 @@ outline: none;
 border-color: #2d467b;
 background-color: #2d467b;
 color: white;
+font-weight: bold;
 }
 
 
@@ -129,7 +132,7 @@ padding: 30px;
 }
 
 .my-btn {
-background-color: #1C2331;
+background-color: #28a745;
 width: 100%;
 border: none;
 font-size: 15px;
@@ -138,6 +141,7 @@ margin-top: 10px;
 margin-top: 10px;
 padding-top: 10px;
 padding-bottom: 10px;
+font-weight: bold;
 
 }
 
@@ -574,7 +578,7 @@ text-align: left;
 
 
 .red {
-  color: #61BB31;
+  color: #28a745;
   font-size: 35px;
   font-family: 'robotobold';
   font-weight: 600px;
@@ -588,6 +592,8 @@ text-align: left;
 
 .host {
   margin-left: 10px;
+  font-weight: bold;
+
 }
 
 .nav-link {
@@ -678,3 +684,6 @@ input::placeholder {
 .row-space-1 {
   color: red;
 } 
+
+
+

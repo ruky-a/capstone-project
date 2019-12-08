@@ -9,3 +9,5 @@ User can upload their accommodations as listings.
  Also integrated is Google Maps API, Stripe API for payments, Facebook API as an option for Sign-up and also twilio for phone sign-up and verification.
  
 User can change avatar by uploading photo.
+
+<img src="screenshot.png" alt="App show page Screenshot">
