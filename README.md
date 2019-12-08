@@ -21,3 +21,4 @@ User authentication. This requires users to be logged in to make reservations.
 
 
 
+https://github.com/ruky-a/capstone-project/blob/master/app/assets/images/screenshot.png
