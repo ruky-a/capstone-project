@@ -13,6 +13,7 @@
             <span class="pull-right"> $<%= room.rate %></span></h6>
           
             <div id="star_<%= room.id %>"></div> 
+            <%= pluralize(room.guest_reviews.count, "review") %>
 
        
          </div>

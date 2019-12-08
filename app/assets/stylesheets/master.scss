@@ -333,7 +333,10 @@ text-align: center;
 -moz-border-radius: 0px;
 -webkit-border-radius: 0px;
 border-radius: 0px;
+
 }
+
+
 
 .form-control.date search{
 background-color: white;
@@ -384,6 +387,7 @@ position: relative;
 .search {
 padding: 0px;
 
+
 }
 
 
@@ -432,6 +436,8 @@ text-align: center;
 margin-right: 30px;
 
 }
+
+
 
 .luxury {
 background: 
@@ -571,11 +577,6 @@ text-align: left;
 }
 
 
-.video-fluid {
-  width: 100%;
-  height: auto;
-}
-
 
 .red {
   color: #28a745;
@@ -655,15 +656,11 @@ text-align: left;
 }
 
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
-  opacity: 1; /* Firefox */
-}
-
 input::placeholder {
   padding-left: 10px;
 
 }
+
 
 .navbar-brand {
   size: 28px;
