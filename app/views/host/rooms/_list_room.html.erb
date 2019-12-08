@@ -11,9 +11,8 @@
         <div class="card-body room"> 
          <h6><%= link_to room.listing_name, room_path(room) %>
             <span class="pull-right"> $<%= room.rate %></span></h6>
-           <%= pluralize(room.guest_reviews.count, "review") %><br />
-            <div id="star_<%= room.id %>"></div> <%= pluralize(room.guest_reviews.count, "review") %>
-
+          
+            <div id="star_<%= room.id %>"></div> 
 
        
          </div>

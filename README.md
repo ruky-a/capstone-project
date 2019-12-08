@@ -10,4 +10,6 @@ User can upload their accommodations as listings.
  
 User can change avatar by uploading photo.
 
-<img src="screenshot.png" alt="App show page Screenshot">
+
+
+<img src="assets/screenshot.png" alt="App show page Screenshot">
