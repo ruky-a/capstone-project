@@ -8,11 +8,7 @@ Postgresql - Database
 
 Ruby on rails - Back-end framework
 
-Bootstrap, Jquery/ Ajax - Front-end
-
-External Api - Facebook as option for sign-up, Google Api for geocoding and Stripe Api for payments.
-
-
+Bootstrap, Jquery - Front-end
 
 How it works.
 
@@ -20,7 +16,7 @@ User authentication. This require user to log in to either upload listing as a h
 
 User can to upload accommodation as listings with photo and video upload functionality.
 
-N.B - App development still in progress.
+N.B - App development in progress.
 
 
 
