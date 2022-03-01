@@ -34,7 +34,7 @@ gem 'twilio-ruby'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem 'stripe', '~> 3.0.0'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
