@@ -21,7 +21,7 @@ gem 'popper_js'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'simple_form'
-gem 'omniauth', '~> 1.7'
+gem 'omniauth', '~> 2.0'
 gem 'omniauth-facebook', '~> 4.0'
 gem "geocoder"
 gem 'toastr-rails'
